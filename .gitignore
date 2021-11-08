@@ -1,3 +1,4 @@
 /.metadata/
 *.org
 !README.org
+**/bin/
