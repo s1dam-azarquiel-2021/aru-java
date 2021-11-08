@@ -7,6 +7,7 @@ public class Ejercicio1 {
 		// Programa que pase un String a mayusculas
 		// y diga cuantas letras han cambiado
 
+		System.out.print("Escribe una frase: ");
 		Scanner input = new Scanner(System.in);
 		String frase = input.nextLine();
 		input.close();
@@ -21,6 +22,7 @@ public class Ejercicio1 {
 		System.out.printf(
 			"Frase en mayusculas: %s\n" +
 			"Numero de letras cambiadas: %d",
-			frase.toUpperCase(), cambios);
+			frase.toUpperCase(), cambios
+		);
 	}
 }
