@@ -13,11 +13,10 @@ public class Ejercicio4 {
 		int n = input.nextInt();
 		input.close();
 
-		int lFrase = frase.length();
-		frase.insert(0, frase.substring(lFrase - n));
+		final int L_FRASE = frase.length();
+		frase.insert(0, frase.substring(L_FRASE - n));
 
-		lFrase = frase.length();
-		frase.delete(lFrase - n, lFrase);
+		frase.delete(L_FRASE, L_FRASE + n);
 
 		System.out.printf(
 			"%s",
