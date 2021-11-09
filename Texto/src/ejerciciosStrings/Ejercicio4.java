@@ -8,19 +8,20 @@ public class Ejercicio4 {
 
 		Scanner input = new Scanner(System.in);
 		System.out.print("Introduce una frase: ");
-		String frase = input.nextLine();
+		StringBuilder frase = new StringBuilder(input.nextLine());
 		System.out.print("Introduce el numero de rotaciones: ");
 		int n = input.nextInt();
 		input.close();
 
-		final int L_FRASE = frase.length();
-		String fraseFinal =
-			frase.substring(L_FRASE - n) +
-			frase.substring(0, L_FRASE - n);
+		int lFrase = frase.length();
+		frase.insert(0, frase.substring(lFrase - n));
+
+		lFrase = frase.length();
+		frase.delete(lFrase - n, lFrase);
 
 		System.out.printf(
 			"%s",
-			fraseFinal
+			frase
 		);
 	}
 }
