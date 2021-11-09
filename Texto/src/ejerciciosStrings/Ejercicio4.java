@@ -13,7 +13,10 @@ public class Ejercicio4 {
 		int n = input.nextInt();
 		input.close();
 
-		String fraseFinal = frase.substring(n - 1) + frase.substring(0, n - 1);
+		final int L_FRASE = frase.length();
+		String fraseFinal =
+			frase.substring(L_FRASE - n) +
+			frase.substring(0, L_FRASE - n);
 
 		System.out.printf(
 			"%s",
