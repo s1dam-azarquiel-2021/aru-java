@@ -54,10 +54,10 @@ public class Ejercicio10 {
 		input.close();
 
 		if (acertado) {
-			System.out.println("Acertaste la palabra, enhorabuena");
+			System.out.println("\nAcertaste la palabra, enhorabuena");
 		} else {
 			System.out.printf(
-				"Eres malisimo, la palabra era:	%s",
+				"\nEres malisimo, la palabra era:	%s",
 				palabra
 			);
 		}
