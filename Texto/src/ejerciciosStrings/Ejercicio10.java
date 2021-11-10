@@ -11,24 +11,37 @@ public class Ejercicio10 {
 		// se da el juego por perdido
 
 		Scanner input = new Scanner(System.in);
+
+		// Pedimos la palabra
 		System.out.print("Introduce una palabra: ");
 		StringBuilder palabra = new StringBuilder(input.nextLine());
 
+		// Ya que lo necesito mas de una vez lo meto en una constante
 		final int L_PALABRA = palabra.length();
 
 		boolean acertado = false;
 		int nIntentos = 0;
-		StringBuilder letrasAcertadas = new StringBuilder("_".repeat(L_PALABRA));
 		char letraActual;
 
+		// La palabra con los aciertos, al principio solo sera un ____
+		StringBuilder letrasAcertadas = new StringBuilder(
+			"_".repeat(L_PALABRA)
+		);
+
 		while (!acertado && nIntentos < 8) {
+			// Mostramos las letras acertadas
 			System.out.printf(
 				"\nLetras acertadas: %s\n",
 				letrasAcertadas
 			);
+
+			// Pedimos una letra
 			System.out.print("Introduce una letra: ");
 			letraActual = input.nextLine().charAt(0);
 
+			// Buscamos en la palabra original si esa letra estaba,
+			// si estaba ponemos las letras en letrasAcertadas
+			// y decimos que acerto la letra
 			boolean acertoLetra = false;
 			for (int i = 0; i < L_PALABRA; i++) {
 				if (palabra.charAt(i) == letraActual) {
@@ -37,13 +50,18 @@ public class Ejercicio10 {
 				}
 			}
 
+			// Le decimos si acerto o no
 			if (acertoLetra) {
 				System.out.println("Acertaste!");
 			} else {
 				System.out.println("Pero que malo eres");
 			}
 
+			// Comprobamos si hay _ en los aciertos, si no hay la palabra ya
+			// esta acertada
 			acertado = letrasAcertadas.indexOf("_") == -1;
+
+			// Sumamos un intento
 			nIntentos++;
 
 			System.out.printf(
@@ -57,7 +75,7 @@ public class Ejercicio10 {
 			System.out.println("\nAcertaste la palabra, enhorabuena");
 		} else {
 			System.out.printf(
-				"\nEres malisimo, la palabra era:	%s",
+				"\nEres malisimo, la palabra era: %s",
 				palabra
 			);
 		}
