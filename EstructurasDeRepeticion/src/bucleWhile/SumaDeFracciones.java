@@ -16,6 +16,6 @@ public class SumaDeFracciones {
 			suma += 1.0 / ++nSumas;
 		}
 
-		System.out.println("Se necesitaron " + nSumas + " sumas.");
+		System.out.printf("Se necesitaron %d sumas.\n", nSumas);
 	}
 }

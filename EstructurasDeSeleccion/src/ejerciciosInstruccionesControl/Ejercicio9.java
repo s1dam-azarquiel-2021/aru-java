@@ -6,10 +6,10 @@ public class Ejercicio9 {
 	public static void main(String[] args) {
 		// Obtener un numero por Input
 		Scanner input = new Scanner(System.in);
-		System.out.print("Introduce un numero del 0 al 9999: ");
+		System.out.printf("Introduce un numero del 0 al 9999: ");
 		int n = input.nextInt();
 		input.close();
-		
+
 		// Calcular el numero del reves
 		int n_reves = 0,
 			resto = n;
@@ -30,12 +30,12 @@ public class Ejercicio9 {
 			n_reves /= 100;
 		} else if (n < 1000) {
 			n_reves /= 10;
-		}		
+		}
 
 		if (n == n_reves) {
-			System.out.println("Es un numero capicua.");
+			System.out.printf("Es un numero capicua.\n");
 		} else {
-			System.out.println("No es un numero capicua.");
+			System.out.printf("No es un numero capicua.\n");
 		}
 	}
 }

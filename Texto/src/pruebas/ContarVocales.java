@@ -7,7 +7,7 @@ public class ContarVocales {
 		Scanner input = new Scanner(System.in);
 		String frase = input.nextLine().toLowerCase();
 		input.close();
-		
+
 		int contador = 0;
 		for (int i = 0; i < frase.length(); i++) {
 			switch (frase.charAt(i)) {
@@ -15,7 +15,7 @@ public class ContarVocales {
 				contador++;
 			}
 		}
-		
-		System.out.printf("En la frase hay %d vocales", contador);
+
+		System.out.printf("En la frase hay %d vocales\n", contador);
 	}
 }

@@ -11,7 +11,7 @@ public class Ejercicio2 {
 		// Leer 5 numeros
 		Scanner input = new Scanner(System.in);
 		for (byte i = 0; i < 5; i++) {
-			System.out.print("Introduce un numero: ");
+			System.out.printf("Introduce un numero: ");
 			int n = input.nextInt();
 
 			// Calcular si son divisibles entre 3 y 5
@@ -24,10 +24,10 @@ public class Ejercicio2 {
 			if (!(divisible3 || divisible5)) { nMultplosNada++; }
 		}
 		input.close();
-		
-		System.out.printf("%d multiplos de 3"
-					  + "\n%d multiplos de 5"
-					  + "\n%d multiplos de nada",
-					  nMultiplos3, nMultiplos5, nMultplosNada);
+
+		System.out.printf(
+			"%d multiplos de 3\n%d multiplos de 5\n%d multiplos de nada",
+			nMultiplos3, nMultiplos5, nMultplosNada
+		);
 	}
 }

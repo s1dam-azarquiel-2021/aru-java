@@ -12,26 +12,30 @@ public class NumeroSecretoConAyuda {
 		    intentos = 0;
 		do {
 			// Pedimos un numero por input y incrementamos el intento
-			System.out.print("Prueba suerte: ");
+			System.out.printf("Prueba suerte: ");
 			nIntroducido = input.nextInt();
 			intentos++;
 			// Si el numero introducido es  mayor o menor que el secreto
 			// Ayudar al usuario diciendoselo
 			if (nIntroducido > nSecreto) {
-				System.out.println("Te pasas prro");
+				System.out.printf("Te pasas prro\n");
 			} else if (nIntroducido < nSecreto) {
-				System.out.println("Te quedas corto");
+				System.out.printf("Te quedas corto\n");
+			} else {
+				ganador = true;
 			}
 			// Mientras que no acertemos o nos queden intentos
-		} while (nIntroducido != nSecreto && intentos < 8);
+		} while (!ganador && intentos < 8);
 		input.close();
-		
-		if (intentos == 5) {
-			System.out.println("Pero que malo eres!\n"
-					         + "El numero era: " + nSecreto);
+
+		if (ganador) {
+			System.out.printf("Ganador!\n");
 		} else {
-			System.out.println("Ganador!");
+			System.out.printf(
+				"\nPero que malo eres!\nEl numero era: %d\n",
+				nSecreto
+			);
 		}
-		
+
 	}
 }

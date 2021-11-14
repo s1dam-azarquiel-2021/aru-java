@@ -8,7 +8,7 @@ public class ProbarVelocidadString {
 			s = s.concat("Hola");
 		}
 		long fin = System.currentTimeMillis();
-		System.out.println("Tiempo de String: " + (fin - inicio));
+		System.out.printf("Tiempo de String: %d\n", fin - inicio);
 
 		StringBuilder s2 = new StringBuilder();
 		long inicio2 = System.currentTimeMillis();
@@ -16,6 +16,6 @@ public class ProbarVelocidadString {
 			s2.append("Hola");
 		}
 		long fin2 = System.currentTimeMillis();
-		System.out.println("Tiempo de StrinaBuilder: " + (fin2 - inicio2));
+		System.out.printf("Tiempo de StrinaBuilder: %d\n", fin2 - inicio2);
 	}
 }

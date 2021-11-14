@@ -3,15 +3,14 @@ package bucleFor;
 import java.util.Scanner;
 
 public class NumeroEsPrimo {
-
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		System.out.print("Introduce un numero: ");
+		System.out.printf("Introduce un numero: ");
 		int n = input.nextInt();
 		input.close();
-		
+
 		boolean esPrimo = true;
-		
+
 		if ((n & 1) == 0 && n != 2 && n != -2) {
 			esPrimo = false;
 		} else {
@@ -22,8 +21,11 @@ public class NumeroEsPrimo {
 				}
 			}
 		}
-		
-		System.out.println(esPrimo ? "Es primo" : "No es primo");
-	}
 
+		if (esPrimo) {
+			System.out.printf("Es primo\n");
+		} else {
+			System.out.printf("No es primo\n");
+		}
+	}
 }

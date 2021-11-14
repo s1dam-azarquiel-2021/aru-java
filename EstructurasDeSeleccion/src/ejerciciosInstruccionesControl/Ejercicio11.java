@@ -6,10 +6,10 @@ public class Ejercicio11 {
 	public static void main(String[] args) {
 		// Obtener un numero del 0 al 99 por Input
 		Scanner input = new Scanner(System.in);
-		System.out.print("Introduce un numero del 0 al 99: ");
+		System.out.printf("Introduce un numero del 0 al 99: ");
 		int n = input.nextInt();
 		input.close();
-		
+
 		// Sacar las cifras
 		final int c1 = n / 10,
 				  c2 = n % 10;
@@ -28,7 +28,7 @@ public class Ejercicio11 {
 		case 8: c2_escrito = "ocho"; break;
 		case 9: c2_escrito = "nueve"; break;
 		}
-		
+
 		// Segun la primera cifra todo cambia
 		String resultado  = "",
 			   c1_escrita = "";
@@ -57,13 +57,13 @@ public class Ejercicio11 {
 		case 8: c1_escrita = "ochenta"; break;
 		case 9: c1_escrita = "noventa"; break;
 		}
-		
+
 		// Solo se han asignado resultados a casos especiales, el resto se
 		// forman segun acaban en 0 o no
 		if (resultado == "") {
 			resultado = c1_escrita + " y " + c2_escrito;
 		}
-		
-		System.out.println(resultado);
+
+		System.out.printf("%s\n", resultado);
 	}
 }

@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class EsVocal {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		System.out.print("Introduce una vocal:");
+		System.out.printf("Introduce una vocal:");
 		char vocal = scanner.nextLine().charAt(0);
 		scanner.close();
 
@@ -20,9 +20,9 @@ public class EsVocal {
 		case 'I':
 		case 'O':
 		case 'U':
-			System.out.println("Es una vocal");
+			System.out.printf("Es una vocal\n");
 		default:
-			System.out.println("No es una vocal");
+			System.out.printf("No es una vocal\n");
 		}
 	}
 }

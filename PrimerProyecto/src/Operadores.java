@@ -4,15 +4,15 @@ public class Operadores {
 			b = 8,
 			c = 3;
 
-		System.out.println(++a);
-		System.out.println(a++);
+		System.out.printf("%d\n", ++a);
+		System.out.printf("%d\n", a++);
 
-		System.out.println(a != c);
-		System.out.println(a > b);
+		System.out.printf("%s\n", a != c);
+		System.out.printf("%s\n", a > b);
 
 		char letra = 'F';
 
-		System.out.println(letra > 'W');
+		System.out.printf("%s\n", letra > 'W');
 
 		boolean hayToner = true,
 				hayPapel = true,
@@ -20,6 +20,6 @@ public class Operadores {
 
 		resultado = hayToner && hayPapel;
 
-		System.out.println("Se puede imprimir? " + resultado);
+		System.out.printf("Se puede imprimir? %s", resultado);
 	}
 }

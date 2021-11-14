@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Ejercicio13 {
 	public static void main(String[] args) {
-		System.out.print("Introduce dos numeros: ");
+		System.out.printf("Introduce dos numeros: ");
 		Scanner input = new Scanner(System.in);
 		int n1 = input.nextInt(),
 			n2 = input.nextInt();
@@ -30,7 +30,7 @@ public class Ejercicio13 {
 				i += 2;
 			}
 		}
-		
-		System.out.printf("MCM: %d", mcm);
+
+		System.out.printf("MCM: %d\n", mcm);
 	}
 }

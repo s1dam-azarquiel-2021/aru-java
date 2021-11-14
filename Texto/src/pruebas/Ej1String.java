@@ -11,18 +11,19 @@ public class Ej1String {
 		int espacio1 = s.indexOf(' '),
 			espacio2 = s.indexOf(' ', espacio1 + 1);
 		
+
 		if (espacio1 == -1) {
-			System.out.println("No te sabes tu apellido o que");
+			System.out.printf("No te sabes tu apellido o que\n");
 		} else if (espacio2 == -1) {
-			System.out.println("Menudo tio raro solo un apellido");
+			System.out.printf("Menudo tio raro solo un apellido\n");
 		} else {
 			String nombre    = s.substring(0, espacio1),
 				   apellido1 = s.substring(espacio1 + 1, espacio2),
 				   apellido2 = s.substring(espacio2 + 1, s.length());
 
-			System.out.println("Tu nombre es: " + nombre);
-			System.out.println("Tu primer apellido es: " + apellido1);
-			System.out.println("Tu segundo apellido es: " + apellido2);
+			System.out.printf("Tu nombre es: %s\n", nombre);
+			System.out.printf("Tu primer apellido es: %s\n", apellido1);
+			System.out.printf("Tu segundo apellido es: %s\n", apellido2);
 		}
 	}
 }

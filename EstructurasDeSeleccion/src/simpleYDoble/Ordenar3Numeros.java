@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Ordenar3Numeros {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		System.out.print("Introduce 3 numeros: ");
+		System.out.printf("Introduce 3 numeros: ");
 		int x = scanner.nextInt();
 		int y = scanner.nextInt();
 		int z = scanner.nextInt();
@@ -27,6 +27,6 @@ public class Ordenar3Numeros {
 			y = temp;
 		}
 
-		System.out.println(x + " " + y + " " + z);
+		System.out.printf("%d %d %d\n", x, y, z);
 	}
 }

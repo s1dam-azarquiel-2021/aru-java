@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Ejercicio9 {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		System.out.print("Introduce un numero: ");
+		System.out.printf("Introduce un numero: ");
 		int n = scanner.nextInt();
 		scanner.close();
 
@@ -16,6 +16,6 @@ public class Ejercicio9 {
 			n_reves += i % 10;
 		}
 
-		System.out.println("\nNumero del reves: " + n_reves);
+		System.out.printf("Numero del reves: %d\n", n_reves);
 	}
 }

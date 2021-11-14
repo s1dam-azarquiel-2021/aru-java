@@ -9,11 +9,11 @@ public class NumeroSecreto {
 		Scanner input = new Scanner(System.in);
 		int nIntroducido;
 		do {
-			System.out.print("Prueba suerte: ");
+			System.out.printf("Prueba suerte: ");
 			nIntroducido = input.nextInt();
 		} while (nIntroducido != nSecreto);
 		input.close();
-		
-		System.out.println("Ganador!");
+
+		System.out.printf("Ganador!\n");
 	}
 }

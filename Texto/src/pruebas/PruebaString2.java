@@ -5,29 +5,46 @@ public class PruebaString2 {
 		String s = "Hola que tal",
 			   t = "hola que tal";
 		
-		System.out.println("Son iguales: " + s.equals(t));
-		System.out.println("Son iguales: " + s.equalsIgnoreCase(t));
 
-		System.out.println("Diferencia entre frases: " + s.compareTo(t));
+		System.out.printf("Son iguales: %s\n" + s.equals(t));
+		System.out.printf("Son iguales: %s\n" + s.equalsIgnoreCase(t));
 
-		System.out.println("La frase comienza por \"Hola\": " +
-						   s.startsWith("Hola"));
-		System.out.println("La frase acaba en \".\": " + s.endsWith("."));
+		System.out.printf("Diferencia entre frases: %s\n" + s.compareTo(t));
 
-		System.out.println("Trozo de la posicion 3 a la 10: " +
-						   s.substring(3, 10));
-		System.out.println("Trozo de la posicion 2 en adelante: " +
-						   s.substring(2));
+		System.out.printf(
+			"La frase comienza por \"Hola\": %s\n",
+			s.startsWith("Hola")
+		);
+		System.out.printf("La frase acaba en \".\": %s\n" + s.endsWith("."));
 
-		System.out.println("La letra \'q\' esta en la posicion: " +
-						   s.indexOf('q'));
-		System.out.println("La letra \'h\' esta en la posicion: " +
-						   s.indexOf('h'));
-		System.out.println("La letra \'a\' aparece por ultima vez: " +
-						   s.lastIndexOf('a'));
-		System.out.println("La palabra \"que\" esta en la posicion: " +
-						   s.indexOf("que"));
-		System.out.println("La letra \'a\' apartir de la posicion 4: " +
-						   s.lastIndexOf('a', 4));
+		System.out.printf(
+			"Trozo de la posicion 3 a la 10: %s\n",
+			s.substring(3, 10)
+		);
+		System.out.printf(
+			"Trozo de la posicion 2 en adelante: %s\n",
+			s.substring(2)
+		);
+
+		System.out.printf(
+			"La letra \'q\' esta en la posicion: %s\n",
+			s.indexOf('q')
+		);
+		System.out.printf(
+			"La letra \'h\' esta en la posicion: %s\n",
+			s.indexOf('h')
+		);
+		System.out.printf(
+			"La letra \'a\' aparece por ultima vez: %s\n",
+			s.lastIndexOf('a')
+		);
+		System.out.printf(
+			"La palabra \"que\" esta en la posicion: %s\n",
+			s.indexOf("que")
+		);
+		System.out.printf(
+			"La letra \'a\' apartir de la posicion 4: %s\n",
+			s.lastIndexOf('a', 4)
+		);
 	}
 }

@@ -6,13 +6,13 @@ public class Ejercicio3 {
 	public static void main(String[] args) {
 		// Obtener el DNI por Input
 		Scanner input = new Scanner(System.in);
-		System.out.print("Introduce tu DNI: ");
+		System.out.printf("Introduce tu DNI: ");
 		int dni = input.nextInt();
 		input.close();
-		
+
 		// Calcular la letra mediante estas operaciones
 		final int CALCULO_LETRA = dni - dni / 23 * 23;
-		
+
 		// Segun el resultado anterior se saca la letra
 		char letra = ' ';
 		switch (CALCULO_LETRA) {
@@ -40,7 +40,7 @@ public class Ejercicio3 {
 		case 21: letra = 'K'; break;
 		case 22: letra = 'E'; break;
 		}
-		
-		System.out.println("La letra de tu DNI es: " + letra);
+
+		System.out.printf("La letra de tu DNI es: %c\n", letra);
 	}
 }

@@ -18,7 +18,7 @@ public class Ejercicio10 {
 				for (int k = 0; k < 10; k++) {
 					int sumaCubos = cubos[i] + cubos[j] + cubos[k];
 					if (sumaCubos == i * 100 + j * 10 + k) {
-						System.out.println(sumaCubos);
+						System.out.printf("%d\n", sumaCubos);
 					}
 				}
 			}

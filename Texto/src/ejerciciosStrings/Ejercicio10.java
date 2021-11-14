@@ -13,7 +13,7 @@ public class Ejercicio10 {
 		Scanner input = new Scanner(System.in);
 
 		// Pedimos la palabra
-		System.out.print("Introduce una palabra: ");
+		System.out.printf("Introduce una palabra: ");
 		StringBuilder palabra = new StringBuilder(input.nextLine());
 
 		// Ya que lo necesito mas de una vez lo meto en una constante
@@ -36,7 +36,7 @@ public class Ejercicio10 {
 			);
 
 			// Pedimos una letra
-			System.out.print("Introduce una letra: ");
+			System.out.printf("Introduce una letra: ");
 			letraActual = input.nextLine().charAt(0);
 
 			// Buscamos en la palabra original si esa letra estaba,
@@ -52,9 +52,9 @@ public class Ejercicio10 {
 
 			// Le decimos si acerto o no
 			if (acertoLetra) {
-				System.out.println("Acertaste!");
+				System.out.printf("Acertaste!\n");
 			} else {
-				System.out.println("Pero que malo eres");
+				System.out.printf("Pero que malo eres\n");
 			}
 
 			// Comprobamos si hay _ en los aciertos, si no hay la palabra ya
@@ -72,10 +72,10 @@ public class Ejercicio10 {
 		input.close();
 
 		if (acertado) {
-			System.out.println("\nAcertaste la palabra, enhorabuena");
+			System.out.printf("\nAcertaste la palabra, enhorabuena\n");
 		} else {
 			System.out.printf(
-				"\nEres malisimo, la palabra era: %s",
+				"\nEres malisimo, la palabra era: %s\n",
 				palabra
 			);
 		}

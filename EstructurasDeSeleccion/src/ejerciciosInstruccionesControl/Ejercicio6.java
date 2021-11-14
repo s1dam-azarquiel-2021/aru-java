@@ -6,12 +6,12 @@ public class Ejercicio6 {
 	public static void main(String[] args) {
 		// Obtener una fecha en formato dia, mes y año por Input
 		Scanner input = new Scanner(System.in);
-		System.out.print("Introduce una fecha como dia, mes y año: ");
 		int dia = input.nextInt(),
 		    mes = input.nextInt(),
 		    año = input.nextInt();
+		System.out.printf("Introduce una fecha como dia, mes y año: ");
 		input.close();
-		
+
 		// Segun el dia puede que sea el ultimo de algun mes
 		if (dia == 31) {
 			// Meses que acaban el 31
@@ -53,7 +53,7 @@ public class Ejercicio6 {
 			// Si no es el ultimo dia del mes se suma 1 al dia
 			dia++;
 		}
-		
-		System.out.println("Mañana sera: " + dia + "/" + mes + "/" + año);
+
+		System.out.printf("Mañana sera: %d/%d/%d\n", dia, mes, año);
 	}
 }

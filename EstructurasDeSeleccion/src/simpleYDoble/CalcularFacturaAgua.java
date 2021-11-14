@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class CalcularFacturaAgua {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		System.out.print("Introduce litros: ");
+		System.out.printf("Introduce litros: ");
 		int metros3 = scanner.nextInt();
 		scanner.close();
 
@@ -29,6 +29,6 @@ public class CalcularFacturaAgua {
 			total = metros3 * pBajo;
 		}
 
-		System.out.println("Pagaras: " + total);
+		System.out.printf("Pagaras: %d\n", total);
 	}
 }

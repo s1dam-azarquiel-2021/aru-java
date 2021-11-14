@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 public class Ejercicio9 {
 	public static void main(String[] args) {
-		System.out.print("Introduce un numero: ");
+		System.out.printf("Introduce un numero: ");
 		Scanner input = new Scanner(System.in);
 		int n = input.nextInt();
 		input.close();
-		
+
 		String binario = "";
 		while (n > 1) {
 			binario = n % 2 + binario;
@@ -19,7 +19,7 @@ public class Ejercicio9 {
 		} else {
 			binario = "1" + binario;
 		}
-		
-		System.out.printf("En binario: %s", binario);
+
+		System.out.printf("En binario: %s\n", binario);
 	}
 }
