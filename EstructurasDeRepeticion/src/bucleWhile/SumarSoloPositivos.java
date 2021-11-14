@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class SumarSoloPositivos {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		int n = 0,
-			suma = 0;
+		int n = 0;
+		int suma = 0;
 		do {
 			suma += n;
 			System.out.printf("Introduce un numero: ");

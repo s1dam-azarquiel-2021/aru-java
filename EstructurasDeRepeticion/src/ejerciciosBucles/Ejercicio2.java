@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class Ejercicio2 {
 	public static void main(String[] args) {
-		byte nMultiplos3 = 0,
-			 nMultiplos5 = 0,
-			 nMultplosNada = 0;
-		
+		byte nMultiplos3 = 0;
+		byte nMultiplos5 = 0;
+		byte nMultplosNada = 0;
+
 		// Leer 5 numeros
 		Scanner input = new Scanner(System.in);
 		for (byte i = 0; i < 5; i++) {

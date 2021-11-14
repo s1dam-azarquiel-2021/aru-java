@@ -11,8 +11,8 @@ public class Ejercicio9 {
 		input.close();
 
 		// Calcular el numero del reves
-		int n_reves = 0,
-			resto = n;
+		int n_reves = 0;
+		int resto = n;
 
 		n_reves += resto % 10 * 1000;
 		resto /= 10;

@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class SumarNumeros {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		int n,
-			suma = 0;
+		int n;
+		int suma = 0;
 		do {
 			System.out.printf("Introduce un numero: ");
 			n = input.nextInt();

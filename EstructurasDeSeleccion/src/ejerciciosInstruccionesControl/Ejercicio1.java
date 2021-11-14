@@ -6,12 +6,12 @@ public class Ejercicio1 {
 	public static void main(String[] args) {
 		// Obtener la longitud de los tres lados de un triangulo por Input
 		Scanner input = new Scanner(System.in);
-		int a = input.nextInt(),
-			b = input.nextInt(),
-			c = input.nextInt();
 		System.out.printf(
 			"Introduce 3 lados de un triangulo, siendo el primero el mayor: "
 		);
+		int a = input.nextInt();
+		int b = input.nextInt();
+		int c = input.nextInt();
 		input.close();
 
 		if (a >= b + c) {
@@ -19,10 +19,10 @@ public class Ejercicio1 {
 		} else {
 			// Calcular los cuadrados de cada lado para no repetir lo mismo
 			// varias veces
-			final int A2 = a * a,
-					  B2 = b * b,
-					  C2 = c * c;
-			
+			final int A2 = a * a;
+			final int B2 = b * b;
+			final int C2 = c * c;
+
 			// Calcular la suma de B2 y C2, por lo mismo que antes
 			final int SUMA_B2_C2 = B2 + C2;
 

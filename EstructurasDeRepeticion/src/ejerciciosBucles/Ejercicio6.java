@@ -6,10 +6,10 @@ public class Ejercicio6 {
 	public static void main(String[] args) {
 		System.out.printf("Introduce una base y un exponente: ");
 		Scanner input = new Scanner(System.in);
-		int a = input.nextInt(),
-			n = input.nextInt();
+		int a = input.nextInt();
+		int n = input.nextInt();
 		input.close();
-		
+
 		double total = 1;
 		for (int i = 0; i < Math.abs(n); i++) {
 			total *= a;

@@ -2,9 +2,8 @@ package pruebas;
 
 public class PruebaString2 {
 	public static void main(String[] args) {
-		String s = "Hola que tal",
-			   t = "hola que tal";
-		
+		String s = "Hola que tal";
+		String t = "hola que tal";
 
 		System.out.printf("Son iguales: %s\n" + s.equals(t));
 		System.out.printf("Son iguales: %s\n" + s.equalsIgnoreCase(t));

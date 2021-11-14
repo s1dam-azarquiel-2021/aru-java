@@ -8,8 +8,9 @@ public class NumeroSecretoConAyuda {
 		final int nSecreto = (int) (Math.random() * 100 + 1);
 
 		Scanner input = new Scanner(System.in);
-		int nIntroducido,
-		    intentos = 0;
+		int nIntroducido;
+		int intentos = 0;
+		boolean ganador = false;
 		do {
 			// Pedimos un numero por input y incrementamos el intento
 			System.out.printf("Prueba suerte: ");
@@ -36,6 +37,5 @@ public class NumeroSecretoConAyuda {
 				nSecreto
 			);
 		}
-
 	}
 }

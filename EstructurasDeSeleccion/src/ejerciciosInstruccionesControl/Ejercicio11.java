@@ -11,9 +11,9 @@ public class Ejercicio11 {
 		input.close();
 
 		// Sacar las cifras
-		final int c1 = n / 10,
-				  c2 = n % 10;
-		
+		final int c1 = n / 10;
+		final int c2 = n % 10;
+
 		// 2a cifra escrita
 		String c2_escrito = "";
 		switch (c2) {
@@ -30,8 +30,8 @@ public class Ejercicio11 {
 		}
 
 		// Segun la primera cifra todo cambia
-		String resultado  = "",
-			   c1_escrita = "";
+		String resultado  = "";
+		String c1_escrita = "";
 		switch (c1) {
 		case 0: resultado = c2_escrito; break;
 		case 1:

@@ -15,9 +15,9 @@ public class Ejercicio5 {
 		// Por lo que decir al principio que el anterior numero de la
 		// sucesion es 0, es un truco para hacer que funcione sin complicarlo
 		// mucho mas usando if o cualquier otra cosa
-		int anterior = 1,
-			actual = 0;
-		
+		int anterior = 1;
+		int actual = 0;
+
 		for (int i = 0; i < n; i++) {
 			System.out.printf("%d ", actual);
 			actual += anterior;

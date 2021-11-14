@@ -2,10 +2,9 @@ package pruebas;
 
 public class PruebaString {
 	public static void main(String[] args) {
-		String s = new String("Hola"),
-			   t = new String("Hola");
-		
-		
+		String s = new String("Hola");
+		String t = new String("Hola");
+
 		System.out.printf("%s\n", s == t);
 		System.out.printf("%s\n", s.equals(t));
 

@@ -6,10 +6,10 @@ public class Ejercicio5 {
 	public static void main(String[] args) {
 		// Obtener los valores a, b y c de la ecuacion de 2do grado por Input
 		Scanner input = new Scanner(System.in);
-		int a = input.nextInt(),
-			b = input.nextInt(),
-			c = input.nextInt();
 		System.out.printf("Introduce a, b y c: ");
+		int a = input.nextInt();
+		int b = input.nextInt();
+		int c = input.nextInt();
 		input.close();
 
 		// Calcular el discriminante
@@ -18,8 +18,8 @@ public class Ejercicio5 {
 		// Segun el valor del discriminante varian las soluciones
 		if (discriminante > 0) {
 			// Hay dos soluciones
-			final double x1 = (-b + Math.sqrt(discriminante)) / (2 * a),
-						 x2 = (-b - Math.sqrt(discriminante)) / (2 * a);
+			final double X1 = (-b + Math.sqrt(discriminante)) / (2 * a);
+			final double X2 = (-b - Math.sqrt(discriminante)) / (2 * a);
 			System.out.printf(
 				"x1 = %d\nx2 = %d/n",
 				X1, X2
@@ -29,7 +29,7 @@ public class Ejercicio5 {
 			System.out.printf("No existe solucion\n");
 		} else {
 			// Hay solo una solucion
-			final double x = -b / (2 * a);
+			final double X = -b / (2 * a);
 			System.out.printf("x = %d\n", X);
 		}
 	}

@@ -1,8 +1,8 @@
 public class Operadores {
 	public static void main(String[] args) {
-		int a = 2,
-			b = 8,
-			c = 3;
+		int a = 2;
+		int b = 8;
+		int c = 3;
 
 		System.out.printf("%d\n", ++a);
 		System.out.printf("%d\n", a++);
@@ -14,9 +14,9 @@ public class Operadores {
 
 		System.out.printf("%s\n", letra > 'W');
 
-		boolean hayToner = true,
-				hayPapel = true,
-				resultado;
+		boolean hayToner = true;
+		boolean hayPapel = true;
+		boolean resultado;
 
 		resultado = hayToner && hayPapel;
 

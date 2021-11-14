@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class Ejercicio7 {
 	public static void main(String[] args) {
-		int n,
-			mayor = -2147483648;
 		System.out.printf("Introduce numeros:\n");
+		int n;
+		int mayor = -2147483648;
 		byte contadorMayor = 0;
 
 		// Coger numeros hasta el 0

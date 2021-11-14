@@ -9,8 +9,8 @@ public class Conversiones2 {
 		input.close();
 
 		String texto = String.valueOf(numero);
-		
-		final int POS_PUNTO = texto.indexOf('.');		
+
+		final int POS_PUNTO = texto.indexOf('.');
 		String trozo1 = texto.substring(0, POS_PUNTO);
 		String trozo2 = texto.substring(POS_PUNTO + 1);
 
