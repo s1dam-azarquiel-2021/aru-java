@@ -17,7 +17,7 @@ public class Ejercicio9 {
 		final int L_FRASE1 = frase1.length();
 		int apariciones = 0;
 		for (int i = 0; i < frase2.length() - L_FRASE1 + 1; i++) {
-			if (frase2.substring(i, i + L_FRASE1).equals(frase1)) {
+			if (frase2.substring(i, i + L_FRASE1).equalsIgnoreCase(frase1)) {
 				apariciones++;
 			}
 		}
