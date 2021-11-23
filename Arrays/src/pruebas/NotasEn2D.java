@@ -1,0 +1,44 @@
+package pruebas;
+
+public class NotasEn2D {
+	public static void main(String[] args) {
+		// Notas de las tres evaluaciones en un mismo array
+
+		int[][] notas = {
+			{ 8, 10,  6,  2,  3,  5,  9},
+			{ 9,  9,  9,  5,  3,  5,  7},
+			{ 7, 10,  5,  6,  2,  8,  8}
+		};
+
+		for (int i = 0; i < notas.length; i++) {
+			for (int j = 0; j < notas[i].length; j++) {
+				System.out.printf("%2d ", notas[i][j]);
+			}
+			System.out.printf("\n");
+		}
+
+		int[] totalEvaluaciones = new int[notas.length];
+		for (int i = 0; i < notas.length; i++) {
+			for (int j = 0; j < notas[i].length; j++) {
+				totalEvaluaciones[i] += notas[i][j];
+			}
+		}
+
+		System.out.printf("\nTotal de cada evaluacion:\n");
+		for (int i = 0; i < totalEvaluaciones.length; i++) {
+			System.out.printf("Evaluacion %d: %d\n", i, totalEvaluaciones[i]);
+		}
+
+		int[] totalColumnas = new int[notas[0].length];
+		for (int i = 0; i < notas.length; i++) {
+			for (int j = 0; j < notas[i].length; j++) {
+				totalColumnas[j] += notas[i][j];
+			}
+		}
+
+		System.out.printf("\nTotal de cada columna:\n");
+		for (int i = 0; i < totalColumnas.length; i++) {
+			System.out.printf("Columna %d: %d\n", i, totalColumnas[i]);
+		}
+	}
+}
