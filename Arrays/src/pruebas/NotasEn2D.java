@@ -40,5 +40,32 @@ public class NotasEn2D {
 		for (int i = 0; i < totalColumnas.length; i++) {
 			System.out.printf("Columna %d: %d\n", i, totalColumnas[i]);
 		}
+
+		int aprobados = 0;
+		for (int i = 0; i < notas.length; i++) {
+			for (int j = 0; j < notas[i].length; j++) {
+				if (notas[i][j] >= 5) {
+					aprobados++;
+				}
+			}
+		}
+
+		System.out.printf("\nTotal aprobados: %d\n\n", aprobados);
+
+		int[] aprobadosPorEvaluacion = new int[notas.length];
+		for (int i = 0; i < notas.length; i++) {
+			for (int j = 0; j < notas[i].length; j++) {
+				if (notas[i][j] >= 5) {
+					aprobadosPorEvaluacion[i]++;
+				}
+			}
+		}
+
+		for (int i = 0; i < aprobadosPorEvaluacion.length; i++) {
+			System.out.printf(
+				"Aprobados en %da Ev: %d\n",
+				i + 1, aprobadosPorEvaluacion[i]
+			);
+		}
 	}
 }
