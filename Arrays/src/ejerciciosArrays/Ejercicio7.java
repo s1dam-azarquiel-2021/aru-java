@@ -2,6 +2,9 @@ package ejerciciosArrays;
 
 public class Ejercicio7 {
 	public static void main(String[] args) {
+		// Dado un array de 3x3 elementos, calcular la suma de sus filas y sus
+		// columnas almacenandolas en dos array de 3 elementos.
+
 		int[][] array = {
 			{1, 2, 3},
 			{4, 5, 6},

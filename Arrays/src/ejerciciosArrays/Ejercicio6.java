@@ -3,6 +3,10 @@ package ejerciciosArrays;
 public class Ejercicio6 {
 	public static void main(String[] args) {
 		// Programa que rellene un array de 4x4 de la siguiente manera:
+		// 1 0 0 0
+		// 0 1 0 0
+		// 0 0 1 0
+		// 0 0 0 1
 
 		int[][] array = new int[4][4];
 
