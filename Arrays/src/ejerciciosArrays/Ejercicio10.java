@@ -12,11 +12,17 @@ public class Ejercicio10 {
 		// 1 0 1 2 3
 		// 0 1 2 3 4
 
+		// Edit2: arreglado
+
 		int[][] array = new int [5][5];
 
 		for (int i = 0; i < array.length; i++) {
 			for (int j = 0; j < array[i].length; j++) {
-				array[i][j] = Math.abs(j + i - array.length + 1);
+				if (i + j < array.length) {
+					array[i][j] = i + j;
+				} else {
+					array[i][j] = array.length * 2 - (i + j) - 2;
+				}
 			}
 		}
 
