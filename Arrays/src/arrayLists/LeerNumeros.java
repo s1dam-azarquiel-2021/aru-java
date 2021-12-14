@@ -11,6 +11,7 @@ public class LeerNumeros {
 			numeros.add(input.nextInt());
 		} while (numeros.get(numeros.size() - 1) != 0);
 		input.close();
+		numeros.remove(numeros.size() - 1);
 
 		for (int n : numeros) {
 			System.out.printf("%d\n", n);
