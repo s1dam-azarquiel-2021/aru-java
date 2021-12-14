@@ -32,8 +32,10 @@ public class Ejercicio8 {
 					sumaDiagonales[1] += array[i][j];
 				}
 
-				if (i == array.length - 1
-					&& sumaColumnas[j] != sumaColumnas[0]) {
+				if (
+					i == array.length - 1
+					&& sumaColumnas[j] != sumaColumnas[0]
+				) {
 					esMagico = false;
 				}
 			}
@@ -42,8 +44,11 @@ public class Ejercicio8 {
 			}
 		}
 
-		if (sumaDiagonales[0] != sumaDiagonales[1]
-			|| sumaDiagonales[0] != sumaFilas[0]) {
+		if (
+			sumaDiagonales[0] != sumaDiagonales[1]
+			|| sumaDiagonales[0] != sumaFilas[0]
+			|| sumaDiagonales[0] != sumaColumnas[0]
+		) {
 			esMagico = false;
 		}
 
