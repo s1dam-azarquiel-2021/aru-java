@@ -15,14 +15,11 @@ public class Ejercicio10 {
 		// Edit2: arreglado
 
 		int[][] array = new int [5][5];
+		final int L_ARR = array.length;
 
-		for (int i = 0; i < array.length; i++) {
+		for (int i = 0; i < L_ARR; i++) {
 			for (int j = 0; j < array[i].length; j++) {
-				if (i + j < array.length) {
-					array[i][j] = i + j;
-				} else {
-					array[i][j] = array.length * 2 - (i + j) - 2;
-				}
+				array[i][j] = Math.abs(Math.abs(j + i - L_ARR + 1) - L_ARR+ 1);
 			}
 		}
 
