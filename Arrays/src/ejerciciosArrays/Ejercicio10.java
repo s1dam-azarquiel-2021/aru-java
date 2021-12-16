@@ -19,7 +19,7 @@ public class Ejercicio10 {
 
 		for (int i = 0; i < L_ARR; i++) {
 			for (int j = 0; j < array[i].length; j++) {
-				array[i][j] = Math.abs(Math.abs(j + i - L_ARR + 1) - L_ARR+ 1);
+				array[i][j] = Math.abs(Math.abs(j + i - L_ARR + 1) - L_ARR + 1);
 			}
 		}
 
