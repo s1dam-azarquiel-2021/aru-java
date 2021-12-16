@@ -13,7 +13,7 @@ public class Ejercicio9 {
 		int iA = 0;
 		int iB = 0;
 		int iF = 0;
-		while (iA < arrA.length || iB < arrB.length) {
+		for (; iF < arrFinal.length; iF++) {
 			if (iA == arrA.length) {
 				arrFinal[iF] = arrB[iB];
 				iB++;
@@ -33,8 +33,6 @@ public class Ejercicio9 {
 				iA++;
 				iB++;
 			}
-
-			iF++;
 		}
 
 		System.out.printf("Array final:\n");
