@@ -5,6 +5,12 @@ public class CuentaCorriente2 {
 	private String titular;
 	private double saldo;
 
+	public CuentaCorriente2(long numeroCuenta, String titular) {
+		this.numeroCuenta = numeroCuenta;
+		this.titular = titular;
+		this.saldo = 0;
+	}
+
 	public void ingresar(double saldo) {
 		this.saldo += saldo;
 	}
@@ -27,18 +33,6 @@ public class CuentaCorriente2 {
 
 	public double getSaldo() {
 		return saldo;
-	}
-
-	public void setNumeroCuenta(long numeroCuenta) {
-		this.numeroCuenta = numeroCuenta;
-	}
-
-	public void setTitular(String titular) {
-		this.titular = titular;
-	}
-
-	public void setSaldo(double saldo) {
-		this.saldo = saldo;
 	}
 
 	@Override
