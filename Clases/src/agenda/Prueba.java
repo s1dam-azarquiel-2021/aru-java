@@ -13,5 +13,7 @@ public class Prueba {
 		agenda.remove(juan);
 		agenda.remove(hugo);
 		System.out.printf("%s\n", agenda);
+		System.out.printf("%s\n", agenda.find("Fonsi"));
+		System.out.printf("%s\n", agenda.find("Pepino"));
 	}
 }

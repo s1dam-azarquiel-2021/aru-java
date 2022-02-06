@@ -42,6 +42,16 @@ public class Agenda {
 		return -1;
 	}
 
+	public Contacto find(String nombre) {
+		for (Contacto contacto : this.lista) {
+			if (contacto != null && contacto.getNombre() == nombre) {
+				return contacto;
+			}
+		}
+
+		return null;
+	}
+
 	public int size() {
 		return this.lista.length;
 	}
