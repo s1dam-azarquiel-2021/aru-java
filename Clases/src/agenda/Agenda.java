@@ -52,6 +52,16 @@ public class Agenda {
 		return null;
 	}
 
+	public Contacto find(long telefono) {
+		for (Contacto contacto : this.lista) {
+			if (contacto != null && contacto.getTelefono() == telefono) {
+				return contacto;
+			}
+		}
+
+		return null;
+	}
+
 	public int size() {
 		return this.lista.length;
 	}
