@@ -84,6 +84,17 @@ public class Agenda {
 		return this.lista.length;
 	}
 
+	public int saved() {
+		int n = 0;
+		for (Contacto contacto : this.lista) {
+			if (contacto != null) {
+				n++;
+			}
+		}
+
+		return n;
+	}
+
 	public String showLista() {
 		String resultado = "";
 		for (int i = 0; i < this.size(); i++) {
