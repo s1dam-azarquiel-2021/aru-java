@@ -32,6 +32,24 @@ public class Agenda {
 		return true;
 	}
 
+	public boolean remove(String nombre) {
+		Contacto contacto = this.find(nombre);
+		if (contacto == null) {
+			return false;
+		}
+
+		return this.remove(contacto);
+	}
+
+	public boolean remove(long numero) {
+		Contacto contacto = this.find(numero);
+		if (contacto == null) {
+			return false;
+		}
+
+		return this.remove(contacto);
+	}
+
 	private int contactIndex(Contacto contacto) {
 		for (int i = 0; i < size(); i++) {
 			if (this.lista[i] != null && this.lista[i].equals(contacto)) {
