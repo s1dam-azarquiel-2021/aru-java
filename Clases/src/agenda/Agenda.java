@@ -12,7 +12,7 @@ public class Agenda {
 	}
 
 	public boolean add(Contacto contacto) {
-		for (int i = 0; i < size(); i++) {
+		for (int i = 0; i < this.size(); i++) {
 			if (this.lista[i] == null) {
 				this.lista[i] = contacto;
 				return true;
@@ -23,7 +23,7 @@ public class Agenda {
 	}
 
 	public boolean remove(Contacto contacto) {
-		int i = contactIndex(contacto);
+		int i = this.contactIndex(contacto);
 		if (i == -1) {
 			return false;
 		}
@@ -51,7 +51,7 @@ public class Agenda {
 	}
 
 	private int contactIndex(Contacto contacto) {
-		for (int i = 0; i < size(); i++) {
+		for (int i = 0; i < this.size(); i++) {
 			if (this.lista[i] != null && this.lista[i].equals(contacto)) {
 				return i;
 			}
@@ -86,7 +86,7 @@ public class Agenda {
 
 	public String showLista() {
 		String resultado = "";
-		for (int i = 0; i < size(); i++) {
+		for (int i = 0; i < this.size(); i++) {
 			if (this.lista[i] != null) {
 				resultado += "Contacto " + (i + 1) + "\n";
 				resultado += this.lista[i].toString();
