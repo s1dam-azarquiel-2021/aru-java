@@ -95,8 +95,9 @@ public class Agenda {
 		return n;
 	}
 
-	public String showLista() {
-		String resultado = "";
+	@Override
+	public String toString() {
+		String resultado = "Agenda:\n";
 		for (int i = 0; i < this.size(); i++) {
 			if (this.lista[i] != null) {
 				resultado += "Contacto " + (i + 1) + "\n";
@@ -105,10 +106,5 @@ public class Agenda {
 		}
 
 		return resultado;
-	}
-
-	@Override
-	public String toString() {
-		return "Agenda:\n" + showLista();
 	}
 }
