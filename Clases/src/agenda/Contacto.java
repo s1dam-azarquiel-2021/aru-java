@@ -9,6 +9,14 @@ public class Contacto {
 		this.telefono = telefono;
 	}
 
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void setTelefono(long telefono) {
+		this.telefono = telefono;
+	}
+
 	public String getNombre() {
 		return nombre;
 	}
