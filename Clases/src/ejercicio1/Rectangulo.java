@@ -23,7 +23,11 @@ public class Rectangulo {
 	}
 
 	public boolean isHorizontal() {
-		return this.width > this.height;
+		return this.width >= this.height;
+	}
+
+	public boolean isVertical() {
+		return this.height >= this.width;
 	}
 
 	public void draw() {
