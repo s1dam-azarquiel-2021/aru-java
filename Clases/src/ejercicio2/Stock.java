@@ -70,4 +70,23 @@ public class Stock {
 
 		return result;
 	}
+
+	public int size() {
+		return this.productos.size();
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder resultado = new StringBuilder("Stock:\n");
+		for (int i = 0; i < this.size(); i++) {
+			if (this.productos.get(i) != null) {
+				resultado.append(
+					"Producto " + (i + 1) + "\n"
+					+ this.productos.get(i).toString()
+				);
+			}
+		}
+
+		return resultado.toString();
+	}
 }

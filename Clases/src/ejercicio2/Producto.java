@@ -68,4 +68,12 @@ public class Producto {
 	public int getMinimo() {
 		return minimo;
 	}
+
+	@Override
+	public String toString() {
+		return
+			"Codigo: " + codigo + "\nDescripcion: " + descripcion
+			+ "\nPrecio: " + precio + "\nCantidad: " + cantidad
+			+ "\nMinimo: " + minimo + "\n";
+	}
 }

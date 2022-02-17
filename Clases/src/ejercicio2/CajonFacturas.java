@@ -37,4 +37,20 @@ public class CajonFacturas {
 
 		return result;
 	}
+
+	public int size() {
+		return this.facturas.size();
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder resultado = new StringBuilder("Cajon de facturas:\n");
+		for (int i = 0; i < this.size(); i++) {
+			if (this.facturas.get(i) != null) {
+				resultado.append(this.facturas.get(i).toString());
+			}
+		}
+
+		return resultado.toString();
+	}
 }

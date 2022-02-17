@@ -40,4 +40,11 @@ public class LineaFactura {
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
 	}
+
+	@Override
+	public String toString() {
+		return
+			"Codigo: " + codigo + "\nPrecio: " + precio
+			+ "\nCantidad: " + cantidad + "\n";
+	}
 }

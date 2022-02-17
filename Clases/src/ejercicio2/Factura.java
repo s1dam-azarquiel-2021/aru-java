@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Factura {
+	private static int nFactura = 1;
 	private Date fecha;
 	private int numeroFactura;
 	private ArrayList<LineaFactura> lineasFacturas;
@@ -21,16 +22,37 @@ public class Factura {
 		this.pagada = pagada;
 	}
 
-	public Factura(Date fecha, int numeroFactura, boolean pagada) {
+	public Factura(Date fecha, boolean pagada) {
 		this.fecha = fecha;
-		this.numeroFactura = numeroFactura;
+		this.numeroFactura = nFactura++;
 		this.lineasFacturas = new ArrayList<LineaFactura>();
 		this.pagada = pagada;
 	}
 
-	public Factura(Date fecha, int numeroFactura) {
+	public Factura(Date fecha) {
 		this.fecha = fecha;
-		this.numeroFactura = numeroFactura;
+		this.numeroFactura = nFactura++;
+		this.lineasFacturas = new ArrayList<LineaFactura>();
+		this.pagada = false;
+	}
+
+	public Factura(ArrayList<LineaFactura> lineasFacturas, boolean pagada) {
+		this.fecha = new Date();
+		this.numeroFactura = nFactura++;
+		this.lineasFacturas = lineasFacturas;
+		this.pagada = pagada;
+	}
+
+	public Factura(boolean pagada) {
+		this.fecha = new Date();
+		this.numeroFactura = nFactura++;
+		this.lineasFacturas = new ArrayList<LineaFactura>();
+		this.pagada = pagada;
+	}
+
+	public Factura() {
+		this.fecha = new Date();
+		this.numeroFactura = nFactura++;
 		this.lineasFacturas = new ArrayList<LineaFactura>();
 		this.pagada = false;
 	}
@@ -65,5 +87,27 @@ public class Factura {
 
 	public void setPagada(boolean pagada) {
 		this.pagada = pagada;
+	}
+
+	public int nLineasFacturas() {
+		return this.lineasFacturas.size();
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder resultado = new StringBuilder(
+			"Factura:\nFecha: " + fecha + "Numero de factura: " + numeroFactura
+			+ "\nPagada: " + pagada + "\n"
+		);
+		for (int i = 0; i < this.nLineasFacturas(); i++) {
+			if (this.lineasFacturas.get(i) != null) {
+				resultado.append(
+					"Linea factura " + (i + 1) + "\n"
+					+ this.lineasFacturas.get(i).toString()
+				);
+			}
+		}
+
+		return resultado.toString();
 	}
 }
