@@ -17,9 +17,6 @@ public class Ejercicio5 {
 			numeroFinal.insert(i, ",");
 		}
 
-		System.out.printf(
-			"Numero con comas: %s",
-			numeroFinal
-		);
+		System.out.printf("Numero con comas: %s", numeroFinal);
 	}
 }

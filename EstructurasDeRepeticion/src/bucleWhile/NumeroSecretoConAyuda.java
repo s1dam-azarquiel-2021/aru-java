@@ -16,7 +16,7 @@ public class NumeroSecretoConAyuda {
 			System.out.printf("Prueba suerte: ");
 			nIntroducido = input.nextInt();
 			intentos++;
-			// Si el numero introducido es  mayor o menor que el secreto
+			// Si el numero introducido es mayor o menor que el secreto
 			// Ayudar al usuario diciendoselo
 			if (nIntroducido > nSecreto) {
 				System.out.printf("Te pasas prro\n");
@@ -33,8 +33,7 @@ public class NumeroSecretoConAyuda {
 			System.out.printf("Ganador!\n");
 		} else {
 			System.out.printf(
-				"\nPero que malo eres!\nEl numero era: %d\n",
-				nSecreto
+				"\nPero que malo eres!\nEl numero era: %d\n", nSecreto
 			);
 		}
 	}

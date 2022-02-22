@@ -6,9 +6,13 @@ public class Ejercicio7 {
 		// columnas almacenandolas en dos array de 3 elementos.
 
 		int[][] array = {
-			{1, 2, 3},
-			{4, 5, 6},
-			{7, 8, 9}
+			{
+				1, 2, 3
+			}, {
+				4, 5, 6
+			}, {
+				7, 8, 9
+			}
 		};
 
 		int[] sumaFilas = new int[array.length];

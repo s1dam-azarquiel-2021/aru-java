@@ -8,11 +8,7 @@ public class Producto {
 	private int minimo;
 
 	public Producto(
-		int codigo,
-		String descripcion,
-		float precio,
-		int cantidad,
-		int minimo
+		int codigo, String descripcion, float precio, int cantidad, int minimo
 	) {
 		this.codigo = codigo;
 		this.descripcion = descripcion;
@@ -71,9 +67,8 @@ public class Producto {
 
 	@Override
 	public String toString() {
-		return
-			"Codigo: " + codigo + "\nDescripcion: " + descripcion
-			+ "\nPrecio: " + precio + "\nCantidad: " + cantidad
-			+ "\nMinimo: " + minimo + "\n";
+		return "Codigo: " + codigo + "\nDescripcion: " + descripcion
+			+ "\nPrecio: " + precio + "\nCantidad: " + cantidad + "\nMinimo: "
+			+ minimo + "\n";
 	}
 }

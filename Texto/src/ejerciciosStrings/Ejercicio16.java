@@ -21,7 +21,7 @@ public class Ejercicio16 {
 		boolean tieneMas2Vocales = false;
 
 		for (int i = 0; i < palabra.length() && !tieneMas2Vocales; i++) {
-			switch(palabra.charAt(i)) {
+			switch (palabra.charAt(i)) {
 			case 'a', 'A':
 				char nA = nVocales.charAt(0);
 				nVocales.setCharAt(0, ++nA);

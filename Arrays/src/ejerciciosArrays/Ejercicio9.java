@@ -5,8 +5,12 @@ public class Ejercicio9 {
 		// Programa que mezcla dos arrays ordenados de N elementos, consiguiendo
 		// un array de n*2 elementos igualmente ordenados.
 
-		int[] arrA = { 4, 8, 15, 22, 25, 40 };
-		int[] arrB = { 3, 6, 18, 21, 25, 47 };
+		int[] arrA = {
+			4, 8, 15, 22, 25, 40
+		};
+		int[] arrB = {
+			3, 6, 18, 21, 25, 47
+		};
 
 		int[] arrFinal = new int[arrA.length + arrB.length];
 

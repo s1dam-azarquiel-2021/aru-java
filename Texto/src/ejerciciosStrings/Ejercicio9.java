@@ -23,8 +23,8 @@ public class Ejercicio9 {
 		}
 
 		System.out.printf(
-			"La frase \"%s\" aparece %d ve%s",
-			frase1, apariciones, apariciones == 1 ? "z" : "ces"
+			"La frase \"%s\" aparece %d ve%s", frase1, apariciones,
+			apariciones == 1 ? "z" : "ces"
 		);
 	}
 }

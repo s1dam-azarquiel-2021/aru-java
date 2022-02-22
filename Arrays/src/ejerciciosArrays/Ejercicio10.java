@@ -14,7 +14,7 @@ public class Ejercicio10 {
 
 		// Edit2: arreglado
 
-		int[][] array = new int [5][5];
+		int[][] array = new int[5][5];
 		final int L_ARR = array.length;
 
 		for (int i = 0; i < L_ARR; i++) {

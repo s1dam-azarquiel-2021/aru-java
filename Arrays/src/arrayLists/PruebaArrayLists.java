@@ -33,7 +33,7 @@ public class PruebaArrayLists {
 		// System.out.printf("%s\n", nombres);
 
 		// ArrayList<ArrayList<String>> listaDoble =
-		//     new ArrayList<ArrayList<String>>();
+		// new ArrayList<ArrayList<String>>();
 
 		for (int i = 0; i < nombres.size(); i++) {
 			System.out.printf("%s\n", nombres.get(i));
@@ -49,22 +49,24 @@ public class PruebaArrayLists {
 		}
 
 		System.out.printf(
-			"Alba esta en la posicion %d\n",
-			nombres.indexOf("Alba")
+			"Alba esta en la posicion %d\n", nombres.indexOf("Alba")
 		);
 
 		System.out.printf(
-			"Esta alba en la lista? %s\n",
-			nombres.contains("Alba")
+			"Esta alba en la lista? %s\n", nombres.contains("Alba")
 		);
 
-		ArrayList<Integer> numeros =
-			new ArrayList<Integer>(Arrays.asList(5,2,3));
+		ArrayList<Integer> numeros = new ArrayList<Integer>(
+			Arrays.asList(5, 2, 3)
+		);
 
-		String[] arrayNombres = { "Pedro", "Juan", "Alberto" };
+		String[] arrayNombres = {
+			"Pedro", "Juan", "Alberto"
+		};
 
-		ArrayList<String> listaNombres =
-			new ArrayList<String>(Arrays.asList(arrayNombres));
+		ArrayList<String> listaNombres = new ArrayList<String>(
+			Arrays.asList(arrayNombres)
+		);
 
 		Object[] array = listaNombres.toArray();
 	}

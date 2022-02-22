@@ -13,7 +13,7 @@ public class Palabras {
 		for (int i = 0; i < st.length(); i++) {
 			if ("aoeuiAOEUI".indexOf(st.charAt(i)) >= 0) {
 				vocales++;
-			};
+			}
 		}
 
 		return vocales;

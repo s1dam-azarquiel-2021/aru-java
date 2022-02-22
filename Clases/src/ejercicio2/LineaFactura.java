@@ -43,8 +43,7 @@ public class LineaFactura {
 
 	@Override
 	public String toString() {
-		return
-			"Codigo: " + codigo + "\nPrecio: " + precio
-			+ "\nCantidad: " + cantidad + "\n";
+		return "Codigo: " + codigo + "\nPrecio: " + precio + "\nCantidad: "
+			+ cantidad + "\n";
 	}
 }

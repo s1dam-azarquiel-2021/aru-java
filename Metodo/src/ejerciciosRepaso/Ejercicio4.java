@@ -2,8 +2,12 @@ package ejerciciosRepaso;
 
 public class Ejercicio4 {
 	public static int[] secuencia(int[] array) {
-		int[] resultado = { 0, 0 };
-		int[] actual = { -1, 1 };
+		int[] resultado = {
+			0, 0
+		};
+		int[] actual = {
+			-1, 1
+		};
 		for (int i = 1; i < array.length; i++) {
 			if (array[i] > array[i - 1]) {
 				if (actual[0] == -1) {

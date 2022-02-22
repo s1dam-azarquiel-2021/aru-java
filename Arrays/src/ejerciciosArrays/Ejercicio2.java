@@ -5,7 +5,9 @@ public class Ejercicio2 {
 		// Dado un array de numeros enteros, realiza un programa que diga si
 		// esta ordenado o no
 
-		int[] array = { 1, 2, 3, 4, 5 };
+		int[] array = {
+			1, 2, 3, 4, 5
+		};
 
 		boolean ordMenorMayor = true;
 		for (int i = 1; i < array.length; i++) {

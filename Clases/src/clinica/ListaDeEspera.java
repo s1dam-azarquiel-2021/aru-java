@@ -1,4 +1,5 @@
 package clinica;
+
 import java.util.ArrayList;
 
 public class ListaDeEspera {
@@ -72,8 +73,7 @@ public class ListaDeEspera {
 		for (int i = 0; i < this.size(); i++) {
 			if (this.list.get(i) != null) {
 				resultado.append(
-					"Paciente " + (i + 1) + "\n"
-					+ this.list.get(i).toString()
+					"Paciente " + (i + 1) + "\n" + this.list.get(i).toString()
 				);
 			}
 		}

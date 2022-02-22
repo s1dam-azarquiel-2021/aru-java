@@ -10,7 +10,7 @@ public class Ejercicio4 {
 		System.out.printf("Introduce numeros: ");
 		int n = input.nextInt();
 
-		 while (n >= 0) {
+		while (n >= 0) {
 			int nAnterior = n;
 			n = input.nextInt();
 

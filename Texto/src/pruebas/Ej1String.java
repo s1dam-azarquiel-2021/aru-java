@@ -16,7 +16,7 @@ public class Ej1String {
 		} else if (espacio2 == -1) {
 			System.out.printf("Menudo tio raro solo un apellido\n");
 		} else {
-			String nombre    = s.substring(0, espacio1);
+			String nombre = s.substring(0, espacio1);
 			String apellido1 = s.substring(espacio1 + 1, espacio2);
 			String apellido2 = s.substring(espacio2 + 1, s.length());
 

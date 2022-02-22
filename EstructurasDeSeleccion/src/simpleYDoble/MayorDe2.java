@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class MayorDe2 {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		System.out.printf("Introduce dos numeros:" );
+		System.out.printf("Introduce dos numeros:");
 		int x = scanner.nextInt();
 		int y = scanner.nextInt();
 		scanner.close();

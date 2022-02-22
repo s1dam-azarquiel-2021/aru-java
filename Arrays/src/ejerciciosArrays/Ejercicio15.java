@@ -23,18 +23,28 @@ public class Ejercicio15 {
 		input.close();
 
 		int[][] cMagico = new int[n][n];
-		int[] pos = { 0, n / 2 };
+		int[] pos = {
+			0, n / 2
+		};
 
 		for (int i = 1; i <= n * n; i++) {
 			if (cMagico[pos[0]][pos[1]] != 0) {
 				pos[0] += 2;
 				pos[1]--;
 
-				if (pos[0] >= n) { pos[0] -= n; }
-				if (pos[1] >= n) { pos[1] -= n; }
+				if (pos[0] >= n) {
+					pos[0] -= n;
+				}
+				if (pos[1] >= n) {
+					pos[1] -= n;
+				}
 
-				if (pos[0] < 0) { pos[0] += n; }
-				if (pos[1] < 0) { pos[1] += n; }
+				if (pos[0] < 0) {
+					pos[0] += n;
+				}
+				if (pos[1] < 0) {
+					pos[1] += n;
+				}
 			}
 
 			cMagico[pos[0]][pos[1]] = i;
@@ -42,11 +52,19 @@ public class Ejercicio15 {
 			pos[0]--;
 			pos[1]++;
 
-			if (pos[0] >= n) { pos[0] -= n; }
-			if (pos[1] >= n) { pos[1] -= n; }
+			if (pos[0] >= n) {
+				pos[0] -= n;
+			}
+			if (pos[1] >= n) {
+				pos[1] -= n;
+			}
 
-			if (pos[0] < 0) { pos[0] += n; }
-			if (pos[1] < 0) { pos[1] += n; }
+			if (pos[0] < 0) {
+				pos[0] += n;
+			}
+			if (pos[1] < 0) {
+				pos[1] += n;
+			}
 		}
 
 		for (int[] arr : cMagico) {

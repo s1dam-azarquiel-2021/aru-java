@@ -5,15 +5,12 @@ public class Notas {
 		// Trabajar con un array de notas
 		// y otro con los modulos
 
-		int[] notas = { 10, 10, 9, 8, 8, 6, 5 };
+		int[] notas = {
+			10, 10, 9, 8, 8, 6, 5
+		};
 		String[] modulos = {
-			"Programacion",
-			"Lenguaje de marcas",
-			"Sistemas",
-			"Entornos",
-			"Ingles",
-			"Bases de datos",
-			"FOL"
+			"Programacion", "Lenguaje de marcas", "Sistemas", "Entornos",
+			"Ingles", "Bases de datos", "FOL"
 		};
 
 		System.out.printf("Aprobadas:\n----------\n");
@@ -31,8 +28,7 @@ public class Notas {
 			}
 		}
 		System.out.printf(
-			"\nTu asignatura favorita es:\n%s\n",
-			modulos[posMayor]
+			"\nTu asignatura favorita es:\n%s\n", modulos[posMayor]
 		);
 	}
 }

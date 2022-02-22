@@ -32,6 +32,8 @@ public class PrimeraPrueba {
 		}
 
 		// Declarar un array poniendo los valores directamente
-		int[] b = {12, 45, 85, 32, 185, 3};
+		int[] b = {
+			12, 45, 85, 32, 185, 3
+		};
 	}
 }

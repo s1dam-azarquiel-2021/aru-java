@@ -22,9 +22,6 @@ public class Ejercicio6 {
 			}
 		}
 
-		System.out.printf(
-			"%s",
-			esPalindromo
-		);
+		System.out.printf("%s", esPalindromo);
 	}
 }

@@ -8,11 +8,7 @@ public class Persona {
 	protected int edad;
 
 	public Persona(
-		String dni,
-		String nombre,
-		String direccion,
-		long telefono,
-		int edad
+		String dni, String nombre, String direccion, long telefono, int edad
 	) {
 		this.dni = dni;
 		this.nombre = nombre;
@@ -63,8 +59,7 @@ public class Persona {
 
 	@Override
 	public String toString() {
-		return
-			"Dni: " + dni + "\nNombre: " + nombre + "\nDireccion" + direccion
+		return "Dni: " + dni + "\nNombre: " + nombre + "\nDireccion" + direccion
 			+ "\nTelefono: " + telefono + "\nEdad: " + edad + "\n";
 	}
 }

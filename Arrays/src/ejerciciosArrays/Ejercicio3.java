@@ -8,8 +8,12 @@ public class Ejercicio3 {
 		// Despues haz un programa que permita ir consultando el nombre y la
 		// direccion de las personas almacenadas.
 
-		String[] nombres = { "Juanito", "Pepito", "Menganito" };
-		String[] direcciones = { "C/ Vacio", "C/ Llena", "C/ Amedias" };
+		String[] nombres = {
+			"Juanito", "Pepito", "Menganito"
+		};
+		String[] direcciones = {
+			"C/ Vacio", "C/ Llena", "C/ Amedias"
+		};
 
 		Scanner input = new Scanner(System.in);
 		String nombre;

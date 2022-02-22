@@ -82,7 +82,7 @@ public class Stock {
 			if (this.productos.get(i) != null) {
 				resultado.append(
 					"Producto " + (i + 1) + "\n"
-					+ this.productos.get(i).toString()
+						+ this.productos.get(i).toString()
 				);
 			}
 		}

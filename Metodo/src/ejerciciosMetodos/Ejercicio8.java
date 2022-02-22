@@ -8,10 +8,7 @@ public class Ejercicio8 {
 			char c = st.charAt(i);
 			if (c == '.') {
 				puntoEncontrado = true;
-			} else if (
-				puntoEncontrado &&
-				c >= 'a' && c <= 'z'
-			) {
+			} else if (puntoEncontrado && c >= 'a' && c <= 'z') {
 				c -= 'a' - 'A';
 				puntoEncontrado = false;
 			}

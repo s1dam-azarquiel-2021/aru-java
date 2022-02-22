@@ -6,7 +6,9 @@ public class Ejercicio4 {
 		// A partir del array original debe generar otro donde aparezcan
 		// ordenados los indices de mayor a menor
 
-		int[] array = { 34, 54, 12, 85, 45 };
+		int[] array = {
+			34, 54, 12, 85, 45
+		};
 		int[] arrayOrdenado = new int[array.length];
 		for (int i = 0; i < array.length; i++) {
 			arrayOrdenado[i] = i;

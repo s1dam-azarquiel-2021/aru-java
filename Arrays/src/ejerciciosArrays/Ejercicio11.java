@@ -8,11 +8,17 @@ public class Ejercicio11 {
 		// de la diagonal principal.
 
 		int[][] array = {
-			{ 1, 4, 6, 2, 9 },
-			{ 4, 8, 5, 5, 3 },
-			{ 6, 5, 4, 7, 2 },
-			{ 2, 5, 7, 9, 4 },
-			{ 9, 3, 2, 4, 3 }
+			{
+				1, 4, 6, 2, 9
+			}, {
+				4, 8, 5, 5, 3
+			}, {
+				6, 5, 4, 7, 2
+			}, {
+				2, 5, 7, 9, 4
+			}, {
+				9, 3, 2, 4, 3
+			}
 		};
 
 		boolean esSimetrico = true;

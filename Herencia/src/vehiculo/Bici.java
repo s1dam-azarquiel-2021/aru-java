@@ -3,7 +3,9 @@ package vehiculo;
 public class Bici extends VehiculoSinMotor {
 	protected int marchas;
 
-	public Bici(String marca, String modelo, String color, float precio, int marchas) {
+	public Bici(
+		String marca, String modelo, String color, float precio, int marchas
+	) {
 		super(marca, modelo, color, precio);
 		this.marchas = marchas;
 	}

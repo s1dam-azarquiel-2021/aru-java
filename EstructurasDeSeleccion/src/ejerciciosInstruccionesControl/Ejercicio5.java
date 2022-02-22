@@ -20,10 +20,7 @@ public class Ejercicio5 {
 			// Hay dos soluciones
 			final double X1 = (-b + Math.sqrt(discriminante)) / (2 * a);
 			final double X2 = (-b - Math.sqrt(discriminante)) / (2 * a);
-			System.out.printf(
-				"x1 = %d\nx2 = %d/n",
-				X1, X2
-			);
+			System.out.printf("x1 = %d\nx2 = %d/n", X1, X2);
 		} else if (discriminante < 0) {
 			// No hay solucion
 			System.out.printf("No existe solucion\n");

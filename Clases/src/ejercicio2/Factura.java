@@ -11,9 +11,7 @@ public class Factura {
 	private boolean pagada;
 
 	public Factura(
-		Date fecha,
-		int numeroFactura,
-		ArrayList<LineaFactura> lineasFacturas,
+		Date fecha, int numeroFactura, ArrayList<LineaFactura> lineasFacturas,
 		boolean pagada
 	) {
 		this.fecha = fecha;
@@ -97,13 +95,13 @@ public class Factura {
 	public String toString() {
 		StringBuilder resultado = new StringBuilder(
 			"Factura:\nFecha: " + fecha + "Numero de factura: " + numeroFactura
-			+ "\nPagada: " + pagada + "\n"
+				+ "\nPagada: " + pagada + "\n"
 		);
 		for (int i = 0; i < this.nLineasFacturas(); i++) {
 			if (this.lineasFacturas.get(i) != null) {
 				resultado.append(
 					"Linea factura " + (i + 1) + "\n"
-					+ this.lineasFacturas.get(i).toString()
+						+ this.lineasFacturas.get(i).toString()
 				);
 			}
 		}

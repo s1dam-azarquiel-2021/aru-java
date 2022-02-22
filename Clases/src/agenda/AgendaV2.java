@@ -103,8 +103,7 @@ public class AgendaV2 {
 		for (int i = 0; i < this.size(); i++) {
 			if (this.lista.get(i) != null) {
 				resultado.append(
-					"Contacto " + (i + 1) + "\n"
-					+ this.lista.get(i).toString()
+					"Contacto " + (i + 1) + "\n" + this.lista.get(i).toString()
 				);
 			}
 		}

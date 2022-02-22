@@ -9,7 +9,7 @@ public class ComprobarCorreo {
 		input.close();
 
 		final int POS_ARROBA = correo.indexOf("@");
-		final int POS_PUNTO  = correo.lastIndexOf(".");
+		final int POS_PUNTO = correo.lastIndexOf(".");
 
 		if (POS_ARROBA == -1) {
 			System.out.printf("Error: debe haber un arroba\n");

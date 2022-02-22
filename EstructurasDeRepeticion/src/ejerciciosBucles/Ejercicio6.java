@@ -15,7 +15,9 @@ public class Ejercicio6 {
 			total *= a;
 		}
 
-		if (n < 0) { total = 1.0 / total; }
+		if (n < 0) {
+			total = 1.0 / total;
+		}
 
 		System.out.printf("Solucion: %f\n", total);
 	}

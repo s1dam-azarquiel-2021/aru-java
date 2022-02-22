@@ -11,17 +11,24 @@ public class Ejercicio13 {
 		// en el resultado.
 
 		int[][] array = {
-			{ 0, 0, 0, 0, 0, 0 },
-			{ 0, 0, 0, 0, 5, 0 },
-			{ 0, 8, 0, 0, 0, 9 },
-			{ 0, 0, 0, 0, 0, 0 },
-			{ 0, 0, 0, 7, 0, 0 },
-			{ 0, 0, 3, 0, 0, 0 }
+			{
+				0, 0, 0, 0, 0, 0
+			}, {
+				0, 0, 0, 0, 5, 0
+			}, {
+				0, 8, 0, 0, 0, 9
+			}, {
+				0, 0, 0, 0, 0, 0
+			}, {
+				0, 0, 0, 7, 0, 0
+			}, {
+				0, 0, 3, 0, 0, 0
+			}
 		};
 
 		ArrayList<Integer> resultado = new ArrayList<Integer>();
 
-		for (int i = 0; i <	array.length; i++) {
+		for (int i = 0; i < array.length; i++) {
 			for (int j = 0; j < array[i].length; j++) {
 				if (array[i][j] != 0) {
 					resultado.add(array[i][j]);

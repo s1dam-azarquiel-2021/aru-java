@@ -23,9 +23,6 @@ public class Ejercicio7 {
 			}
 		}
 
-		System.out.printf(
-			"Suma de todas las cifras: %d",
-			suma
-		);
+		System.out.printf("Suma de todas las cifras: %d", suma);
 	}
 }

@@ -39,8 +39,8 @@ public class CuentaCorriente {
 
 	public void mostrarDatosCuenta() {
 		System.out.printf(
-			"Numero de cuenta: %d\nTitular: %s\nSaldo: %.2f$\n",
-			numeroCuenta, titular, saldo
+			"Numero de cuenta: %d\nTitular: %s\nSaldo: %.2f$\n", numeroCuenta,
+			titular, saldo
 		);
 	}
 }

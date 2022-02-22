@@ -11,7 +11,7 @@ public class Ejercicio12 {
 
 		int espacios = n - 1;
 
-		for (int i = 1; i <= n; i++ ) {
+		for (int i = 1; i <= n; i++) {
 			int actual = 1;
 			boolean centroHecho = false;
 

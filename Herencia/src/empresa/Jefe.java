@@ -4,13 +4,8 @@ public class Jefe extends Staff {
 	protected String matricula;
 
 	public Jefe(
-		String dni,
-		String nombre,
-		String direccion,
-		long telefono,
-		int edad,
-		float sueldo,
-		String matricula
+		String dni, String nombre, String direccion, long telefono, int edad,
+		float sueldo, String matricula
 	) {
 		super(dni, nombre, direccion, telefono, edad, sueldo);
 		this.matricula = matricula;

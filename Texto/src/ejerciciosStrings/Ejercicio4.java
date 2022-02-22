@@ -18,9 +18,6 @@ public class Ejercicio4 {
 
 		frase.delete(L_FRASE, L_FRASE + n);
 
-		System.out.printf(
-			"%s",
-			frase
-		);
+		System.out.printf("%s", frase);
 	}
 }

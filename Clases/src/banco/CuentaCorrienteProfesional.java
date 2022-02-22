@@ -5,7 +5,7 @@ public class CuentaCorrienteProfesional {
 	private Cliente titular;
 	private double saldo;
 
-	public CuentaCorrienteProfesional( long numeroCuenta, Cliente titular) {
+	public CuentaCorrienteProfesional(long numeroCuenta, Cliente titular) {
 		this.numeroCuenta = numeroCuenta;
 		this.titular = titular;
 		this.saldo = 0;

@@ -5,9 +5,13 @@ public class NotasEn2D {
 		// Notas de las tres evaluaciones en un mismo array
 
 		int[][] notas = {
-			{ 8, 10,  6,  2,  3,  5,  9},
-			{ 9,  9,  9,  5,  3,  5,  7},
-			{ 7, 10,  5,  6,  2,  8,  8}
+			{
+				8, 10, 6, 2, 3, 5, 9
+			}, {
+				9, 9, 9, 5, 3, 5, 7
+			}, {
+				7, 10, 5, 6, 2, 8, 8
+			}
 		};
 
 		for (int i = 0; i < notas.length; i++) {
@@ -63,8 +67,7 @@ public class NotasEn2D {
 
 		for (int i = 0; i < aprobadosPorEvaluacion.length; i++) {
 			System.out.printf(
-				"Aprobados en %da Ev: %d\n",
-				i + 1, aprobadosPorEvaluacion[i]
+				"Aprobados en %da Ev: %d\n", i + 1, aprobadosPorEvaluacion[i]
 			);
 		}
 	}

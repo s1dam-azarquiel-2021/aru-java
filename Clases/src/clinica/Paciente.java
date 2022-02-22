@@ -1,4 +1,5 @@
 package clinica;
+
 public class Paciente {
 	private String name;
 	private String company;

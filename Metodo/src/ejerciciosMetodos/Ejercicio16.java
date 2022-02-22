@@ -20,8 +20,8 @@ public class Ejercicio16 {
 
 	public static String intToMes(int m) {
 		String[] meses = {
-			"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-			"Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+			"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
+			"Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
 		};
 
 		return meses[m - 1];
@@ -33,14 +33,18 @@ public class Ejercicio16 {
 
 	public static int diaComienzoMes(int m, int y) {
 		if (m == 1 || m == 2) {
-			return (y+31*(m-1)+(y-1)/4-3*((y+99)/100)/4)%7;
+			return (y + 31 * (m - 1) + (y - 1) / 4 - 3 * ((y + 99) / 100) / 4)
+				% 7;
 		} else {
-			return (y+31*(m-1)-(4*m+23)/10+y/4-(3*(y/100+1))/4)%7;
+			return (y + 31 * (m - 1) - (4 * m + 23) / 10 + y / 4
+				- (3 * (y / 100 + 1)) / 4) % 7;
 		}
 	}
 
 	public static int diasDeMes(int m, int y) {
-		int[] dias = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+		int[] dias = {
+			31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+		};
 		if (m == 2 && esBisiesto(y)) {
 			return dias[m - 1] + 1;
 		} else {

@@ -4,53 +4,69 @@ public class Prueba3D {
 	public static void main(String[] args) {
 		int[][][] datos = {
 			{
-				{ 20, 22 },
-				{ 16, 19 },
-				{ 28, 25 },
-				{ 16, 14 }
-			},
-			{
-				{ 22, 25 },
-				{ 22, 15 },
-				{ 20, 20 },
-				{ 21, 25 }
-			},
-			{
-				{ 19, 27 },
-				{ 17, 18 },
-				{ 25, 18 },
-				{ 23, 21 }
-			},
-			{
-				{ 27, 20 },
-				{ 19, 23 },
-				{ 22, 19 },
-				{ 19, 20 }
-			},
-			{
-				{ 20, 23 },
-				{ 19, 21 },
-				{ 23, 24 },
-				{ 20, 22 }
+				{
+					20, 22
+				}, {
+					16, 19
+				}, {
+					28, 25
+				}, {
+					16, 14
+				}
+			}, {
+				{
+					22, 25
+				}, {
+					22, 15
+				}, {
+					20, 20
+				}, {
+					21, 25
+				}
+			}, {
+				{
+					19, 27
+				}, {
+					17, 18
+				}, {
+					25, 18
+				}, {
+					23, 21
+				}
+			}, {
+				{
+					27, 20
+				}, {
+					19, 23
+				}, {
+					22, 19
+				}, {
+					19, 20
+				}
+			}, {
+				{
+					20, 23
+				}, {
+					19, 21
+				}, {
+					23, 24
+				}, {
+					20, 22
+				}
 			},
 		};
 
 		String[] grados = {
-			"Derecho",
-			"Magisterio",
-			"Informatico",
-			"Periodismo",
-			"ADE"
+			"Derecho", "Magisterio", "Informatico", "Periodismo", "ADE"
 		};
 
 		String[] cursos = {
-			"Primero",
-			"Segundo",
-			"Tercero",
-			"Cuarto"
+			"Primero", "Segundo", "Tercero", "Cuarto"
 		};
 
-		String[] sexo = { "Hombres", "Mujeres" };
+		String[] sexo = {
+			"Hombres", "Mujeres"
+		};
 
 		for (int i = 0; i < datos.length; i++) {
 			int suma = 0;

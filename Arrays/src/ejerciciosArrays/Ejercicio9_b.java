@@ -7,11 +7,16 @@ public class Ejercicio9_b {
 		// Programa que mezcla dos arrays ordenados de N elementos, consiguiendo
 		// un array de n*2 elementos igualmente ordenados.
 
-		int[] arrA = { 4, 8, 15, 22, 25, 40 };
-		int[] arrB = { 3, 6, 18, 21, 25, 47 };
+		int[] arrA = {
+			4, 8, 15, 22, 25, 40
+		};
+		int[] arrB = {
+			3, 6, 18, 21, 25, 47
+		};
 
-		ArrayList<Integer> arrFinal =
-			new ArrayList<Integer>(arrA.length + arrB.length);
+		ArrayList<Integer> arrFinal = new ArrayList<Integer>(
+			arrA.length + arrB.length
+		);
 
 		for (int n : arrA) {
 			arrFinal.add(n);
@@ -26,8 +31,11 @@ public class Ejercicio9_b {
 				}
 			}
 
-			if (pos == -1) { arrFinal.add(n); }
-			else { arrFinal.add(pos, n); }
+			if (pos == -1) {
+				arrFinal.add(n);
+			} else {
+				arrFinal.add(pos, n);
+			}
 		}
 
 		System.out.printf("Array final:\n");

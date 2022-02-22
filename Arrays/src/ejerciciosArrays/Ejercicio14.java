@@ -33,14 +33,12 @@ public class Ejercicio14 {
 		Scanner input = new Scanner(System.in);
 		while (esGanador && intentos < (N_F_MAPAJ * N_C_MAPAJ - N_MINAS)) {
 			System.out.printf(
-				"Introduce la fila (del 1 al %d): ",
-				mapaMinas.length
+				"Introduce la fila (del 1 al %d): ", mapaMinas.length
 			);
 			int fila = input.nextInt();
 			fila--;
 			System.out.printf(
-				"Introduce la columna (del 1 al %d): ",
-				mapaMinas[0].length
+				"Introduce la columna (del 1 al %d): ", mapaMinas[0].length
 			);
 			int columna = input.nextInt();
 			columna--;
@@ -57,9 +55,8 @@ public class Ejercicio14 {
 				for (int i = fila - 1; i <= fila + 1; i++) {
 					for (int j = columna - 1; j <= columna + 1; j++) {
 						if (
-							i >= 0 && j >= 0
-							&& i < N_F_MAPAJ && j < N_C_MAPAJ
-							&& mapaMinas[i][j] == 1
+							i >= 0 && j >= 0 && i < N_F_MAPAJ && j < N_C_MAPAJ
+								&& mapaMinas[i][j] == 1
 						) {
 							nMinas++;
 						}
@@ -75,7 +72,7 @@ public class Ejercicio14 {
 
 				System.out.printf("Mapa actual:\n");
 				for (int i = 0; i < N_F_MAPAJ; i++) {
-					System.out.printf( "%s\n|", "-".repeat(N_F_MAPAJ * 4 + 1));
+					System.out.printf("%s\n|", "-".repeat(N_F_MAPAJ * 4 + 1));
 					for (int j = 0; j < N_C_MAPAJ; j++) {
 						int actual = mapaJugador[i][j];
 						if (actual == 0) {
@@ -88,7 +85,7 @@ public class Ejercicio14 {
 					}
 					System.out.printf("\n");
 				}
-				System.out.printf( "%s\n\n", "-".repeat(N_F_MAPAJ * 4 + 1));
+				System.out.printf("%s\n\n", "-".repeat(N_F_MAPAJ * 4 + 1));
 			}
 
 			intentos++;

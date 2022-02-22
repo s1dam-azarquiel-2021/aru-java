@@ -1,6 +1,6 @@
 package vehiculo;
 
-public class Vehiculo {
+public abstract class Vehiculo {
 	protected String marca;
 	protected String modelo;
 	protected String color;
@@ -47,8 +47,7 @@ public class Vehiculo {
 
 	@Override
 	public String toString() {
-		return
-			"Marca: " + marca + "\nModelo: " + modelo + "\nColor: " + color
+		return "Marca: " + marca + "\nModelo: " + modelo + "\nColor: " + color
 			+ "\nPrecio: " + precio + "\n";
 	}
 }

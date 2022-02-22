@@ -19,9 +19,7 @@ public class Ejercicio17 {
 		);
 
 		System.out.printf("Introduce las notas:\n");
-		StringTokenizer notas = new StringTokenizer(
-			input.nextLine(), ":"
-		);
+		StringTokenizer notas = new StringTokenizer(input.nextLine(), ":");
 		input.close();
 
 		if (asignaturas.countTokens() == notas.countTokens()) {
@@ -39,7 +37,7 @@ public class Ejercicio17 {
 		} else {
 			System.out.printf(
 				"Tiene que haber la misma cantidad"
-				+ " de asignaturas que de notas\n"
+					+ " de asignaturas que de notas\n"
 			);
 		}
 	}

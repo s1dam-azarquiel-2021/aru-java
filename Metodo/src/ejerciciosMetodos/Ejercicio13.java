@@ -23,7 +23,9 @@ public class Ejercicio13 {
 	}
 
 	public static int[] posLetraMenor(StringBuilder st, int pos) {
-		int[] resultado = {0, 255};
+		int[] resultado = {
+			0, 255
+		};
 		for (int i = pos; i < st.length(); i++) {
 			char letra = st.charAt(i);
 			if (letra < resultado[1]) {

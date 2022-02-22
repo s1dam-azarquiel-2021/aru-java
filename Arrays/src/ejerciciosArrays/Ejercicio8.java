@@ -7,11 +7,17 @@ public class Ejercicio8 {
 		// diagonales suman igual
 
 		int[][] array = {
-			{ 15,  8,  1, 24, 17 },
-			{ 16, 14,  7,  5, 23 },
-			{ 22, 20, 13,  6,  4 },
-			{  3, 21, 19, 12, 10 },
-			{  9,  2, 25, 18, 11 }
+			{
+				15, 8, 1, 24, 17
+			}, {
+				16, 14, 7, 5, 23
+			}, {
+				22, 20, 13, 6, 4
+			}, {
+				3, 21, 19, 12, 10
+			}, {
+				9, 2, 25, 18, 11
+			}
 		};
 
 		int[] sumaFilas = new int[array.length];
@@ -33,8 +39,7 @@ public class Ejercicio8 {
 				}
 
 				if (
-					i == array.length - 1
-					&& sumaColumnas[j] != sumaColumnas[0]
+					i == array.length - 1 && sumaColumnas[j] != sumaColumnas[0]
 				) {
 					esMagico = false;
 				}
@@ -46,8 +51,8 @@ public class Ejercicio8 {
 
 		if (
 			sumaDiagonales[0] != sumaDiagonales[1]
-			|| sumaDiagonales[0] != sumaFilas[0]
-			|| sumaDiagonales[0] != sumaColumnas[0]
+				|| sumaDiagonales[0] != sumaFilas[0]
+				|| sumaDiagonales[0] != sumaColumnas[0]
 		) {
 			esMagico = false;
 		}

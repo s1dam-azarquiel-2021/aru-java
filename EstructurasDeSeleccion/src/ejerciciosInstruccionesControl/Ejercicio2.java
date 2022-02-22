@@ -21,8 +21,8 @@ public class Ejercicio2 {
 		final int H_CORRECTO = h + M_TOTALES / 60;
 
 		System.out.printf(
-			"%d horas, %d minutos y %d segundos.\n",
-			H_CORRECTO, M_CORRECTO, S_CORRECTO
+			"%d horas, %d minutos y %d segundos.\n", H_CORRECTO, M_CORRECTO,
+			S_CORRECTO
 		);
 	}
 }

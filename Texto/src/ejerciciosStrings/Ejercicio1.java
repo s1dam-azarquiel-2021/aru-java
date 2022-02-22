@@ -20,8 +20,7 @@ public class Ejercicio1 {
 		}
 
 		System.out.printf(
-			"Frase en mayusculas: %s\n" +
-			"Numero de letras cambiadas: %d",
+			"Frase en mayusculas: %s\n" + "Numero de letras cambiadas: %d",
 			frase.toUpperCase(), cambios
 		);
 	}

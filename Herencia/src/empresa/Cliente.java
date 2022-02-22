@@ -4,11 +4,7 @@ public class Cliente extends Persona {
 	protected String numeroCuenta;
 
 	public Cliente(
-		String dni,
-		String nombre,
-		String direccion,
-		long telefono,
-		int edad,
+		String dni, String nombre, String direccion, long telefono, int edad,
 		String numeroCuenta
 	) {
 		super(dni, nombre, direccion, telefono, edad);

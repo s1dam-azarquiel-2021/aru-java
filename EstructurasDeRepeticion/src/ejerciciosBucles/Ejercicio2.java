@@ -19,9 +19,15 @@ public class Ejercicio2 {
 			final boolean divisible5 = n % 5 == 0;
 
 			// Segun sean, se cuenta
-			if (divisible3) { nMultiplos3++; }
-			if (divisible5) { nMultiplos5++; }
-			if (!(divisible3 || divisible5)) { nMultplosNada++; }
+			if (divisible3) {
+				nMultiplos3++;
+			}
+			if (divisible5) {
+				nMultiplos5++;
+			}
+			if (!(divisible3 || divisible5)) {
+				nMultplosNada++;
+			}
 		}
 		input.close();
 

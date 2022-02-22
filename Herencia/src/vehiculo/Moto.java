@@ -3,8 +3,10 @@ package vehiculo;
 public class Moto extends VehiculoConMotor {
 	protected String estilo;
 
-	public Moto(String marca, String modelo, String color, float precio, int cilindrada, String combustible,
-			String estilo) {
+	public Moto(
+		String marca, String modelo, String color, float precio, int cilindrada,
+		String combustible, String estilo
+	) {
 		super(marca, modelo, color, precio, cilindrada, combustible);
 		this.estilo = estilo;
 	}

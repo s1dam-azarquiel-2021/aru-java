@@ -4,11 +4,7 @@ public class Staff extends Persona {
 	protected float sueldo;
 
 	public Staff(
-		String dni,
-		String nombre,
-		String direccion,
-		long telefono,
-		int edad,
+		String dni, String nombre, String direccion, long telefono, int edad,
 		float sueldo
 	) {
 		super(dni, nombre, direccion, telefono, edad);

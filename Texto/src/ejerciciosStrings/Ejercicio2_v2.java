@@ -17,8 +17,7 @@ public class Ejercicio2_v2 {
 		int palabras = st.countTokens();
 
 		System.out.printf(
-			"La frase tiene: %d palabra%c",
-			palabras, palabras == 1 ? ' ' : 's'
+			"La frase tiene: %d palabra%c", palabras, palabras == 1 ? ' ' : 's'
 		);
 	}
 }

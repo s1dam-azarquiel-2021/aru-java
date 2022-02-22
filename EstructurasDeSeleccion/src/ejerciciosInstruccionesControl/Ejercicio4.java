@@ -13,13 +13,15 @@ public class Ejercicio4 {
 		input.close();
 
 		// Sacar la primera y ultima cifra de ambos numeros
-		final int N_USUARIO_PRIMERA_CIFRA  = n_usuario  / 10000;
-		final int N_USUARIO_ULTIMA_CIFRA   = n_usuario  % 10;
+		final int N_USUARIO_PRIMERA_CIFRA = n_usuario / 10000;
+		final int N_USUARIO_ULTIMA_CIFRA = n_usuario % 10;
 		final int N_PREMIADO_PRIMERA_CIFRA = n_premiado / 10000;
-		final int N_PREMIADO_ULTIMA_CIFRA  = n_premiado % 10;
+		final int N_PREMIADO_ULTIMA_CIFRA = n_premiado % 10;
 
-		if (N_USUARIO_PRIMERA_CIFRA == N_PREMIADO_PRIMERA_CIFRA ||
-			N_USUARIO_ULTIMA_CIFRA  == N_PREMIADO_ULTIMA_CIFRA) {
+		if (
+			N_USUARIO_PRIMERA_CIFRA == N_PREMIADO_PRIMERA_CIFRA
+				|| N_USUARIO_ULTIMA_CIFRA == N_PREMIADO_ULTIMA_CIFRA
+		) {
 			System.out.printf("Si tiene reintegro\n");
 		} else {
 			System.out.printf("No tiene reintegro\n");

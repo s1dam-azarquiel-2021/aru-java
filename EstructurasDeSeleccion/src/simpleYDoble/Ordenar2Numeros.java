@@ -10,7 +10,10 @@ public class Ordenar2Numeros {
 		int y = scanner.nextInt();
 		scanner.close();
 
-		if (x > y) { System.out.printf("%d %d\n", x, y); }
-		else       { System.out.printf("%d %d\n", y , x); }
+		if (x > y) {
+			System.out.printf("%d %d\n", x, y);
+		} else {
+			System.out.printf("%d %d\n", y, x);
+		}
 	}
 }

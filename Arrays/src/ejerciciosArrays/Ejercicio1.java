@@ -9,10 +9,7 @@ public class Ejercicio1 {
 		// dentro del array
 
 		int[] array = {
-			1, 2, 5, 8, 8,
-			3, 5, 5, 8, 4,
-			5, 2, 0, 5, 3,
-			4, 9, 7, 4, 3
+			1, 2, 5, 8, 8, 3, 5, 5, 8, 4, 5, 2, 0, 5, 3, 4, 9, 7, 4, 3
 		};
 
 		System.out.printf("Introduce un numero: ");

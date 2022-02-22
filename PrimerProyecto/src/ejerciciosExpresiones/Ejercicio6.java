@@ -9,7 +9,9 @@ public class Ejercicio6 {
 		int dinero = scanner.nextInt();
 		scanner.close();
 
-		final int[] billetes = { 500, 200, 100, 50, 20, 10, 5 };
+		final int[] billetes = {
+			500, 200, 100, 50, 20, 10, 5
+		};
 
 		for (int i : billetes) {
 			System.out.printf("%d\n", dinero / i);

@@ -30,10 +30,7 @@ public class Ejercicio10 {
 
 		while (!acertado && nIntentos < 8) {
 			// Mostramos las letras acertadas
-			System.out.printf(
-				"\nLetras acertadas: %s\n",
-				letrasAcertadas
-			);
+			System.out.printf("\nLetras acertadas: %s\n", letrasAcertadas);
 
 			// Pedimos una letra
 			System.out.printf("Introduce una letra: ");
@@ -64,20 +61,14 @@ public class Ejercicio10 {
 			// Sumamos un intento
 			nIntentos++;
 
-			System.out.printf(
-				"Intentos restantes: %d\n",
-				8 - nIntentos
-			);
+			System.out.printf("Intentos restantes: %d\n", 8 - nIntentos);
 		}
 		input.close();
 
 		if (acertado) {
 			System.out.printf("\nAcertaste la palabra, enhorabuena\n");
 		} else {
-			System.out.printf(
-				"\nEres malisimo, la palabra era: %s\n",
-				palabra
-			);
+			System.out.printf("\nEres malisimo, la palabra era: %s\n", palabra);
 		}
 	}
 }

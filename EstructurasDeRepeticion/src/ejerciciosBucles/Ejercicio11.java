@@ -12,7 +12,7 @@ public class Ejercicio11 {
 		int espacios = n / 2;
 		boolean centroHecho = false;
 
-		for (int i = 1; i <= n; i++ ) {
+		for (int i = 1; i <= n; i++) {
 			for (int j = 1; j <= n; j++) {
 				if (j > espacios && j <= n - espacios) {
 					System.out.printf("* ");

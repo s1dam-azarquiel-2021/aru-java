@@ -11,10 +11,7 @@ public class TablaDelNumeroDado {
 		input.close();
 
 		for (int i = 0; i <= 10; i++) {
-			System.out.printf(
-				"%d x %d = %d\n",
-				n, i, (i * n)
-			);
+			System.out.printf("%d x %d = %d\n", n, i, (i * n));
 		}
 	}
 }

@@ -29,9 +29,6 @@ public class Ejercicio8 {
 		// Por si acaso quedo algun numero sin sumarse
 		suma += numActual;
 
-		System.out.printf(
-			"Suma de todas las cifras: %d",
-			suma
-		);
+		System.out.printf("Suma de todas las cifras: %d", suma);
 	}
 }

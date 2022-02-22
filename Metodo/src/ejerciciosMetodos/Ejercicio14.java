@@ -36,7 +36,9 @@ public class Ejercicio14 {
 		return posLetraMenor(st, pos, (char) (255), 0);
 	}
 
-	public static int[] posLetraMenor(StringBuilder st, int pos, char c, int max) {
+	public static int[] posLetraMenor(
+		StringBuilder st, int pos, char c, int max
+	) {
 		char letra = st.charAt(pos);
 		if (letra < c) {
 			c = letra;
@@ -44,7 +46,9 @@ public class Ejercicio14 {
 		}
 
 		if (pos == st.length() - 1) {
-			int[] resultado = {max, c};
+			int[] resultado = {
+				max, c
+			};
 			return resultado;
 		} else {
 			return posLetraMenor(st, pos + 1, c, max);

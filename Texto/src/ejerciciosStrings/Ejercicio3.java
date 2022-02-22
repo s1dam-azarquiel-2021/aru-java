@@ -17,9 +17,6 @@ public class Ejercicio3 {
 			fraseFinal += (char) (frase.charAt(i) + 1);
 		}
 
-		System.out.printf(
-			"%s",
-			fraseFinal
-		);
+		System.out.printf("%s", fraseFinal);
 	}
 }

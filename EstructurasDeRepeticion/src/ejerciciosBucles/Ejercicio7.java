@@ -26,8 +26,7 @@ public class Ejercicio7 {
 		input.close();
 
 		System.out.printf(
-			"El mayor es el %d, se repite %d veces.\n",
-			mayor, contadorMayor
+			"El mayor es el %d, se repite %d veces.\n", mayor, contadorMayor
 		);
 	}
 }

@@ -3,7 +3,7 @@ package ejerciciosRepaso;
 import java.util.Scanner;
 
 public class Ejercicio6 {
-	public static void jugar7yMedia () {
+	public static void jugar7yMedia() {
 		double puntos = 0;
 		Scanner input = new Scanner(System.in);
 		while (puntos < 7.5) {
@@ -35,9 +35,7 @@ public class Ejercicio6 {
 
 		for (int i = 0; i < Math.random() * 20 + 20; i++) {
 			intercambiar(
-				baraja,
-				(int) (Math.random() * 40),
-				(int) (Math.random() * 40)
+				baraja, (int) (Math.random() * 40), (int) (Math.random() * 40)
 			);
 		}
 	}

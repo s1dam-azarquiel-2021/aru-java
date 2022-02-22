@@ -10,7 +10,7 @@ public class Ejercicio4 {
 		scanner.close();
 
 		final float gTierra = 9.8F;
-		final float gLuna   = 1.62F;
+		final float gLuna = 1.62F;
 		float pesoEnLaLuna = pesoEnLaTierra / gTierra * gLuna;
 		System.out.printf("Peso en la luna: %d\n", pesoEnLaLuna);
 	}
