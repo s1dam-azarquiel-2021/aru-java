@@ -1,6 +1,6 @@
 package ejercicio2;
 
-public class Escala {
+public abstract class Escala {
 	protected String ciudad;
 	protected int horaBajada;
 	protected int horaRegreso;
