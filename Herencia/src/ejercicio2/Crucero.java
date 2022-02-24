@@ -24,6 +24,14 @@ public class Crucero {
 		this.escalas = escalas;
 	}
 
+	public boolean add(Escala escala) {
+		return escalas.add(escala);
+	}
+
+	public boolean remove(Escala escala) {
+		return escalas.remove(escala);
+	}
+
 	public float coste() {
 		int resultado = 600;
 		for (Escala escala : escalas) {

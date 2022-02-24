@@ -13,6 +13,14 @@ public class Comanda {
 		this.platos = platos;
 	}
 
+	public boolean add(Plato plato) {
+		return platos.add(plato);
+	}
+
+	public boolean remove(Plato plato) {
+		return platos.remove(plato);
+	}
+
 	public float coste() {
 		float resultado = 0;
 		for (Plato plato : this.platos) {
