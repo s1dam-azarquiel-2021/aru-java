@@ -14,11 +14,11 @@ public class Comanda {
 	}
 
 	public boolean add(Plato plato) {
-		return platos.add(plato);
+		return this.platos.add(plato);
 	}
 
 	public boolean remove(Plato plato) {
-		return platos.remove(plato);
+		return this.platos.remove(plato);
 	}
 
 	public float coste() {

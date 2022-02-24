@@ -25,16 +25,16 @@ public class Crucero {
 	}
 
 	public boolean add(Escala escala) {
-		return escalas.add(escala);
+		return this.escalas.add(escala);
 	}
 
 	public boolean remove(Escala escala) {
-		return escalas.remove(escala);
+		return this.escalas.remove(escala);
 	}
 
 	public float coste() {
 		int resultado = 600;
-		for (Escala escala : escalas) {
+		for (Escala escala : this.escalas) {
 			resultado += 100;
 			if (escala instanceof EscalaCultural) {
 				resultado += ((EscalaCultural) escala).getPrecioGuia();
@@ -101,7 +101,7 @@ public class Crucero {
 				+ fRegreso + "\n"
 		);
 
-		for (Escala escala : escalas) {
+		for (Escala escala : this.escalas) {
 			resultado.append(escala.toString());
 		}
 
