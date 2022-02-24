@@ -2,11 +2,13 @@ package ejercicio1;
 
 import java.util.ArrayList;
 
+import ejercicio1.Carnes.Grado;
+
 public class Prueba {
 	public static void main(String[] args) {
 		ArrayList<Plato> lista = new ArrayList<Plato>();
 		lista.add(new Primeros("sopa", 5, false));
-		lista.add(new Carnes("Solomillo", 8, "Muy hecho"));
+		lista.add(new Carnes("Solomillo", 8, Grado.MUY_HECHO));
 		lista.add(new Pescados("Lubina", 8));
 		lista.add(new Postres("Arroz con leche", 2, true));
 		Comanda comanda = new Comanda(1, 1, lista);

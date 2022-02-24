@@ -1,18 +1,22 @@
 package ejercicio1;
 
 public class Carnes extends Plato {
-	private String grado;
-
-	public String getGrado() {
-		return grado;
+	public enum Grado {
+		POCO_HECHO, AL_PUNTO, MUY_HECHO, CARBONIZADO
 	}
 
-	public void setGrado(String grado) {
+	private Grado grado;
+
+	public Carnes(String nombre, float precio, Grado grado) {
+		super(nombre, precio);
 		this.grado = grado;
 	}
 
-	public Carnes(String nombre, float precio, String grado) {
-		super(nombre, precio);
+	public Grado getGrado() {
+		return grado;
+	}
+
+	public void setGrado(Grado grado) {
 		this.grado = grado;
 	}
 
