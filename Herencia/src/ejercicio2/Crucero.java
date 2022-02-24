@@ -24,6 +24,18 @@ public class Crucero {
 		this.escalas = escalas;
 	}
 
+	public float coste() {
+		int resultado = 600;
+		for (Escala escala : escalas) {
+			resultado += 100;
+			if (escala instanceof EscalaCultural) {
+				resultado += ((EscalaCultural) escala).getPrecioGuia();
+			}
+		}
+
+		return resultado;
+	}
+
 	public int getcCrucero() {
 		return cCrucero;
 	}
