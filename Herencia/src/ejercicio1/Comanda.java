@@ -24,10 +24,7 @@ public class Comanda {
 
 	public boolean hayDiabeticosEnLaMesa() {
 		for (Plato plato : this.platos) {
-			if (
-				Postres.class.isInstance(plato)
-					&& !((Postres) plato).isConAzucar()
-			) {
+			if (plato instanceof Postres && !((Postres) plato).isConAzucar()) {
 				return true;
 			}
 		}
