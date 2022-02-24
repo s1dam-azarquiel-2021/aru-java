@@ -1,11 +1,13 @@
 package ejercicio2;
 
+import java.util.Date;
+
 public class EscalaCultural extends Escala {
 	private String guia;
 	private float precioGuia;
 
 	public EscalaCultural(
-		String ciudad, int horaBajada, int horaRegreso, String guia,
+		String ciudad, Date horaBajada, Date horaRegreso, String guia,
 		float precioGuia
 	) {
 		super(ciudad, horaBajada, horaRegreso);

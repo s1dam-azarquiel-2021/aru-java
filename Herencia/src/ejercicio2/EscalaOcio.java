@@ -1,10 +1,12 @@
 package ejercicio2;
 
+import java.util.Date;
+
 public class EscalaOcio extends Escala {
 	private int horas;
 
 	public EscalaOcio(
-		String ciudad, int horaBajada, int horaRegreso, int horas
+		String ciudad, Date horaBajada, Date horaRegreso, int horas
 	) {
 		super(ciudad, horaBajada, horaRegreso);
 		this.horas = horas;
