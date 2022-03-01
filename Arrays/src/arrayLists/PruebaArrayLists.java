@@ -5,6 +5,9 @@ import java.util.Arrays;
 import java.util.Iterator;
 
 public class PruebaArrayLists {
+	@SuppressWarnings({
+		"unchecked", "rawtypes", "unused"
+	})
 	public static void main(String[] args) {
 		ArrayList lista = new ArrayList();
 		lista.add("Hola");
