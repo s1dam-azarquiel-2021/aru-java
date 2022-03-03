@@ -5,4 +5,9 @@ public class RelojDigital extends Reloj {
 	public String getHora() {
 		return this.hora + ":" + this.minuto;
 	}
+
+	@Override
+	public String toString() {
+		return "Hora: " + getHora() + "\n";
+	}
 }
