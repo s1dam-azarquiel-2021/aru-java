@@ -28,7 +28,10 @@ public class RelojAnalogico extends Reloj {
 		return "Son las "
 			+ (this.minuto > 30 ? (this.hora + 1) + " menos "
 				: this.hora + " y ")
-			+ (minuto.equals("") ? this.minuto + " minutos" : minuto);
+			+ (minuto.equals("")
+				? (this.minuto > 30 ? (60 - this.minuto) : this.minuto)
+					+ " minutos"
+				: minuto);
 	}
 
 	@Override
