@@ -1,7 +1,7 @@
 package contadores;
 
 public class ContadorDecimal extends Contador {
-	private double valor;
+	protected double valor;
 
 	public ContadorDecimal(double valor) {
 		this.valor = valor;

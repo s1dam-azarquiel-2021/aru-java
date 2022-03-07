@@ -1,7 +1,7 @@
 package contadores;
 
 public class ContadorLetras extends Contador {
-	private char valor;
+	protected char valor;
 
 	public ContadorLetras(char valor) {
 		this.valor = valor;

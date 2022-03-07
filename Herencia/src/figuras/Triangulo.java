@@ -1,8 +1,8 @@
 package figuras;
 
 public class Triangulo extends Figura {
-	private double base;
-	private double altura;
+	protected double base;
+	protected double altura;
 
 	public Triangulo(String color, double base, double altura) {
 		super(color);

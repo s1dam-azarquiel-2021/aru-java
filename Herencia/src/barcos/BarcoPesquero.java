@@ -1,7 +1,7 @@
 package barcos;
 
 public class BarcoPesquero extends Barco implements Navegable {
-	private boolean congelador;
+	protected boolean congelador;
 
 	public BarcoPesquero(
 		String nombre, String capitan, int eslora, boolean congelador

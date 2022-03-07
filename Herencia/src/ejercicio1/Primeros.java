@@ -1,7 +1,7 @@
 package ejercicio1;
 
 public class Primeros extends Plato {
-	private boolean compartir;
+	protected boolean compartir;
 
 	public Primeros(String nombre, float precio, boolean compartir) {
 		super(nombre, precio);

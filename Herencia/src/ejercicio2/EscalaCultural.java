@@ -3,8 +3,8 @@ package ejercicio2;
 import java.util.Date;
 
 public class EscalaCultural extends Escala {
-	private String guia;
-	private float precioGuia;
+	protected String guia;
+	protected float precioGuia;
 
 	public EscalaCultural(
 		String ciudad, Date horaBajada, Date horaRegreso, String guia,

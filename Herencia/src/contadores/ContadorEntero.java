@@ -1,7 +1,7 @@
 package contadores;
 
 public class ContadorEntero extends Contador {
-	private int valor;
+	protected int valor;
 
 	public ContadorEntero(int valor) {
 		this.valor = valor;

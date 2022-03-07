@@ -1,7 +1,7 @@
 package figuras;
 
 public class Circulo extends Figura {
-	private double radio;
+	protected double radio;
 
 	public Circulo(String color, double radio) {
 		super(color);

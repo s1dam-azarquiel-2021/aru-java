@@ -3,9 +3,9 @@ package ejercicio1;
 import java.util.ArrayList;
 
 public class Comanda {
-	private int nMesa;
-	private int nComensales;
-	private ArrayList<Plato> platos;
+	protected int nMesa;
+	protected int nComensales;
+	protected ArrayList<Plato> platos;
 
 	public Comanda(int nMesa, int nComensales, ArrayList<Plato> platos) {
 		this.nMesa = nMesa;

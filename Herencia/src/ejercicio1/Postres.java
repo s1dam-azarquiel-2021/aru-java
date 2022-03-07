@@ -1,7 +1,7 @@
 package ejercicio1;
 
 public class Postres extends Plato {
-	private boolean conAzucar;
+	protected boolean conAzucar;
 
 	public Postres(String nombre, float precio, boolean conAzucar) {
 		super(nombre, precio);

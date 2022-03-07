@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Crucero {
-	private int cCrucero;
-	private String nombreComercial;
-	private String nombreBarco;
-	private Date fPartida;
-	private Date fRegreso;
-	private ArrayList<Escala> escalas;
+	protected int cCrucero;
+	protected String nombreComercial;
+	protected String nombreBarco;
+	protected Date fPartida;
+	protected Date fRegreso;
+	protected ArrayList<Escala> escalas;
 
 	public Crucero(
 		int cCrucero, String nombreComercial, String nombreBarco, Date fPartida,

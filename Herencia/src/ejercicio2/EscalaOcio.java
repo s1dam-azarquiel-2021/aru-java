@@ -3,7 +3,7 @@ package ejercicio2;
 import java.util.Date;
 
 public class EscalaOcio extends Escala {
-	private int horas;
+	protected int horas;
 
 	public EscalaOcio(
 		String ciudad, Date horaBajada, Date horaRegreso, int horas

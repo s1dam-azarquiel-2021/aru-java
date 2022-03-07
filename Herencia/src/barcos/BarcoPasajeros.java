@@ -1,7 +1,7 @@
 package barcos;
 
 public class BarcoPasajeros extends Barco implements Navegable {
-	private int capacidad;
+	protected int capacidad;
 
 	public BarcoPasajeros(
 		String nombre, String capitan, int eslora, int capacidad

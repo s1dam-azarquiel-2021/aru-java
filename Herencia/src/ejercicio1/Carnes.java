@@ -5,7 +5,7 @@ public class Carnes extends Plato {
 		POCO_HECHO, AL_PUNTO, MUY_HECHO, CARBONIZADO
 	}
 
-	private Grado grado;
+	public Grado grado;
 
 	public Carnes(String nombre, float precio, Grado grado) {
 		super(nombre, precio);

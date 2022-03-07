@@ -1,7 +1,7 @@
 package figuras;
 
 public class Cuadrado extends Figura {
-	private double lado;
+	protected double lado;
 
 	public Cuadrado(String color, double lado) {
 		super(color);
