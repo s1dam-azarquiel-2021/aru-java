@@ -89,26 +89,4 @@ public class Electrodomestico {
 	public float getPrecioBase() {
 		return precioBase;
 	}
-
-	public void setColor(Color color) {
-		this.color = color;
-	}
-
-	public void setConsumoEnergetico(Consumo consumoEnergetico) {
-		this.consumoEnergetico = consumoEnergetico;
-	}
-
-	public void setPeso(float peso) {
-		this.peso = peso;
-	}
-
-	public void setPrecioBase(float precioBase) {
-		this.precioBase = precioBase;
-	}
-
-	@Override
-	public String toString() {
-		return "color: " + color + "\nConsumoEnergetico: " + consumoEnergetico
-			+ "\nPeso: " + peso + "\nPrecio base: " + precioBase + "\n";
-	}
 }
