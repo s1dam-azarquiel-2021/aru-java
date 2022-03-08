@@ -10,6 +10,7 @@ public class Persona {
 	public Persona(
 		String dni, String nombre, String direccion, long telefono, int edad
 	) {
+		super();
 		this.dni = dni;
 		this.nombre = nombre;
 		this.direccion = direccion;

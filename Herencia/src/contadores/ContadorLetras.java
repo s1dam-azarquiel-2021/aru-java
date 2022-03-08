@@ -4,6 +4,7 @@ public class ContadorLetras extends Contador {
 	protected char valor;
 
 	public ContadorLetras(char valor) {
+		super();
 		this.valor = valor;
 	}
 

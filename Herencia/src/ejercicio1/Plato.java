@@ -5,6 +5,7 @@ public abstract class Plato {
 	protected float precio;
 
 	public Plato(String nombre, float precio) {
+		super();
 		this.nombre = nombre;
 		this.precio = precio;
 	}

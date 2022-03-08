@@ -4,6 +4,7 @@ public class ContadorEntero extends Contador {
 	protected int valor;
 
 	public ContadorEntero(int valor) {
+		super();
 		this.valor = valor;
 	}
 

@@ -8,6 +8,7 @@ public class Comanda {
 	protected ArrayList<Plato> platos;
 
 	public Comanda(int nMesa, int nComensales, ArrayList<Plato> platos) {
+		super();
 		this.nMesa = nMesa;
 		this.nComensales = nComensales;
 		this.platos = platos;

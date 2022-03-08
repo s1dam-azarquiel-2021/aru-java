@@ -7,6 +7,7 @@ public abstract class Vehiculo {
 	protected float precio;
 
 	public Vehiculo(String marca, String modelo, String color, float precio) {
+		super();
 		this.marca = marca;
 		this.modelo = modelo;
 		this.color = color;

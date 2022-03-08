@@ -4,6 +4,7 @@ public class ContadorDecimal extends Contador {
 	protected double valor;
 
 	public ContadorDecimal(double valor) {
+		super();
 		this.valor = valor;
 	}
 

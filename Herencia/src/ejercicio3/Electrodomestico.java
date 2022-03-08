@@ -20,6 +20,7 @@ public class Electrodomestico {
 	private float PRECIO_BASE_POR_DEFECTO = 100;
 
 	public Electrodomestico() {
+		super();
 		this.color = COLOR_POR_DEFECTO;
 		this.consumoEnergetico = CONSUMO_POR_DEFECTO;
 		this.peso = PESO_POR_DEFECTO;
@@ -27,6 +28,7 @@ public class Electrodomestico {
 	}
 
 	public Electrodomestico(float peso, float precioBase) {
+		super();
 		this.color = COLOR_POR_DEFECTO;
 		this.consumoEnergetico = CONSUMO_POR_DEFECTO;
 		this.peso = peso;
@@ -36,6 +38,7 @@ public class Electrodomestico {
 	public Electrodomestico(
 		Color color, Consumo consumoEnergetico, float peso, float precioBase
 	) {
+		super();
 		this.color = color;
 		this.consumoEnergetico = consumoEnergetico;
 		this.peso = peso;

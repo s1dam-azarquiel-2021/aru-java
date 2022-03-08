@@ -8,6 +8,7 @@ public abstract class Escala {
 	protected Date horaRegreso;
 
 	public Escala(String ciudad, Date horaBajada, Date horaRegreso) {
+		super();
 		this.ciudad = ciudad;
 		this.horaBajada = horaBajada;
 		this.horaRegreso = horaRegreso;
