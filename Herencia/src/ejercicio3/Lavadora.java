@@ -23,6 +23,7 @@ public class Lavadora extends Electrodomestico {
 		this.carga = CARGA_POR_DEFECTO;
 	}
 
+	@Override
 	public float precioFinal() {
 		return super.precioFinal() + (this.carga > 30 ? 50 : 0);
 	}

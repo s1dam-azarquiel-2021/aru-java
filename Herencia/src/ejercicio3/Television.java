@@ -28,6 +28,7 @@ public class Television extends Electrodomestico {
 		this.smartTV = SMARTTV_POR_DEFECTO;
 	}
 
+	@Override
 	public float precioFinal() {
 		return super.precioFinal() * (this.resolucion > 40 ? 1.3F : 1)
 			+ (this.smartTV ? 50 : 0);
