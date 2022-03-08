@@ -22,12 +22,12 @@ public class Prueba {
 		float pLavadora = 0;
 		float pTelevision = 0;
 		for (Electrodomestico electrodomestico : lista) {
-			pElectrodomestico += electrodomestico.precioFinal();
-
 			if (electrodomestico instanceof Lavadora) {
 				pLavadora += ((Lavadora) electrodomestico).precioFinal();
 			} else if (electrodomestico instanceof Television) {
 				pTelevision += ((Television) electrodomestico).precioFinal();
+			} else {
+				pElectrodomestico += electrodomestico.precioFinal();
 			}
 		}
 
