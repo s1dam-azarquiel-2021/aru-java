@@ -3,6 +3,8 @@ package ejercicio3;
 public class Lavadora extends Electrodomestico {
 	protected float carga;
 
+	private float CARGA_POR_DEFECTO = 5;
+
 	public Lavadora(
 		Color color, Consumo consumoEnergetico, float peso, float precioBase,
 		float carga
@@ -13,12 +15,12 @@ public class Lavadora extends Electrodomestico {
 
 	public Lavadora(float peso, float precioBase) {
 		super(peso, precioBase);
-		this.carga = 5;
+		this.carga = CARGA_POR_DEFECTO;
 	}
 
 	public Lavadora() {
 		super();
-		this.carga = 5;
+		this.carga = CARGA_POR_DEFECTO;
 	}
 
 	public float precioFinal() {

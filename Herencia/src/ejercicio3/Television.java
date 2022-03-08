@@ -4,6 +4,9 @@ public class Television extends Electrodomestico {
 	protected int resolucion;
 	protected boolean smartTV;
 
+	private int RESOLUCION_POR_DEFECTO = 20;
+	private boolean SMARTTV_POR_DEFECTO = false;
+
 	public Television(
 		Color color, Consumo consumoEnergetico, float peso, float precioBase,
 		int resolucion, boolean smartTV
@@ -15,14 +18,14 @@ public class Television extends Electrodomestico {
 
 	public Television(float peso, float precioBase) {
 		super(peso, precioBase);
-		this.resolucion = 20;
-		this.smartTV = false;
+		this.resolucion = RESOLUCION_POR_DEFECTO;
+		this.smartTV = SMARTTV_POR_DEFECTO;
 	}
 
 	public Television() {
 		super();
-		this.resolucion = 20;
-		this.smartTV = false;
+		this.resolucion = RESOLUCION_POR_DEFECTO;
+		this.smartTV = SMARTTV_POR_DEFECTO;
 	}
 
 	public float precioFinal() {

@@ -14,16 +14,21 @@ public class Electrodomestico {
 	protected float peso;
 	protected float precioBase;
 
+	private Color COLOR_POR_DEFECTO = Color.BLANCO;
+	private Consumo CONSUMO_POR_DEFECTO = Consumo.F;
+	private float PESO_POR_DEFECTO = 5;
+	private float PRECIO_BASE_POR_DEFECTO = 100;
+
 	public Electrodomestico() {
-		this.color = Color.BLANCO;
-		this.consumoEnergetico = Consumo.F;
-		this.precioBase = 100;
-		this.precioBase = 100;
+		this.color = COLOR_POR_DEFECTO;
+		this.consumoEnergetico = CONSUMO_POR_DEFECTO;
+		this.peso = PESO_POR_DEFECTO;
+		this.precioBase = PRECIO_BASE_POR_DEFECTO;
 	}
 
 	public Electrodomestico(float peso, float precioBase) {
-		this.color = Color.BLANCO;
-		this.consumoEnergetico = Consumo.F;
+		this.color = COLOR_POR_DEFECTO;
+		this.consumoEnergetico = CONSUMO_POR_DEFECTO;
 		this.peso = peso;
 		this.precioBase = precioBase;
 	}
