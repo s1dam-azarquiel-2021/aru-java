@@ -14,10 +14,10 @@ public class Electrodomestico {
 	protected float peso;
 	protected float precioBase;
 
-	private Color COLOR_POR_DEFECTO = Color.BLANCO;
-	private Consumo CONSUMO_POR_DEFECTO = Consumo.F;
-	private float PESO_POR_DEFECTO = 5;
-	private float PRECIO_BASE_POR_DEFECTO = 100;
+	private final Color COLOR_POR_DEFECTO = Color.BLANCO;
+	private final Consumo CONSUMO_POR_DEFECTO = Consumo.F;
+	private final float PESO_POR_DEFECTO = 5;
+	private final float PRECIO_BASE_POR_DEFECTO = 100;
 
 	public Electrodomestico() {
 		super();

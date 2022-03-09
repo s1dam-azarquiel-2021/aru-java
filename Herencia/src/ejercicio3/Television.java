@@ -4,8 +4,8 @@ public class Television extends Electrodomestico {
 	protected int resolucion;
 	protected boolean smartTV;
 
-	private int RESOLUCION_POR_DEFECTO = 20;
-	private boolean SMARTTV_POR_DEFECTO = false;
+	private final int RESOLUCION_POR_DEFECTO = 20;
+	private final boolean SMARTTV_POR_DEFECTO = false;
 
 	public Television(
 		Color color, Consumo consumoEnergetico, float peso, float precioBase,
