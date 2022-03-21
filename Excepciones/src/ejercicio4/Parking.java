@@ -22,11 +22,15 @@ public class Parking {
 		throws ParkingLlenoException, TicketDuplicadoException {
 		if (this.tickets.size() >= capacidad) {
 			throw new ParkingLlenoException("El parking esta lleno");
-		} else if (this.tickets.contains(ticket)) {
-			throw new TicketDuplicadoException("Ese ticket ya existe");
-		} else {
-			this.tickets.add(ticket);
 		}
+
+		for (Ticket t : this.tickets) {
+			if (t.getMatricula().equals(ticket.getMatricula())) {
+				throw new TicketDuplicadoException("Ese ticket ya existe");
+			}
+		}
+
+		this.tickets.add(ticket);
 	}
 
 	public void remove(Ticket ticket) throws TicketNoPagadoException {
