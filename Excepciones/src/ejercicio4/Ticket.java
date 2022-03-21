@@ -7,6 +7,10 @@ public class Ticket {
 	private Calendar hora;
 	private boolean pagado;
 
+	private static final float PRECIO_DIA = 6.5F;
+	private static final float PRECIO_HORA = 1.7F;
+	private static final float PRECIO_MINUTO = 0.1F;
+
 	public Ticket(String matricula, Calendar hora, boolean pagado) {
 		super();
 		this.matricula = matricula;
@@ -22,14 +26,27 @@ public class Ticket {
 	}
 
 	public float calcularPrecio() throws DiferenciaNegativaException {
-		float diferencia = this.hora.get(Calendar.HOUR_OF_DAY)
-			- Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+		long diferencia = Calendar.getInstance().getTimeInMillis()
+			- this.hora.getTimeInMillis();
 		if (diferencia < 0) {
 			throw new DiferenciaNegativaException(
 				"Diferencia de horas negativa"
 			);
 		} else {
-			return diferencia;
+			diferencia /= 60000; // To minutes
+			long dias = diferencia / 1440;
+			diferencia %= 1440;
+			long horas = diferencia / 60;
+			long minutos = diferencia % 60;
+
+			if (horas > 10) {
+				dias++;
+				horas = 0;
+				minutos = 0;
+			}
+
+			return dias * PRECIO_DIA + horas * PRECIO_HORA
+				+ minutos * PRECIO_MINUTO;
 		}
 	}
 
