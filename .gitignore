@@ -2,3 +2,4 @@
 *.org
 !README.org
 **/bin/
+**/.settings/
