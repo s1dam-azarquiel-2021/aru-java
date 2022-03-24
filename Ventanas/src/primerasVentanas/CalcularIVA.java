@@ -1,0 +1,140 @@
+package primerasVentanas;
+
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+
+public class CalcularIVA extends JFrame {
+
+	private static final Font FONT_BIG = new Font("Iosevka", Font.BOLD, 18);
+	private static final Font FONT_SMALL = new Font("Iosevka", Font.BOLD, 14);
+	private JPanel contentPane;
+	private JTextField txtFieldCantidad;
+	private JTextField txtFieldIVA;
+	private JTextField txtFieldTotal;
+	private final ButtonGroup grupoIVA = new ButtonGroup();
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					CalcularIVA frame = new CalcularIVA();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public CalcularIVA() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 400, 330);
+		contentPane = new JPanel();
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+
+		txtFieldCantidad = generateTxtField(20, true);
+		JLabel lblCantidad = generateJLabel("Cantidad:", 20);
+
+		JRadioButton rdbtnIVA21 = generateRDBTNIva("21", 60);
+		JRadioButton rdbtnIVA10 = generateRDBTNIva("10", 100);
+		JRadioButton rdbtnIVA4 = generateRDBTNIva("4", 140);
+
+		JButton btnCalcular = new JButton("CALCULAR");
+		btnCalcular.setFont(FONT_SMALL);
+		btnCalcular.setBounds(100, 180, 200, 30);
+
+		JLabel lblIVA = generateJLabel("IVA:", 220);
+		txtFieldIVA = generateTxtField(220, false);
+
+		JLabel lblTotal = generateJLabel("Total:", 260);
+		txtFieldTotal = generateTxtField(260, false);
+
+		contentPane.add(lblCantidad);
+		contentPane.add(lblIVA);
+		contentPane.add(lblTotal);
+		contentPane.add(txtFieldTotal);
+		contentPane.add(txtFieldIVA);
+		contentPane.add(txtFieldCantidad);
+		contentPane.add(rdbtnIVA21);
+		contentPane.add(rdbtnIVA10);
+		contentPane.add(rdbtnIVA4);
+		contentPane.add(btnCalcular);
+
+		btnCalcular.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				calcular();
+			}
+		});
+	}
+
+	private JRadioButton generateRDBTNIva(String porcentaje, int y) {
+		JRadioButton resultado = new JRadioButton(porcentaje + "%");
+		grupoIVA.add(resultado);
+		resultado.setFont(FONT_BIG);
+		resultado.setHorizontalAlignment(SwingConstants.CENTER);
+		resultado.setBounds(100, y, 200, 30);
+		resultado.setActionCommand(porcentaje);
+		return resultado;
+	}
+
+	private JLabel generateJLabel(String texto, int y) {
+		JLabel resultado = new JLabel(texto);
+		resultado.setBounds(50, y, 140, 30);
+		resultado.setFont(FONT_SMALL);
+		resultado.setHorizontalAlignment(SwingConstants.RIGHT);
+		return resultado;
+	}
+
+	private JTextField generateTxtField(int y, boolean editable) {
+		JTextField resultado = new JTextField();
+		resultado.setBounds(210, y, 140, 30);
+		resultado.setFont(FONT_SMALL);
+		resultado.setHorizontalAlignment(SwingConstants.LEFT);
+		resultado.setEditable(editable);
+		resultado.setColumns(10);
+		return resultado;
+	}
+
+	private void calcular() {
+		final String CANTIDAD = this.txtFieldCantidad.getText();
+		if (CANTIDAD.isBlank()) {
+			JOptionPane.showMessageDialog(
+				this, "Rellena los campos", "Error", JOptionPane.ERROR_MESSAGE
+			);
+		}
+
+		try {
+			final double CANTIDAD_N = Double.parseDouble(CANTIDAD);
+			final double IVA_PORCENTAJE = Double.parseDouble(
+				this.grupoIVA.getSelection().getActionCommand()
+			);
+			final double IVA_TOTAL = CANTIDAD_N * IVA_PORCENTAJE / 100;
+
+			this.txtFieldIVA.setText(String.valueOf(IVA_TOTAL));
+			this.txtFieldTotal.setText(String.valueOf(IVA_TOTAL + CANTIDAD_N));
+		} catch (NumberFormatException e) {
+			JOptionPane.showMessageDialog(
+				this, "Valores invalidos", "Error", JOptionPane.ERROR_MESSAGE
+			);
+		}
+	}
+}
