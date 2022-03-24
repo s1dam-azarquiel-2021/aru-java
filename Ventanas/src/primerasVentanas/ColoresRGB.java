@@ -58,11 +58,11 @@ public class ColoresRGB extends JFrame {
 
 		colorVisualizer = new JPanel();
 		JLabel lblR = generateColorLbl("R", Color.RED, 125);
-		JLabel lblG = generateColorLbl("G", Color.BLUE, 165);
-		JLabel lblB = generateColorLbl("B", Color.GREEN, 205);
+		JLabel lblG = generateColorLbl("G", Color.GREEN, 165);
+		JLabel lblB = generateColorLbl("B", Color.BLUE, 205);
 		JLabel lblRValor = generateColorValueLbl(Color.RED, 125);
-		JLabel lblGValor = generateColorValueLbl(Color.BLUE, 165);
-		JLabel lblBValor = generateColorValueLbl(Color.GREEN, 205);
+		JLabel lblGValor = generateColorValueLbl(Color.GREEN, 165);
+		JLabel lblBValor = generateColorValueLbl(Color.BLUE, 205);
 		sliderR = generateSlider(125);
 		sliderG = generateSlider(165);
 		sliderB = generateSlider(205);
@@ -81,9 +81,9 @@ public class ColoresRGB extends JFrame {
 		colorVisualizer.setBounds(200, 15, 100, 100);
 		colorVisualizer.setBackground(Color.BLACK);
 
-		sliderR.addChangeListener(cambiarOnStateChange(lblRValor, sliderR));
-		sliderG.addChangeListener(cambiarOnStateChange(lblGValor, sliderG));
-		sliderB.addChangeListener(cambiarOnStateChange(lblBValor, sliderB));
+		sliderR.addChangeListener(actualizar(lblRValor, sliderR));
+		sliderG.addChangeListener(actualizar(lblGValor, sliderG));
+		sliderB.addChangeListener(actualizar(lblBValor, sliderB));
 	}
 
 	private JSlider generateSlider(int y) {
@@ -124,9 +124,7 @@ public class ColoresRGB extends JFrame {
 		jLabel.setText(String.valueOf(valor));
 	}
 
-	private ChangeListener cambiarOnStateChange(
-		JLabel jLabel, JSlider jSlider
-	) {
+	private ChangeListener actualizar(JLabel jLabel, JSlider jSlider) {
 		return new ChangeListener() {
 			public void stateChanged(ChangeEvent e) {
 				cambiarColor();
