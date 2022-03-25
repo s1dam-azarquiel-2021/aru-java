@@ -115,26 +115,34 @@ public class CalcularIVA extends JFrame {
 	}
 
 	private void calcular() {
-		final String CANTIDAD = this.txtFieldCantidad.getText();
-		if (CANTIDAD.isBlank()) {
+		if (this.txtFieldCantidad.getText().isBlank()) {
 			JOptionPane.showMessageDialog(
 				this, "Rellena los campos", "Error", JOptionPane.ERROR_MESSAGE
 			);
-		}
-
-		try {
-			final double CANTIDAD_N = Double.parseDouble(CANTIDAD);
-			final double IVA_PORCENTAJE = Double.parseDouble(
-				this.grupoIVA.getSelection().getActionCommand()
-			);
-			final double IVA_TOTAL = CANTIDAD_N * IVA_PORCENTAJE / 100;
-
-			this.txtFieldIVA.setText(String.valueOf(IVA_TOTAL));
-			this.txtFieldTotal.setText(String.valueOf(IVA_TOTAL + CANTIDAD_N));
-		} catch (NumberFormatException e) {
+		} else if (this.grupoIVA.getSelection() == null) {
 			JOptionPane.showMessageDialog(
-				this, "Valores invalidos", "Error", JOptionPane.ERROR_MESSAGE
+				this, "Elige un porcentaje de IVA", "Error",
+				JOptionPane.ERROR_MESSAGE
 			);
+		} else {
+			try {
+				final double CANTIDAD = Double.parseDouble(
+					this.txtFieldCantidad.getText()
+				);
+				final double IVA_TOTAL = CANTIDAD * Double.parseDouble(
+					this.grupoIVA.getSelection().getActionCommand()
+				) / 100;
+
+				this.txtFieldIVA.setText(String.valueOf(IVA_TOTAL));
+				this.txtFieldTotal.setText(
+					String.valueOf(IVA_TOTAL + CANTIDAD)
+				);
+			} catch (NumberFormatException e) {
+				JOptionPane.showMessageDialog(
+					this, "Valores invalidos", "Error",
+					JOptionPane.ERROR_MESSAGE
+				);
+			}
 		}
 	}
 }

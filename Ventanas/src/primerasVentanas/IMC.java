@@ -119,18 +119,20 @@ public class IMC extends JFrame {
 	}
 
 	private void calcular() {
-		final String peso = this.txtFieldPeso.getText();
-		final String altura = this.txtFieldAltura.getText();
-
-		if (peso.isBlank() || altura.isEmpty()) {
+		if (
+			this.txtFieldPeso.getText().isBlank()
+				|| this.txtFieldAltura.getText().isEmpty()
+		) {
 			JOptionPane.showMessageDialog(
 				this, "Rellena los campos", "Error", JOptionPane.ERROR_MESSAGE
 			);
 		} else {
 			try {
-				final double pesoN = Double.parseDouble(peso);
-				final double alturaN = Double.parseDouble(altura) / 100;
-				final double imc = pesoN / Math.pow(alturaN, 2);
+				final double imc = Double.parseDouble(
+					this.txtFieldPeso.getText()
+				) / Math.pow(
+					Double.parseDouble(this.txtFieldAltura.getText()) / 100, 2
+				);
 
 				DecimalFormat formato = new DecimalFormat("#0.00");
 
