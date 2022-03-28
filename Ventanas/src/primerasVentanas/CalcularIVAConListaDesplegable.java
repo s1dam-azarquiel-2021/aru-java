@@ -47,7 +47,7 @@ public class CalcularIVAConListaDesplegable extends JFrame {
 	 */
 	public CalcularIVAConListaDesplegable() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 400, 400);
+		setBounds(100, 100, 400, 260);
 		contentPane = new JPanel();
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
