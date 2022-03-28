@@ -48,7 +48,7 @@ public class CalcularIVA extends JFrame {
 	 */
 	public CalcularIVA() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 400, 330);
+		setBounds(100, 100, 400, 340);
 		contentPane = new JPanel();
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
