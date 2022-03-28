@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
+import javax.swing.UIManager;
 
 public class TipoDeLetra extends JFrame {
 
@@ -27,6 +28,9 @@ public class TipoDeLetra extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					UIManager.setLookAndFeel(
+						UIManager.getSystemLookAndFeelClassName()
+					);
 					TipoDeLetra frame = new TipoDeLetra();
 					frame.setVisible(true);
 				} catch (Exception e) {

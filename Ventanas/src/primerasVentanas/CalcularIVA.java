@@ -16,6 +16,7 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.UIManager;
 
 public class CalcularIVA extends JFrame {
 
@@ -34,6 +35,9 @@ public class CalcularIVA extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					UIManager.setLookAndFeel(
+						UIManager.getSystemLookAndFeelClassName()
+					);
 					CalcularIVA frame = new CalcularIVA();
 					frame.setVisible(true);
 				} catch (Exception e) {

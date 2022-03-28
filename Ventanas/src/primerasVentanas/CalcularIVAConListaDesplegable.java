@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.UIManager;
 
 public class CalcularIVAConListaDesplegable extends JFrame {
 
@@ -33,6 +34,9 @@ public class CalcularIVAConListaDesplegable extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					UIManager.setLookAndFeel(
+						UIManager.getSystemLookAndFeelClassName()
+					);
 					CalcularIVAConListaDesplegable frame = new CalcularIVAConListaDesplegable();
 					frame.setVisible(true);
 				} catch (Exception e) {
