@@ -4,6 +4,8 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -79,6 +81,10 @@ public class CalcularIVA extends JFrame {
 		contentPane.add(rdbtnIVA4);
 		contentPane.add(btnCalcular);
 
+		rdbtnIVA4.addItemListener(calcularAlSeleccionar());
+		rdbtnIVA10.addItemListener(calcularAlSeleccionar());
+		rdbtnIVA21.addItemListener(calcularAlSeleccionar());
+
 		btnCalcular.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				calcular();
@@ -112,6 +118,14 @@ public class CalcularIVA extends JFrame {
 		resultado.setEditable(editable);
 		resultado.setColumns(10);
 		return resultado;
+	}
+
+	private ItemListener calcularAlSeleccionar() {
+		return new ItemListener() {
+			public void itemStateChanged(ItemEvent e) {
+				calcular();
+			}
+		};
 	}
 
 	private void calcular() {
