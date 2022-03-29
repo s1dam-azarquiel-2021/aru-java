@@ -100,6 +100,7 @@ public class CalculadoraAntigua extends JFrame {
 		);
 
 		JButton btnAC = generateSquareBtn("AC", 420, 60);
+		JButton btnPosNeg = generateSquareBtn("+/-", 420, 260);
 
 		JButton btnCalcular = generateBtn("=", 120, 360, 200);
 
@@ -120,11 +121,18 @@ public class CalculadoraAntigua extends JFrame {
 		contentPane.add(btnMultiplication);
 		contentPane.add(btnDivision);
 		contentPane.add(btnAC);
+		contentPane.add(btnPosNeg);
 		contentPane.add(btnCalcular);
 
 		btnAC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				reiniciar();
+			}
+		});
+
+		btnPosNeg.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				cambiarSigno();
 			}
 		});
 
@@ -187,6 +195,18 @@ public class CalculadoraAntigua extends JFrame {
 
 	private void reiniciar() {
 		this.visualizadorNumero.setText("0");
+	}
+
+	private void cambiarSigno() {
+		if (this.visualizadorNumero.getText().startsWith("-")) {
+			this.visualizadorNumero.setText(
+				this.visualizadorNumero.getText().substring(1)
+			);
+		} else {
+			this.visualizadorNumero.setText(
+				"-" + this.visualizadorNumero.getText()
+			);
+		}
 	}
 
 	private void calcular() {
