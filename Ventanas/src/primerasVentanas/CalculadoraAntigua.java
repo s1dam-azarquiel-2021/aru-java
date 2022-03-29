@@ -35,6 +35,7 @@ public class CalculadoraAntigua extends JFrame {
 	private JTextField visualizadorNumaro;
 	private double numero1;
 	private Operation operacionARealizar = null;
+	private boolean repetirUltima = false;
 
 	/**
 	 * Launch the application.
@@ -85,7 +86,9 @@ public class CalculadoraAntigua extends JFrame {
 		JButton btn9 = generateNumberBtn("9", 220, 60);
 		JButton btnDot = generateNumberBtn(".", 420, 160);
 
-		JButton btnAddition = generateOperationBtn(Operation.ADDITION, 320, 60);
+		JButton btnAddition = generateOperationBtn(
+			Operation.ADDITION, 320, 60
+		);
 		JButton btnSubstraction = generateOperationBtn(
 			Operation.SUBSTRACTION, 320, 160
 		);
@@ -207,8 +210,10 @@ public class CalculadoraAntigua extends JFrame {
 					this.visualizadorNumaro.setText(String.valueOf(resultado));
 				}
 
-				this.operacionARealizar = null;
-				this.numero1 = resultado;
+				if (!repetirUltima) {
+					this.numero1 = numero2;
+					this.repetirUltima = true;
+				}
 			}
 		} catch (ArithmeticException e1) {
 			JOptionPane.showMessageDialog(
