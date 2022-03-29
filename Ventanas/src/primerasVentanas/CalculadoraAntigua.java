@@ -266,7 +266,10 @@ public class CalculadoraAntigua extends JFrame {
 			break;
 		}
 
-		if (Double.isInfinite(resultado)) {
+		if (
+			Double.isInfinite(resultado)
+				|| Double.isNaN(resultado)
+		) {
 			if (numero2 == 0) {
 				throw new ArithmeticException("Division por 0");
 			} else {
