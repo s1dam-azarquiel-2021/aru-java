@@ -16,6 +16,8 @@ import javax.swing.border.EmptyBorder;
 
 public class CalculadoraAntigua extends JFrame {
 
+	private static final String DEFAULT_NUMBER = "0";
+
 	private static enum Operation {
 		ADDITION("+"), SUBSTRACTION("-"), MULTIPLICATION("*"), DIVISION("/");
 
@@ -67,14 +69,14 @@ public class CalculadoraAntigua extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		visualizadorNumero = new JTextField("0");
+		visualizadorNumero = new JTextField(DEFAULT_NUMBER);
 		visualizadorNumero.setBounds(20, 20, 500, 30);
 		visualizadorNumero.setFont(FONT_SMALL);
 		visualizadorNumero.setHorizontalAlignment(SwingConstants.RIGHT);
 		visualizadorNumero.setEditable(false);
 		visualizadorNumero.setColumns(10);
 
-		JButton btn0 = generateNumberBtn("0", 20, 360);
+		JButton btn0 = generateNumberBtn(DEFAULT_NUMBER, 20, 360);
 		JButton btn1 = generateNumberBtn("1", 20, 260);
 		JButton btn2 = generateNumberBtn("2", 120, 260);
 		JButton btn3 = generateNumberBtn("3", 220, 260);
@@ -175,7 +177,7 @@ public class CalculadoraAntigua extends JFrame {
 
 	private void aniadirNumero(String number) {
 		if (
-			this.visualizadorNumero.getText().equals("0")
+			this.visualizadorNumero.getText().equals(DEFAULT_NUMBER)
 				&& !number.equals(".")
 		) {
 			this.visualizadorNumero.setText(number);
@@ -189,12 +191,12 @@ public class CalculadoraAntigua extends JFrame {
 	private void realizarOperacion(Operation operation) {
 		this.numero1 = Double.parseDouble(this.visualizadorNumero.getText());
 		this.operacionARealizar = operation;
-		this.visualizadorNumero.setText("0");
+		this.visualizadorNumero.setText(DEFAULT_NUMBER);
 		this.repetirUltima = false;
 	}
 
 	private void reiniciar() {
-		this.visualizadorNumero.setText("0");
+		this.visualizadorNumero.setText(DEFAULT_NUMBER);
 	}
 
 	private void cambiarSigno() {
