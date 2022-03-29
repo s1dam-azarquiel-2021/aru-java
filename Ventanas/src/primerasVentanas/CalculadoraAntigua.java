@@ -179,8 +179,15 @@ public class CalculadoraAntigua extends JFrame {
 		if (
 			this.visualizadorNumero.getText().equals(DEFAULT_NUMBER)
 				&& !number.equals(".")
+				|| this.visualizadorNumero.getText().equals(
+					"-" + DEFAULT_NUMBER
+				)
 		) {
-			this.visualizadorNumero.setText(number);
+			if (this.visualizadorNumero.getText().startsWith("-")) {
+				this.visualizadorNumero.setText("-" + number);
+			} else {
+				this.visualizadorNumero.setText(number);
+			}
 		} else if (
 			!(number.equals(".")
 				&& this.visualizadorNumero.getText().contains("."))
