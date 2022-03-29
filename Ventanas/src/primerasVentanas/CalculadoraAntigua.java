@@ -60,14 +60,14 @@ public class CalculadoraAntigua extends JFrame {
 	 */
 	public CalculadoraAntigua() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 440, 510);
+		setBounds(100, 100, 540, 510);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		visualizadorNumaro = new JTextField("0");
-		visualizadorNumaro.setBounds(20, 20, 400, 30);
+		visualizadorNumaro.setBounds(20, 20, 500, 30);
 		visualizadorNumaro.setFont(FONT_SMALL);
 		visualizadorNumaro.setHorizontalAlignment(SwingConstants.RIGHT);
 		visualizadorNumaro.setEditable(false);
@@ -83,6 +83,7 @@ public class CalculadoraAntigua extends JFrame {
 		JButton btn7 = generateNumberBtn("7", 20, 60);
 		JButton btn8 = generateNumberBtn("8", 120, 60);
 		JButton btn9 = generateNumberBtn("9", 220, 60);
+		JButton btnDot = generateNumberBtn(".", 420, 160);
 
 		JButton btnAddition = generateOperationBtn(Operation.ADDITION, 320, 60);
 		JButton btnSubstraction = generateOperationBtn(
@@ -108,6 +109,7 @@ public class CalculadoraAntigua extends JFrame {
 		contentPane.add(btn7);
 		contentPane.add(btn8);
 		contentPane.add(btn9);
+		contentPane.add(btnDot);
 		contentPane.add(btnAddition);
 		contentPane.add(btnSubstraction);
 		contentPane.add(btnMultiplication);
@@ -152,7 +154,10 @@ public class CalculadoraAntigua extends JFrame {
 	}
 
 	private void aniadirNumero(String number) {
-		if (this.visualizadorNumaro.getText().equals("0")) {
+		if (
+			this.visualizadorNumaro.getText().equals("0")
+				&& !number.equals(".")
+		) {
 			this.visualizadorNumaro.setText(number);
 		} else {
 			this.visualizadorNumaro.setText(
@@ -162,13 +167,14 @@ public class CalculadoraAntigua extends JFrame {
 	}
 
 	private void realizarOperacion(Operation operation) {
-		this.numero1 = Integer.parseInt(this.visualizadorNumaro.getText());
+		this.numero1 = Double.parseDouble(this.visualizadorNumaro.getText());
 		this.operacionARealizar = operation;
 		this.visualizadorNumaro.setText("0");
+		this.repetirUltima = false;
 	}
 
 	private void calcular() {
-		int numero2 = Integer.parseInt(this.visualizadorNumaro.getText());
+		double numero2 = Double.parseDouble(this.visualizadorNumaro.getText());
 		double resultado = 0;
 
 		try {
