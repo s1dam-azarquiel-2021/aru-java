@@ -210,30 +210,17 @@ public class CalculadoraAntigua extends JFrame {
 	}
 
 	private void calcular() {
-		double numero2 = Double.parseDouble(this.visualizadorNumero.getText());
-		double resultado = 0;
-
-		try {
-			if (this.operacionARealizar == null) {
-				JOptionPane.showMessageDialog(
-					this, "No seleccionaste ninguna operacion", "Error",
-					JOptionPane.ERROR_MESSAGE
+		if (this.operacionARealizar == null) {
+			JOptionPane.showMessageDialog(
+				this, "No seleccionaste ninguna operacion", "Error",
+				JOptionPane.ERROR_MESSAGE
+			);
+		} else {
+			try {
+				double numero2 = Double.parseDouble(
+					this.visualizadorNumero.getText()
 				);
-			} else {
-				switch (this.operacionARealizar) {
-				case ADDITION:
-					resultado = this.numero1 + numero2;
-					break;
-				case SUBSTRACTION:
-					resultado = this.numero1 - numero2;
-					break;
-				case MULTIPLICATION:
-					resultado = this.numero1 * numero2;
-					break;
-				case DIVISION:
-					resultado = this.numero1 / numero2;
-					break;
-				}
+				double resultado = calcularResultado(numero2);
 
 				if (resultado % 1 == 0.0) {
 					this.visualizadorNumero.setText(
@@ -247,11 +234,33 @@ public class CalculadoraAntigua extends JFrame {
 					this.numero1 = numero2;
 					this.repetirUltima = true;
 				}
+			} catch (ArithmeticException e1) {
+				JOptionPane.showMessageDialog(
+					this, "Division por cero", "Error",
+					JOptionPane.ERROR_MESSAGE
+				);
 			}
-		} catch (ArithmeticException e1) {
-			JOptionPane.showMessageDialog(
-				this, "Division por cero", "Error", JOptionPane.ERROR_MESSAGE
-			);
 		}
+	}
+
+	private double calcularResultado(double numero2) {
+		double resultado = 0;
+
+		switch (this.operacionARealizar) {
+		case ADDITION:
+			resultado = this.numero1 + numero2;
+			break;
+		case SUBSTRACTION:
+			resultado = this.numero1 - numero2;
+			break;
+		case MULTIPLICATION:
+			resultado = this.numero1 * numero2;
+			break;
+		case DIVISION:
+			resultado = this.numero1 / numero2;
+			break;
+		}
+
+		return resultado;
 	}
 }
