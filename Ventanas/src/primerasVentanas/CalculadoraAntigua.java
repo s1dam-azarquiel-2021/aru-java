@@ -66,7 +66,7 @@ public class CalculadoraAntigua extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		visualizadorNumaro = new JTextField();
+		visualizadorNumaro = new JTextField("0");
 		visualizadorNumaro.setBounds(20, 20, 400, 30);
 		visualizadorNumaro.setFont(FONT_SMALL);
 		visualizadorNumaro.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -135,7 +135,7 @@ public class CalculadoraAntigua extends JFrame {
 		JButton resultado = generateSquareBtn(number, x, y);
 		resultado.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				visualizadorNumaro.setText(aniadirNumero(number));
+				aniadirNumero(number);
 			}
 		});
 		return resultado;
@@ -151,66 +151,63 @@ public class CalculadoraAntigua extends JFrame {
 		return resultado;
 	}
 
-	private String aniadirNumero(String number) {
-		return visualizadorNumaro.getText() + number;
+	private void aniadirNumero(String number) {
+		if (this.visualizadorNumaro.getText().equals("0")) {
+			this.visualizadorNumaro.setText(number);
+		} else {
+			this.visualizadorNumaro.setText(
+				this.visualizadorNumaro.getText() + number
+			);
+		}
 	}
 
 	private void realizarOperacion(Operation operation) {
 		this.numero1 = Integer.parseInt(this.visualizadorNumaro.getText());
 		this.operacionARealizar = operation;
-		this.visualizadorNumaro.setText("");
+		this.visualizadorNumaro.setText("0");
 	}
 
 	private void calcular() {
-		if (this.visualizadorNumaro.getText().isBlank()) {
-			JOptionPane.showMessageDialog(
-				this, "Introduce un numero", "Error", JOptionPane.ERROR_MESSAGE
-			);
-		} else {
-			int numero2 = Integer.parseInt(this.visualizadorNumaro.getText());
-			double resultado = 0;
+		int numero2 = Integer.parseInt(this.visualizadorNumaro.getText());
+		double resultado = 0;
 
-			try {
-				if (this.operacionARealizar == null) {
-					JOptionPane.showMessageDialog(
-						this, "No seleccionaste ninguna operacion", "Error",
-						JOptionPane.ERROR_MESSAGE
-					);
-				} else {
-					switch (this.operacionARealizar) {
-					case ADDITION:
-						resultado = this.numero1 + numero2;
-						break;
-					case SUBSTRACTION:
-						resultado = this.numero1 - numero2;
-						break;
-					case MULTIPLICATION:
-						resultado = this.numero1 * numero2;
-						break;
-					case DIVISION:
-						resultado = this.numero1 / numero2;
-						break;
-					}
-
-					if (resultado % 1 == 0.0) {
-						this.visualizadorNumaro.setText(
-							String.valueOf((int) (resultado))
-						);
-					} else {
-						this.visualizadorNumaro.setText(
-							String.valueOf(resultado)
-						);
-					}
-
-					this.operacionARealizar = null;
-					this.numero1 = resultado;
-				}
-			} catch (ArithmeticException e1) {
+		try {
+			if (this.operacionARealizar == null) {
 				JOptionPane.showMessageDialog(
-					this, "Division por cero", "Error",
+					this, "No seleccionaste ninguna operacion", "Error",
 					JOptionPane.ERROR_MESSAGE
 				);
+			} else {
+				switch (this.operacionARealizar) {
+				case ADDITION:
+					resultado = this.numero1 + numero2;
+					break;
+				case SUBSTRACTION:
+					resultado = this.numero1 - numero2;
+					break;
+				case MULTIPLICATION:
+					resultado = this.numero1 * numero2;
+					break;
+				case DIVISION:
+					resultado = this.numero1 / numero2;
+					break;
+				}
+
+				if (resultado % 1 == 0.0) {
+					this.visualizadorNumaro.setText(
+						String.valueOf((int) (resultado))
+					);
+				} else {
+					this.visualizadorNumaro.setText(String.valueOf(resultado));
+				}
+
+				this.operacionARealizar = null;
+				this.numero1 = resultado;
 			}
+		} catch (ArithmeticException e1) {
+			JOptionPane.showMessageDialog(
+				this, "Division por cero", "Error", JOptionPane.ERROR_MESSAGE
+			);
 		}
 	}
 }
