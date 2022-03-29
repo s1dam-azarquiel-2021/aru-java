@@ -76,6 +76,7 @@ public class CalculadoraAntigua extends JFrame {
 		visualizadorNumero.setEditable(false);
 		visualizadorNumero.setColumns(10);
 
+		JButton btnDot = this.generateNumberBtn(".", 120, 360);
 		JButton btn0 = this.generateNumberBtn(DEFAULT_NUMBER, 20, 360);
 		JButton btn1 = this.generateNumberBtn("1", 20, 260);
 		JButton btn2 = this.generateNumberBtn("2", 120, 260);
@@ -86,7 +87,6 @@ public class CalculadoraAntigua extends JFrame {
 		JButton btn7 = this.generateNumberBtn("7", 20, 60);
 		JButton btn8 = this.generateNumberBtn("8", 120, 60);
 		JButton btn9 = this.generateNumberBtn("9", 220, 60);
-		JButton btnDot = this.generateNumberBtn(".", 420, 160);
 
 		JButton btnAddition = this.generateOperationBtn(
 			Operation.ADDITION, 320, 60
@@ -102,9 +102,9 @@ public class CalculadoraAntigua extends JFrame {
 		);
 
 		JButton btnCE = this.generateSquareBtn("CE", 420, 60);
-		JButton btnPosNeg = this.generateSquareBtn("+/-", 420, 260);
+		JButton btnPosNeg = this.generateSquareBtn("+/-", 220, 360);
 
-		JButton btnCalcular = this.generateBtn("=", 120, 360, 200);
+		JButton btnCalcular = this.generateBtn("=", 420, 160, 100, 300);
 
 		contentPane.add(visualizadorNumero);
 		contentPane.add(btn0);
@@ -145,14 +145,14 @@ public class CalculadoraAntigua extends JFrame {
 		});
 	}
 
-	private JButton generateBtn(String text, int x, int y, int w) {
+	private JButton generateBtn(String text, int x, int y, int w, int h) {
 		JButton resultado = new JButton(text);
-		resultado.setBounds(x, y, w, 100);
+		resultado.setBounds(x, y, w, h);
 		return resultado;
 	}
 
 	private JButton generateSquareBtn(String text, int x, int y) {
-		return this.generateBtn(text, x, y, 100);
+		return this.generateBtn(text, x, y, 100, 100);
 	}
 
 	private JButton generateNumberBtn(String number, int x, int y) {
