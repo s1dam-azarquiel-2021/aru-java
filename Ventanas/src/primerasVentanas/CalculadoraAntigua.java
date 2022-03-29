@@ -32,7 +32,7 @@ public class CalculadoraAntigua extends JFrame {
 
 	private static final Font FONT_SMALL = new Font("Iosevka", Font.BOLD, 14);
 	private JPanel contentPane;
-	private JTextField visualizadorNumaro;
+	private JTextField visualizadorNumero;
 	private double numero1;
 	private Operation operacionARealizar = null;
 	private boolean repetirUltima = false;
@@ -67,12 +67,12 @@ public class CalculadoraAntigua extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		visualizadorNumaro = new JTextField("0");
-		visualizadorNumaro.setBounds(20, 20, 500, 30);
-		visualizadorNumaro.setFont(FONT_SMALL);
-		visualizadorNumaro.setHorizontalAlignment(SwingConstants.RIGHT);
-		visualizadorNumaro.setEditable(false);
-		visualizadorNumaro.setColumns(10);
+		visualizadorNumero = new JTextField("0");
+		visualizadorNumero.setBounds(20, 20, 500, 30);
+		visualizadorNumero.setFont(FONT_SMALL);
+		visualizadorNumero.setHorizontalAlignment(SwingConstants.RIGHT);
+		visualizadorNumero.setEditable(false);
+		visualizadorNumero.setColumns(10);
 
 		JButton btn0 = generateNumberBtn("0", 20, 360);
 		JButton btn1 = generateNumberBtn("1", 20, 260);
@@ -101,7 +101,7 @@ public class CalculadoraAntigua extends JFrame {
 
 		JButton btnCalcular = generateBtn("=", 120, 360, 200);
 
-		contentPane.add(visualizadorNumaro);
+		contentPane.add(visualizadorNumero);
 		contentPane.add(btn0);
 		contentPane.add(btn1);
 		contentPane.add(btn2);
@@ -158,26 +158,26 @@ public class CalculadoraAntigua extends JFrame {
 
 	private void aniadirNumero(String number) {
 		if (
-			this.visualizadorNumaro.getText().equals("0")
+			this.visualizadorNumero.getText().equals("0")
 				&& !number.equals(".")
 		) {
-			this.visualizadorNumaro.setText(number);
+			this.visualizadorNumero.setText(number);
 		} else {
-			this.visualizadorNumaro.setText(
-				this.visualizadorNumaro.getText() + number
+			this.visualizadorNumero.setText(
+				this.visualizadorNumero.getText() + number
 			);
 		}
 	}
 
 	private void realizarOperacion(Operation operation) {
-		this.numero1 = Double.parseDouble(this.visualizadorNumaro.getText());
+		this.numero1 = Double.parseDouble(this.visualizadorNumero.getText());
 		this.operacionARealizar = operation;
-		this.visualizadorNumaro.setText("0");
+		this.visualizadorNumero.setText("0");
 		this.repetirUltima = false;
 	}
 
 	private void calcular() {
-		double numero2 = Double.parseDouble(this.visualizadorNumaro.getText());
+		double numero2 = Double.parseDouble(this.visualizadorNumero.getText());
 		double resultado = 0;
 
 		try {
@@ -203,11 +203,11 @@ public class CalculadoraAntigua extends JFrame {
 				}
 
 				if (resultado % 1 == 0.0) {
-					this.visualizadorNumaro.setText(
+					this.visualizadorNumero.setText(
 						String.valueOf((int) (resultado))
 					);
 				} else {
-					this.visualizadorNumaro.setText(String.valueOf(resultado));
+					this.visualizadorNumero.setText(String.valueOf(resultado));
 				}
 
 				if (!repetirUltima) {
