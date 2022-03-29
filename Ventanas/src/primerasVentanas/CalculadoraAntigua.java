@@ -37,6 +37,7 @@ public class CalculadoraAntigua extends JFrame {
 	private JTextField visualizadorNumero;
 	private double numero1;
 	private Operation operacionARealizar = null;
+	private boolean operacionRealizada = false;
 	private boolean repetirUltima = false;
 
 	/**
@@ -176,6 +177,11 @@ public class CalculadoraAntigua extends JFrame {
 	}
 
 	private void aniadirNumero(String number) {
+		if (operacionRealizada) {
+			this.visualizadorNumero.setText(DEFAULT_NUMBER);
+			this.operacionRealizada = false;
+		}
+
 		if (
 			this.visualizadorNumero.getText().equals(DEFAULT_NUMBER)
 				&& !number.equals(".")
@@ -201,8 +207,8 @@ public class CalculadoraAntigua extends JFrame {
 	private void realizarOperacion(Operation operation) {
 		this.numero1 = Double.parseDouble(this.visualizadorNumero.getText());
 		this.operacionARealizar = operation;
-		this.visualizadorNumero.setText(DEFAULT_NUMBER);
 		this.repetirUltima = false;
+		this.operacionRealizada = true;
 	}
 
 	private void reiniciar() {
@@ -210,14 +216,16 @@ public class CalculadoraAntigua extends JFrame {
 	}
 
 	private void cambiarSigno() {
-		if (this.visualizadorNumero.getText().startsWith("-")) {
-			this.visualizadorNumero.setText(
-				this.visualizadorNumero.getText().substring(1)
-			);
-		} else {
-			this.visualizadorNumero.setText(
-				"-" + this.visualizadorNumero.getText()
-			);
+		if (!this.operacionRealizada) {
+			if (this.visualizadorNumero.getText().startsWith("-")) {
+				this.visualizadorNumero.setText(
+					this.visualizadorNumero.getText().substring(1)
+				);
+			} else {
+				this.visualizadorNumero.setText(
+					"-" + this.visualizadorNumero.getText()
+				);
+			}
 		}
 	}
 
