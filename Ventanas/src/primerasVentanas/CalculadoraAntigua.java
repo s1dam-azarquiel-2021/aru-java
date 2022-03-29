@@ -181,7 +181,10 @@ public class CalculadoraAntigua extends JFrame {
 				&& !number.equals(".")
 		) {
 			this.visualizadorNumero.setText(number);
-		} else {
+		} else if (
+			!(number.equals(".")
+				&& this.visualizadorNumero.getText().contains("."))
+		) {
 			this.visualizadorNumero.setText(
 				this.visualizadorNumero.getText() + number
 			);
