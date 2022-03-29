@@ -99,6 +99,8 @@ public class CalculadoraAntigua extends JFrame {
 			Operation.DIVISION, 320, 360
 		);
 
+		JButton btnAC = generateSquareBtn("AC", 420, 60);
+
 		JButton btnCalcular = generateBtn("=", 120, 360, 200);
 
 		contentPane.add(visualizadorNumero);
@@ -117,7 +119,14 @@ public class CalculadoraAntigua extends JFrame {
 		contentPane.add(btnSubstraction);
 		contentPane.add(btnMultiplication);
 		contentPane.add(btnDivision);
+		contentPane.add(btnAC);
 		contentPane.add(btnCalcular);
+
+		btnAC.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				reiniciar();
+			}
+		});
 
 		btnCalcular.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -174,6 +183,10 @@ public class CalculadoraAntigua extends JFrame {
 		this.operacionARealizar = operation;
 		this.visualizadorNumero.setText("0");
 		this.repetirUltima = false;
+	}
+
+	private void reiniciar() {
+		this.visualizadorNumero.setText("0");
 	}
 
 	private void calcular() {
