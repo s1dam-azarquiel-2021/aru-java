@@ -101,7 +101,7 @@ public class CalculadoraAntigua extends JFrame {
 			Operation.DIVISION, 320, 360
 		);
 
-		JButton btnAC = this.generateSquareBtn("AC", 420, 60);
+		JButton btnCE = this.generateSquareBtn("CE", 420, 60);
 		JButton btnPosNeg = this.generateSquareBtn("+/-", 420, 260);
 
 		JButton btnCalcular = this.generateBtn("=", 120, 360, 200);
@@ -122,11 +122,11 @@ public class CalculadoraAntigua extends JFrame {
 		contentPane.add(btnSubstraction);
 		contentPane.add(btnMultiplication);
 		contentPane.add(btnDivision);
-		contentPane.add(btnAC);
+		contentPane.add(btnCE);
 		contentPane.add(btnPosNeg);
 		contentPane.add(btnCalcular);
 
-		btnAC.addActionListener(new ActionListener() {
+		btnCE.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				reiniciar();
 			}
