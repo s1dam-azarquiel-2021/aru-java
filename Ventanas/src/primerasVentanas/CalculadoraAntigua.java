@@ -222,7 +222,7 @@ public class CalculadoraAntigua extends JFrame {
 				double numero2 = Double.parseDouble(
 					this.visualizadorNumero.getText()
 				);
-				double resultado = calcularResultado(numero2);
+				double resultado = this.calcularResultado(numero2);
 
 				if (resultado % 1 == 0.0) {
 					this.visualizadorNumero.setText(
@@ -232,20 +232,20 @@ public class CalculadoraAntigua extends JFrame {
 					this.visualizadorNumero.setText(String.valueOf(resultado));
 				}
 
-				if (!repetirUltima) {
+				if (!this.repetirUltima) {
 					this.numero1 = numero2;
 					this.repetirUltima = true;
 				}
-			} catch (ArithmeticException e1) {
+			} catch (ArithmeticException e) {
 				JOptionPane.showMessageDialog(
-					this, "Division por cero", "Error",
-					JOptionPane.ERROR_MESSAGE
+					this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE
 				);
 			}
 		}
 	}
 
-	private double calcularResultado(double numero2) {
+	private double calcularResultado(double numero2)
+		throws ArithmeticException {
 		double resultado = 0;
 
 		switch (this.operacionARealizar) {
@@ -263,6 +263,14 @@ public class CalculadoraAntigua extends JFrame {
 			break;
 		}
 
-		return resultado;
+		if (Double.isInfinite(resultado)) {
+			if (numero2 == 0) {
+				throw new ArithmeticException("Division por 0");
+			} else {
+				throw new ArithmeticException("Sale infinito");
+			}
+		} else {
+			return resultado;
+		}
 	}
 }
