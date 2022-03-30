@@ -1,4 +1,4 @@
-package primerasVentanas;
+package dialogos;
 
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;

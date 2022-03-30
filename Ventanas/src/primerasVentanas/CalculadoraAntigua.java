@@ -14,7 +14,6 @@ import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 
 public class CalculadoraAntigua extends JFrame {
-
 	private static final String DEFAULT_NUMBER = "0";
 
 	private static enum Operation {
@@ -279,10 +278,7 @@ public class CalculadoraAntigua extends JFrame {
 			break;
 		}
 
-		if (
-			Double.isInfinite(resultado)
-				|| Double.isNaN(resultado)
-		) {
+		if (Double.isInfinite(resultado) || Double.isNaN(resultado)) {
 			if (numero2 == 0) {
 				throw new ArithmeticException("Division por 0");
 			} else {
