@@ -16,9 +16,6 @@ public class Formulario2 extends JFrame {
 	private JTextField textFieldNombre;
 	private JTextField textFieldEdad;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -35,9 +32,6 @@ public class Formulario2 extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
 	public Formulario2() {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setBounds(100, 100, 230, 180);

@@ -19,7 +19,6 @@ import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 
 public class CalcularIVA extends JFrame {
-
 	private static final Font FONT_BIG = new Font("Iosevka", Font.BOLD, 18);
 	private static final Font FONT_SMALL = new Font("Iosevka", Font.BOLD, 14);
 	private JPanel contentPane;
@@ -28,9 +27,6 @@ public class CalcularIVA extends JFrame {
 	private JTextField txtFieldTotal;
 	private final ButtonGroup grupoIVA = new ButtonGroup();
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -47,9 +43,6 @@ public class CalcularIVA extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
 	public CalcularIVA() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 400, 340);

@@ -38,9 +38,6 @@ public class CalculadoraAntigua extends JFrame {
 	private boolean operacionRealizada = false;
 	private boolean repetirUltima = false;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -57,9 +54,6 @@ public class CalculadoraAntigua extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
 	public CalculadoraAntigua() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 550, 510);
@@ -181,10 +175,8 @@ public class CalculadoraAntigua extends JFrame {
 
 		if (
 			this.visualizadorNumero.getText().equals(DEFAULT_NUMBER)
-				&& !number.equals(".")
-				|| this.visualizadorNumero.getText().equals(
-					"-" + DEFAULT_NUMBER
-				)
+			&& !number.equals(".")
+			|| this.visualizadorNumero.getText().equals("-" + DEFAULT_NUMBER)
 		) {
 			if (this.visualizadorNumero.getText().startsWith("-")) {
 				this.visualizadorNumero.setText("-" + number);
@@ -193,7 +185,7 @@ public class CalculadoraAntigua extends JFrame {
 			}
 		} else if (
 			!(number.equals(".")
-				&& this.visualizadorNumero.getText().contains("."))
+			&& this.visualizadorNumero.getText().contains("."))
 		) {
 			this.visualizadorNumero.setText(
 				this.visualizadorNumero.getText() + number

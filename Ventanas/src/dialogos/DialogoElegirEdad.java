@@ -17,16 +17,10 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 public class DialogoElegirEdad extends JDialog {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private JLabel lblEdad;
 	private JSlider slider;
 
-	/**
-	 * Create the dialog.
-	 */
 	public DialogoElegirEdad(JFrame padre, boolean modal) {
 		super(padre, modal);
 		this.setResizable(false);

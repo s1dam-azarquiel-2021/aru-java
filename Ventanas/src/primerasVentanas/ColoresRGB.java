@@ -15,7 +15,6 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 public class ColoresRGB extends JFrame {
-
 	private static final Font MAIN_FONT = new Font(
 		"Iosevka Extrabold", Font.BOLD, 20
 	);
@@ -25,9 +24,6 @@ public class ColoresRGB extends JFrame {
 	private JSlider sliderG;
 	private JSlider sliderB;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -44,9 +40,6 @@ public class ColoresRGB extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
 	public ColoresRGB() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 500, 300);
@@ -131,6 +124,5 @@ public class ColoresRGB extends JFrame {
 				cambiarValor(jLabel, jSlider.getValue());
 			}
 		};
-
 	}
 }

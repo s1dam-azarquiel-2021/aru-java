@@ -13,14 +13,10 @@ import javax.swing.JTextField;
 import javax.swing.UIManager;
 
 public class Formulario extends JFrame {
-
 	private JPanel contentPane;
 	private JTextField textFieldNombre;
 	private JTextField textFieldEdad;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -37,9 +33,6 @@ public class Formulario extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
 	public Formulario() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 230, 180);
@@ -97,7 +90,7 @@ public class Formulario extends JFrame {
 			);
 		} else if (
 			Integer.parseInt(this.textFieldEdad.getText()) < 0
-				|| Integer.parseInt(this.textFieldEdad.getText()) > 120
+			|| Integer.parseInt(this.textFieldEdad.getText()) > 120
 		) {
 			JOptionPane.showMessageDialog(
 				this, "Revise la edad", "Error", JOptionPane.WARNING_MESSAGE

@@ -19,7 +19,6 @@ import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 
 public class CalcularIVAConListaDesplegable extends JFrame {
-
 	private static final Font FONT_SMALL = new Font("Iosevka", Font.BOLD, 14);
 	private JPanel contentPane;
 	private JTextField txtFieldCantidad;
@@ -27,9 +26,6 @@ public class CalcularIVAConListaDesplegable extends JFrame {
 	private JTextField txtFieldTotal;
 	private JComboBox<Integer> comboBox;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -37,7 +33,8 @@ public class CalcularIVAConListaDesplegable extends JFrame {
 					UIManager.setLookAndFeel(
 						UIManager.getSystemLookAndFeelClassName()
 					);
-					CalcularIVAConListaDesplegable frame = new CalcularIVAConListaDesplegable();
+					CalcularIVAConListaDesplegable frame =
+						new CalcularIVAConListaDesplegable();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -46,9 +43,6 @@ public class CalcularIVAConListaDesplegable extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
 	public CalcularIVAConListaDesplegable() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 400, 260);
@@ -126,7 +120,7 @@ public class CalcularIVAConListaDesplegable extends JFrame {
 					this.txtFieldCantidad.getText()
 				);
 				final double IVA_TOTAL = CANTIDAD
-					* (Integer) (comboBox.getSelectedItem()) / 100;
+				* (Integer) (comboBox.getSelectedItem()) / 100;
 
 				this.txtFieldIVA.setText(String.valueOf(IVA_TOTAL));
 				this.txtFieldTotal.setText(

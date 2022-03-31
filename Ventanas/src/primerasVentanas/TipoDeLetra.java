@@ -13,7 +13,6 @@ import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 
 public class TipoDeLetra extends JFrame {
-
 	private static final Font MAIN_FONT = new Font("Iosevka", Font.PLAIN, 40);
 	private static final Font CHKBX_FONT = new Font("Iosevka", Font.PLAIN, 15);
 	private JPanel contentPane;
@@ -21,9 +20,6 @@ public class TipoDeLetra extends JFrame {
 	private JCheckBox chckbxCursiva;
 	private JLabel lblTexto;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -40,9 +36,6 @@ public class TipoDeLetra extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
 	public TipoDeLetra() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 400, 210);

@@ -17,7 +17,6 @@ import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 
 public class IMC extends JFrame {
-
 	private static final Font FONT_BIG = new Font("Iosevka", Font.BOLD, 18);
 	private static final Font FONT_SMALL = new Font("Iosevka", Font.BOLD, 14);
 	private JPanel contentPane;
@@ -26,9 +25,6 @@ public class IMC extends JFrame {
 	private JLabel lblIMCValor;
 	private JLabel lblIMCTexto;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -46,9 +42,6 @@ public class IMC extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
 	public IMC() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 400, 210);
@@ -121,7 +114,7 @@ public class IMC extends JFrame {
 	private void calcular() {
 		if (
 			this.txtFieldPeso.getText().isBlank()
-				|| this.txtFieldAltura.getText().isEmpty()
+			|| this.txtFieldAltura.getText().isEmpty()
 		) {
 			JOptionPane.showMessageDialog(
 				this, "Rellena los campos", "Error", JOptionPane.ERROR_MESSAGE
