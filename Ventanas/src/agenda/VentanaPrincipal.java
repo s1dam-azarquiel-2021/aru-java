@@ -80,7 +80,7 @@ public class VentanaPrincipal extends JFrame {
 		dialogoNuevoContacto.setLocationRelativeTo(this);
 		dialogoNuevoContacto.setVisible(true);
 
-		actualizarTablaContactos();
+		this.actualizarTablaContactos();
 	}
 
 	private void eliminar() {
@@ -89,7 +89,7 @@ public class VentanaPrincipal extends JFrame {
 		dialogoEliminarContacto.setLocationRelativeTo(this);
 		dialogoEliminarContacto.setVisible(true);
 
-		actualizarTablaContactos();
+		this.actualizarTablaContactos();
 	}
 
 	private void actualizarTablaContactos() {
@@ -100,7 +100,7 @@ public class VentanaPrincipal extends JFrame {
 			datos[i][1] = this.agenda.getLista().get(i).getTelefono();
 		}
 
-		table.setModel(new DefaultTableModel(datos, new String[] {
+		this.table.setModel(new DefaultTableModel(datos, new String[] {
 			"Nombre", "Telefono"
 		}) {
 			private static final long serialVersionUID = 1L;
