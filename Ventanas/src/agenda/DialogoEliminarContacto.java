@@ -83,36 +83,20 @@ public class DialogoEliminarContacto extends JDialog {
 				JOptionPane.WARNING_MESSAGE
 			);
 		} else {
+			boolean eliminado = false;
 			switch (this.grupoBorrarPor.getSelection().getActionCommand()) {
 			case "nombre":
-				if (
+				eliminado =
 					((VentanaPrincipal) this.getParent()).getAgenda().remove(
 						this.txtFieldNumero.getText()
-					)
-				) {
-					this.dispose();
-				} else {
-					JOptionPane.showMessageDialog(
-						this, "No se encontro ningun contacto con ese nombre",
-						"Error", JOptionPane.ERROR_MESSAGE
 					);
-				}
 				break;
 			case "numero":
 				try {
-					if (
+					eliminado =
 						((VentanaPrincipal) this.getParent()).getAgenda().remove(
 							Long.parseLong(this.txtFieldNumero.getText())
-						)
-					) {
-						this.dispose();
-					} else {
-						JOptionPane.showMessageDialog(
-							this,
-							"No se encontro ningun contacto con ese numero",
-							"Error", JOptionPane.ERROR_MESSAGE
 						);
-					}
 				} catch (NumberFormatException e) {
 					JOptionPane.showMessageDialog(
 						this, "No es un numero valido", "Warning",
@@ -120,6 +104,16 @@ public class DialogoEliminarContacto extends JDialog {
 					);
 				}
 				break;
+			}
+
+			if (eliminado) {
+				this.dispose();
+			} else {
+				JOptionPane.showMessageDialog(
+					this, "No se encontro ningun contacto con ese "
+					+ this.grupoBorrarPor.getSelection().getActionCommand(),
+					"Error", JOptionPane.ERROR_MESSAGE
+				);
 			}
 		}
 	}
