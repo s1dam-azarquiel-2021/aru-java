@@ -3,8 +3,6 @@ package agenda;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.Vector;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -16,7 +14,6 @@ import javax.swing.table.DefaultTableModel;
 
 public class VentanaPrincipal extends JFrame {
 	private Agenda agenda;
-	private Vector<Vector<Object>> datosTabla;
 	private JTable table;
 
 	public static void main(String[] args) {
@@ -51,8 +48,6 @@ public class VentanaPrincipal extends JFrame {
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(20, 20, 410, 210);
 		contentPane.add(scrollPane);
-
-		datosTabla = new Vector<Vector<Object>>();
 
 		table = new JTable();
 		this.actualizarTablaContactos();
@@ -99,11 +94,10 @@ public class VentanaPrincipal extends JFrame {
 
 	private void actualizarTablaContactos() {
 		Object[][] datos = new Object[this.agenda.size()][2];
-		ArrayList<Contacto> lista = this.agenda.getLista();
 
 		for (int i = 0; i < datos.length; i++) {
-			datos[i][0] = lista.get(i).getNombre();
-			datos[i][1] = lista.get(i).getTelefono();
+			datos[i][0] = this.agenda.getLista().get(i).getNombre();
+			datos[i][1] = this.agenda.getLista().get(i).getTelefono();
 		}
 
 		table.setModel(new DefaultTableModel(datos, new String[] {
