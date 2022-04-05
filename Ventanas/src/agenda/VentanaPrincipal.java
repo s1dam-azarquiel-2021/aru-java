@@ -40,7 +40,7 @@ public class VentanaPrincipal extends JFrame {
 	 */
 	public VentanaPrincipal() {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setBounds(100, 100, 450, 300);
+		this.setBounds(100, 100, 460, 320);
 
 		this.agenda = new Agenda();
 
@@ -49,7 +49,7 @@ public class VentanaPrincipal extends JFrame {
 		this.setContentPane(contentPane);
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(25, 39, 394, 168);
+		scrollPane.setBounds(20, 20, 410, 210);
 		contentPane.add(scrollPane);
 
 		datosTabla = new Vector<Vector<Object>>();
@@ -67,7 +67,7 @@ public class VentanaPrincipal extends JFrame {
 				nuevo();
 			}
 		});
-		btnNuevo.setBounds(25, 228, 106, 25);
+		btnNuevo.setBounds(20, 250, 100, 30);
 		contentPane.add(btnNuevo);
 
 		JButton btnEliminar = new JButton("Eliminar");
@@ -76,7 +76,7 @@ public class VentanaPrincipal extends JFrame {
 				eliminar();
 			}
 		});
-		btnEliminar.setBounds(313, 228, 106, 25);
+		btnEliminar.setBounds(330, 250, 100, 30);
 		contentPane.add(btnEliminar);
 	}
 
