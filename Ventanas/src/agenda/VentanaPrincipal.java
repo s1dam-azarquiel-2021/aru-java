@@ -55,9 +55,7 @@ public class VentanaPrincipal extends JFrame {
 		datosTabla = new Vector<Vector<Object>>();
 
 		table = new JTable();
-		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] {
-			"Nombre", "Numero"
-		}));
+		this.actualizarTablaContactos();
 
 		scrollPane.setViewportView(table);
 
@@ -110,7 +108,25 @@ public class VentanaPrincipal extends JFrame {
 
 		table.setModel(new DefaultTableModel(datos, new String[] {
 			"Nombre", "Telefono"
-		}));
+		}) {
+			private static final long serialVersionUID = 1L;
+
+			Class[] columnTypes = new Class[] {
+				String.class, Long.class
+			};
+
+			public Class getColumnClass(int columnIndex) {
+				return columnTypes[columnIndex];
+			}
+
+			boolean[] columnEditables = new boolean[] {
+				false, false
+			};
+
+			public boolean isCellEditable(int row, int column) {
+				return columnEditables[column];
+			}
+		});
 	}
 
 	public Agenda getAgenda() {
