@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -78,12 +79,68 @@ public class DialogoNuevoModulo extends JDialog {
 		this.getContentPane().add(buttonPane, BorderLayout.SOUTH);
 
 		JButton okButton = new JButton("OK");
+		okButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				confirmar();
+			}
+		});
 		okButton.setActionCommand("OK");
 		buttonPane.add(okButton);
 		this.getRootPane().setDefaultButton(okButton);
 
 		JButton cancelButton = new JButton("Cancel");
+		cancelButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				cancelar();
+			}
+		});
 		cancelButton.setActionCommand("Cancel");
 		buttonPane.add(cancelButton);
+	}
+
+	private void confirmar() {
+		if (this.textFieldNombre.getText().isBlank()) {
+			JOptionPane.showMessageDialog(
+				this, "El campo nombre está vacío", "Warning",
+				JOptionPane.WARNING_MESSAGE
+			);
+		} else if (this.textFieldNotaEv1.getText().isBlank()) {
+			JOptionPane.showMessageDialog(
+				this, "El campo nota de 1aEv está vacío", "Warning",
+				JOptionPane.WARNING_MESSAGE
+			);
+		} else if (this.textFieldNotaEv2.getText().isBlank()) {
+			JOptionPane.showMessageDialog(
+				this, "El campo nota de 2aEv está vacío", "Warning",
+				JOptionPane.WARNING_MESSAGE
+			);
+		} else if (this.textFieldNotaEv3.getText().isBlank()) {
+			JOptionPane.showMessageDialog(
+				this, "El campo nota de 3aEv está vacío", "Warning",
+				JOptionPane.WARNING_MESSAGE
+			);
+		} else {
+			try {
+				((VentanaPrincipal) this.getParent()).getExpediente().addModulo(
+					new Modulo(
+						this.textFieldNombre.getText(), Integer.parseInt(
+							this.textFieldNotaEv1.getText()
+						), Integer.parseInt(this.textFieldNotaEv2.getText()),
+						Integer.parseInt(this.textFieldNotaEv3.getText())
+					)
+				);
+
+				this.dispose();
+			} catch (NumberFormatException e) {
+				JOptionPane.showMessageDialog(
+					this, "Una de las notas no es numero", "Error",
+					JOptionPane.ERROR_MESSAGE
+				);
+			}
+		}
+	}
+
+	private void cancelar() {
+		this.dispose();
 	}
 }

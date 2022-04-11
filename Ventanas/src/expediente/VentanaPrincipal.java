@@ -129,4 +129,8 @@ public class VentanaPrincipal extends JFrame {
 			}
 		});
 	}
+
+	public Expediente getExpediente() {
+		return this.expediente;
+	}
 }
