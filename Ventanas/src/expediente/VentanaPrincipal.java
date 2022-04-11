@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -79,6 +80,11 @@ public class VentanaPrincipal extends JFrame {
 		contentPane.add(btnModificarModulo);
 
 		JButton btnEliminarModulo = new JButton("Elimininar");
+		btnEliminarModulo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				eliminarModulo();
+			}
+		});
 		btnEliminarModulo.setBounds(640, 180, 100, 30);
 		contentPane.add(btnEliminarModulo);
 
@@ -93,6 +99,23 @@ public class VentanaPrincipal extends JFrame {
 		dialogoNuevoModulo.setVisible(true);
 
 		this.actualizarTablaModulos();
+	}
+
+	private void eliminarModulo() {
+		if (this.table.getSelectedRow() == -1) {
+			JOptionPane.showMessageDialog(
+				this, "No estas seleccionando ningun modulo", "Warning",
+				JOptionPane.WARNING_MESSAGE
+			);
+		} else {
+			this.expediente.removeModulo(
+				this.expediente.getModulos().get(
+					this.table.getSelectedRow()
+				).getNombre()
+			);
+
+			this.actualizarTablaModulos();
+		}
 	}
 
 	private void actualizarTablaModulos() {
