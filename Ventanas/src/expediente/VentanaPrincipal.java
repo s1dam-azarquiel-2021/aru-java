@@ -1,6 +1,8 @@
 package expediente;
 
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -64,6 +66,11 @@ public class VentanaPrincipal extends JFrame {
 		scrollPane.setViewportView(table);
 
 		JButton btnNuevoModulo = new JButton("Nuevo");
+		btnNuevoModulo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				nuevoModulo();
+			}
+		});
 		btnNuevoModulo.setBounds(640, 100, 100, 30);
 		contentPane.add(btnNuevoModulo);
 
@@ -75,7 +82,17 @@ public class VentanaPrincipal extends JFrame {
 		btnEliminarModulo.setBounds(640, 180, 100, 30);
 		contentPane.add(btnEliminarModulo);
 
-		actualizarTablaModulos();
+		this.actualizarTablaModulos();
+	}
+
+	private void nuevoModulo() {
+		DialogoNuevoModulo dialogoNuevoModulo = new DialogoNuevoModulo(
+			this, true
+		);
+		dialogoNuevoModulo.setLocationRelativeTo(this);
+		dialogoNuevoModulo.setVisible(true);
+
+		this.actualizarTablaModulos();
 	}
 
 	private void actualizarTablaModulos() {
