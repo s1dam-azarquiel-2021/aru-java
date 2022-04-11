@@ -76,6 +76,11 @@ public class VentanaPrincipal extends JFrame {
 		contentPane.add(btnNuevoModulo);
 
 		JButton btnModificarModulo = new JButton("Modificar");
+		btnModificarModulo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				modificarModulo();
+			}
+		});
 		btnModificarModulo.setBounds(640, 140, 100, 30);
 		contentPane.add(btnModificarModulo);
 
@@ -113,6 +118,26 @@ public class VentanaPrincipal extends JFrame {
 					this.table.getSelectedRow()
 				).getNombre()
 			);
+
+			this.actualizarTablaModulos();
+		}
+	}
+
+	private void modificarModulo() {
+		if (this.table.getSelectedRow() == -1) {
+			JOptionPane.showMessageDialog(
+				this, "No estas seleccionando ningun modulo", "Warning",
+				JOptionPane.WARNING_MESSAGE
+			);
+		} else {
+			DialogoModificarModulo dialogoModificarModulo =
+				new DialogoModificarModulo(
+					this, true, this.expediente.getModulos().get(
+						this.table.getSelectedRow()
+					)
+				);
+			dialogoModificarModulo.setLocationRelativeTo(this);
+			dialogoModificarModulo.setVisible(true);
 
 			this.actualizarTablaModulos();
 		}
