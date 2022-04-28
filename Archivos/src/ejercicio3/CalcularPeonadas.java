@@ -17,17 +17,25 @@ public class CalcularPeonadas {
 	private String ficheroTotalPeonadas;
 
 	public static void main(String[] args) {
-		CalcularPeonadas calcularPeonadas = new CalcularPeonadas();
+		CalcularPeonadas calcularPeonadas = new CalcularPeonadas(
+			"Trabajadores.txt",
+			"Peonadas.txt",
+			"TotalPeonadas.txt"
+		);
 		calcularPeonadas.cargarTrabajadores();
 		calcularPeonadas.cargarPeonadas();
 		calcularPeonadas.guardarPeonadas();
 	}
 
-	public CalcularPeonadas() {
+	public CalcularPeonadas(
+		String ficheroTrabajadores, String ficheroPeonadas,
+		String ficheroTotalPeonadas
+	) {
+		super();
 		this.trabajadores = new ArrayList<Trabajador>();
-		this.ficheroTrabajadores = "Trabajadores.txt";
-		this.ficheroPeonadas = "Peonadas.txt";
-		this.ficheroTotalPeonadas = "TotalPeonadas.txt";
+		this.ficheroTrabajadores = ficheroTrabajadores;
+		this.ficheroPeonadas = ficheroPeonadas;
+		this.ficheroTotalPeonadas = ficheroTotalPeonadas;
 	}
 
 	public Trabajador getTrabajador(String nombre) {
@@ -71,7 +79,8 @@ public class CalcularPeonadas {
 				StringTokenizer partes = new StringTokenizer(linea, ":");
 				partes.nextToken();
 				StringTokenizer trabajadores = new StringTokenizer(
-					partes.nextToken(), ","
+					partes.nextToken(),
+					","
 				);
 
 				while (trabajadores.hasMoreElements()) {

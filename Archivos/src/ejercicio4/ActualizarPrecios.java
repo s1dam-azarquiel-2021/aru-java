@@ -17,14 +17,17 @@ public class ActualizarPrecios {
 	private String ficheroVehiculos;
 
 	public static void main(String[] args) throws ParseException {
-		ActualizarPrecios actualizarPrecios = new ActualizarPrecios();
+		ActualizarPrecios actualizarPrecios = new ActualizarPrecios(
+			"vehiculos.exp"
+		);
 		actualizarPrecios.cargarVehiculos();
 		actualizarPrecios.guardarVehiculos();
 	}
 
-	public ActualizarPrecios() {
+	public ActualizarPrecios(String ficheroVehiculos) {
+		super();
 		this.vehiculos = new ArrayList<Vehiculo>();
-		this.ficheroVehiculos = "vehiculos.exp";
+		this.ficheroVehiculos = ficheroVehiculos;
 	}
 
 	public void guardarVehiculos() {

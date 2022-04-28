@@ -20,21 +20,33 @@ public class MezclarDatos {
 	private String ficheroGuardado;
 
 	public static void main(String[] args) {
-		MezclarDatos mezclarDatos = new MezclarDatos();
+		MezclarDatos mezclarDatos = new MezclarDatos(
+			"demarcaciones.txt",
+			"selecciones.txt",
+			"jugadores.txt",
+			"mezclado.txt"
+		);
 		mezclarDatos.cargarDemarcaciones();
 		mezclarDatos.cargarSelecciones();
 		mezclarDatos.cargarJugadores();
 		mezclarDatos.guardarDatos();
 	}
 
-	public MezclarDatos() {
+	public MezclarDatos(
+		String ficheroDemarcaciones, String ficheroSelecciones,
+		String ficheroJugadores, String ficheroGuardado
+	) {
+		super();
 		this.selecciones = new ArrayList<Seleccion>();
 		this.demarcaciones = new ArrayList<Demarcacion>();
 		this.jugadores = new ArrayList<Jugador>();
-		this.ficheroDemarcaciones = "demarcaciones.txt";
-		this.ficheroSelecciones = "selecciones.txt";
-		this.ficheroJugadores = "jugadores.txt";
-		this.ficheroGuardado = "mezclado.txt";
+		this.ficheroDemarcaciones = ficheroDemarcaciones;
+		this.ficheroSelecciones = ficheroSelecciones;
+		this.ficheroJugadores = ficheroJugadores;
+		this.ficheroGuardado = ficheroGuardado;
+	}
+
+	public MezclarDatos() {
 	}
 
 	public void guardarDatos() {
