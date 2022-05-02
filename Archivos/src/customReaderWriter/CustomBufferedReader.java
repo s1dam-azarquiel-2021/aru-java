@@ -13,7 +13,7 @@ public abstract class CustomBufferedReader {
 		this.stream = null;
 		try {
 			this.stream = new BufferedReader(new FileReader(file));
-			this.streamRead();
+			this.main();
 		} catch (EOFException e) {
 			this.eofException();
 		} catch (FileNotFoundException e) {
@@ -31,7 +31,7 @@ public abstract class CustomBufferedReader {
 		}
 	}
 
-	public abstract void streamRead() throws IOException;
+	public abstract void main() throws IOException;
 
 	public void eofException() {
 	}

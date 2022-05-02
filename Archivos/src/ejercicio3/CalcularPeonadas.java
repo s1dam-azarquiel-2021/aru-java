@@ -45,8 +45,8 @@ public class CalcularPeonadas {
 	}
 
 	public void guardarPeonadas() {
-		CustomBufferedWriter customBufferedWriter = new CustomBufferedWriter() {
-			public void streamWrite() throws IOException {
+		CustomBufferedWriter bw = new CustomBufferedWriter() {
+			public void main() throws IOException {
 				for (Trabajador trabajador : trabajadores) {
 					stream.write(trabajador.toString());
 					stream.newLine();
@@ -54,12 +54,12 @@ public class CalcularPeonadas {
 			}
 		};
 
-		customBufferedWriter.write(this.ficheroTotalPeonadas);
+		bw.write(this.ficheroTotalPeonadas);
 	}
 
 	public void cargarPeonadas() {
-		CustomBufferedReader customBufferedReader = new CustomBufferedReader() {
-			public void streamRead() throws IOException {
+		CustomBufferedReader br = new CustomBufferedReader() {
+			public void main() throws IOException {
 				String linea = stream.readLine();
 				while (linea != null) {
 					StringTokenizer partes = new StringTokenizer(linea, ":");
@@ -80,12 +80,12 @@ public class CalcularPeonadas {
 			}
 		};
 
-		customBufferedReader.read(this.ficheroPeonadas);
+		br.read(this.ficheroPeonadas);
 	}
 
 	public void cargarTrabajadores() {
-		CustomBufferedReader customBufferedReader = new CustomBufferedReader() {
-			public void streamRead() throws IOException {
+		CustomBufferedReader br = new CustomBufferedReader() {
+			public void main() throws IOException {
 				String linea = stream.readLine();
 				while (linea != null) {
 					trabajadores.add(new Trabajador(linea));
@@ -94,6 +94,6 @@ public class CalcularPeonadas {
 			}
 		};
 
-		customBufferedReader.read(ficheroTrabajadores);
+		br.read(ficheroTrabajadores);
 	}
 }

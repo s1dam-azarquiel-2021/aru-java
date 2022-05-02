@@ -12,7 +12,7 @@ public abstract class CustomBufferedWriter {
 		this.stream = null;
 		try {
 			this.stream = new BufferedWriter(new FileWriter(file));
-			this.streamWrite();
+			this.main();
 		} catch (FileNotFoundException e) {
 			this.fileNotFoundException();
 		} catch (IOException e) {
@@ -28,7 +28,7 @@ public abstract class CustomBufferedWriter {
 		}
 	}
 
-	public abstract void streamWrite() throws IOException;
+	public abstract void main() throws IOException;
 
 	public void fileNotFoundException() {
 		System.out.println("El archivo no existe");

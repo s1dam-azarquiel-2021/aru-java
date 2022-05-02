@@ -44,8 +44,8 @@ public class MezclarDatos {
 	}
 
 	public void guardarDatos() {
-		CustomBufferedWriter customBufferedReader = new CustomBufferedWriter() {
-			public void streamWrite() throws IOException {
+		CustomBufferedWriter bw = new CustomBufferedWriter() {
+			public void main() throws IOException {
 				for (Seleccion seleccion : selecciones) {
 					stream.write(seleccion.getNombre());
 					stream.newLine();
@@ -62,12 +62,12 @@ public class MezclarDatos {
 			}
 		};
 
-		customBufferedReader.write(ficheroGuardado);
+		bw.write(ficheroGuardado);
 	}
 
 	public void cargarJugadores() {
-		CustomBufferedReader customBufferedReader = new CustomBufferedReader() {
-			public void streamRead() throws IOException {
+		CustomBufferedReader br = new CustomBufferedReader() {
+			public void main() throws IOException {
 				String linea = stream.readLine();
 				while (linea != null) {
 					StringTokenizer partes = new StringTokenizer(linea, ":");
@@ -83,12 +83,12 @@ public class MezclarDatos {
 			}
 		};
 
-		customBufferedReader.read(ficheroJugadores);
+		br.read(ficheroJugadores);
 	}
 
 	public void cargarSelecciones() {
-		CustomBufferedReader customBufferedReader = new CustomBufferedReader() {
-			public void streamRead() throws IOException {
+		CustomBufferedReader br = new CustomBufferedReader() {
+			public void main() throws IOException {
 				String linea = stream.readLine();
 				while (linea != null) {
 					StringTokenizer partes = new StringTokenizer(linea, ":");
@@ -100,12 +100,12 @@ public class MezclarDatos {
 			}
 		};
 
-		customBufferedReader.read(ficheroSelecciones);
+		br.read(ficheroSelecciones);
 	}
 
 	public void cargarDemarcaciones() {
-		CustomBufferedReader customBufferedReader = new CustomBufferedReader() {
-			public void streamRead() throws IOException {
+		CustomBufferedReader br = new CustomBufferedReader() {
+			public void main() throws IOException {
 				String linea = stream.readLine();
 				while (linea != null) {
 					StringTokenizer partes = new StringTokenizer(linea, ":");
@@ -117,7 +117,7 @@ public class MezclarDatos {
 			}
 		};
 
-		customBufferedReader.read(ficheroDemarcaciones);
+		br.read(ficheroDemarcaciones);
 	}
 
 	public Seleccion getSeleccion(String idSeleccion) {
