@@ -1,16 +1,12 @@
 package ejercicio4;
 
-import java.io.EOFException;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
+
+import customReaderWriter.CustomObjectInputStream;
+import customReaderWriter.CustomObjectOutputStream;
 
 public class ActualizarPrecios {
 	private ArrayList<Vehiculo> vehiculos;
@@ -31,59 +27,39 @@ public class ActualizarPrecios {
 	}
 
 	public void guardarVehiculos() {
-		File archivo = new File(this.ficheroVehiculos);
-		ObjectOutputStream stream = null;
-		try {
-			stream = new ObjectOutputStream(new FileOutputStream(archivo));
-			for (Vehiculo vehiculo : this.vehiculos) {
-				stream.writeObject(vehiculo);
+		CustomObjectOutputStream oos = new CustomObjectOutputStream() {
+			public void main() throws IOException {
+				for (Vehiculo vehiculo : vehiculos) {
+					stream.writeObject(vehiculo);
+				}
 			}
-		} catch (FileNotFoundException e) {
-			System.out.println("El archivo no existe");
-		} catch (IOException e) {
-			System.out.println("Error al escribir el dato");
-		} finally {
-			try {
-				stream.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
+		};
+
+		oos.write(ficheroVehiculos);
 	}
 
 	public void cargarVehiculos() {
-		File archivo = new File(this.ficheroVehiculos);
-		ObjectInputStream stream = null;
-		try {
-			stream = new ObjectInputStream(new FileInputStream(archivo));
-			while (true) {
-				Vehiculo vehiculo = (Vehiculo) stream.readObject();
-				Date hoy = new Date();
+		CustomObjectInputStream ois = new CustomObjectInputStream() {
+			public void main() throws IOException, ClassNotFoundException {
+				while (true) {
+					Vehiculo vehiculo = (Vehiculo) stream.readObject();
+					Date hoy = new Date();
 
-				if (
-					(hoy.getTime()
-					- vehiculo.getEntradaEnExposicion().getTime())
-					/ 86400000 > 5
-				) {
-					vehiculo.setPrecio((float) (vehiculo.getPrecio() * 0.85));
-				}
+					if (
+						(hoy.getTime()
+						- vehiculo.getEntradaEnExposicion().getTime())
+						/ 86400000 > 5
+					) {
+						vehiculo.setPrecio(
+							(float) (vehiculo.getPrecio() * 0.85)
+						);
+					}
 
-				this.vehiculos.add(vehiculo);
-			}
-		} catch (EOFException e) {
-		} catch (IOException e) {
-			System.out.println("Error leyendo el objeto");
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			System.out.println("El archivo no contiene objetos Vehiculo");
-		} finally {
-			try {
-				if (stream != null) {
-					stream.close();
+					vehiculos.add(vehiculo);
 				}
-			} catch (IOException e) {
-				System.out.println("Error cerrando el Stream");
 			}
-		}
+		};
+
+		ois.read(this.ficheroVehiculos);
 	}
 }
