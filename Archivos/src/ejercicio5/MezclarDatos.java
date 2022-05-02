@@ -1,14 +1,11 @@
 package ejercicio5;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.EOFException;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
+
+import customReaderWriter.CustomBufferedReader;
+import customReaderWriter.CustomBufferedWriter;
 
 public class MezclarDatos {
 	private ArrayList<Seleccion> selecciones;
@@ -46,37 +43,81 @@ public class MezclarDatos {
 		this.ficheroGuardado = ficheroGuardado;
 	}
 
-	public MezclarDatos() {
+	public void guardarDatos() {
+		CustomBufferedWriter customBufferedReader = new CustomBufferedWriter() {
+			public void streamWrite() throws IOException {
+				for (Seleccion seleccion : selecciones) {
+					stream.write(seleccion.getNombre());
+					stream.newLine();
+					for (Jugador jugador : jugadores) {
+						if (jugador.getSeleccion().equals(seleccion)) {
+							stream.write(jugador.getNombre());
+							stream.write(":");
+							stream.write(jugador.getDemarcacion().getNombre());
+							stream.newLine();
+						}
+					}
+					stream.newLine();
+				}
+			}
+		};
+
+		customBufferedReader.write(ficheroGuardado);
 	}
 
-	public void guardarDatos() {
-		BufferedWriter stream = null;
-		try {
-			stream = new BufferedWriter(new FileWriter(this.ficheroGuardado));
-			for (Seleccion seleccion : this.selecciones) {
-				stream.write(seleccion.getNombre());
-				stream.newLine();
-				for (Jugador jugador : this.jugadores) {
-					if (jugador.getSeleccion().equals(seleccion)) {
-						stream.write(jugador.getNombre());
-						stream.write(":");
-						stream.write(jugador.getDemarcacion().getNombre());
-						stream.newLine();
-					}
-				}
-				stream.newLine();
-			}
-		} catch (IOException e) {
-			System.out.println("Error escribiendo el texto");
-		} finally {
-			if (stream != null) {
-				try {
-					stream.close();
-				} catch (IOException e) {
-					System.out.println("Error cerrando stream");
+	public void cargarJugadores() {
+		CustomBufferedReader customBufferedReader = new CustomBufferedReader() {
+			public void streamRead() throws IOException {
+				String linea = stream.readLine();
+				while (linea != null) {
+					StringTokenizer partes = new StringTokenizer(linea, ":");
+					jugadores.add(
+						new Jugador(
+							partes.nextToken(),
+							getDemarcacion(partes.nextToken()),
+							getSeleccion(partes.nextToken())
+						)
+					);
+					linea = stream.readLine();
 				}
 			}
-		}
+		};
+
+		customBufferedReader.read(ficheroJugadores);
+	}
+
+	public void cargarSelecciones() {
+		CustomBufferedReader customBufferedReader = new CustomBufferedReader() {
+			public void streamRead() throws IOException {
+				String linea = stream.readLine();
+				while (linea != null) {
+					StringTokenizer partes = new StringTokenizer(linea, ":");
+					selecciones.add(
+						new Seleccion(partes.nextToken(), partes.nextToken())
+					);
+					linea = stream.readLine();
+				}
+			}
+		};
+
+		customBufferedReader.read(ficheroSelecciones);
+	}
+
+	public void cargarDemarcaciones() {
+		CustomBufferedReader customBufferedReader = new CustomBufferedReader() {
+			public void streamRead() throws IOException {
+				String linea = stream.readLine();
+				while (linea != null) {
+					StringTokenizer partes = new StringTokenizer(linea, ":");
+					demarcaciones.add(
+						new Demarcacion(partes.nextToken(), partes.nextToken())
+					);
+					linea = stream.readLine();
+				}
+			}
+		};
+
+		customBufferedReader.read(ficheroDemarcaciones);
 	}
 
 	public Seleccion getSeleccion(String idSeleccion) {
@@ -97,91 +138,5 @@ public class MezclarDatos {
 		}
 
 		return null;
-	}
-
-	public void cargarJugadores() {
-		BufferedReader stream = null;
-		try {
-			stream = new BufferedReader(new FileReader(this.ficheroJugadores));
-			String linea = stream.readLine();
-			while (linea != null) {
-				StringTokenizer partes = new StringTokenizer(linea, ":");
-				this.jugadores.add(
-					new Jugador(
-						partes.nextToken(),
-						this.getDemarcacion(partes.nextToken()),
-						this.getSeleccion(partes.nextToken())
-					)
-				);
-				linea = stream.readLine();
-			}
-		} catch (EOFException e) {
-		} catch (FileNotFoundException e) {
-			System.out.println("El archivo no existe");
-		} catch (IOException ae) {
-			System.out.println("Error al escribir el dato");
-		} finally {
-			try {
-				stream.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-	}
-
-	public void cargarSelecciones() {
-		BufferedReader stream = null;
-		try {
-			stream = new BufferedReader(
-				new FileReader(this.ficheroSelecciones)
-			);
-			String linea = stream.readLine();
-			while (linea != null) {
-				StringTokenizer partes = new StringTokenizer(linea, ":");
-				this.selecciones.add(
-					new Seleccion(partes.nextToken(), partes.nextToken())
-				);
-				linea = stream.readLine();
-			}
-		} catch (EOFException e) {
-		} catch (FileNotFoundException e) {
-			System.out.println("El archivo no existe");
-		} catch (IOException ae) {
-			System.out.println("Error al escribir el dato");
-		} finally {
-			try {
-				stream.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-	}
-
-	public void cargarDemarcaciones() {
-		BufferedReader stream = null;
-		try {
-			stream = new BufferedReader(
-				new FileReader(this.ficheroDemarcaciones)
-			);
-			String linea = stream.readLine();
-			while (linea != null) {
-				StringTokenizer partes = new StringTokenizer(linea, ":");
-				this.demarcaciones.add(
-					new Demarcacion(partes.nextToken(), partes.nextToken())
-				);
-				linea = stream.readLine();
-			}
-		} catch (EOFException e) {
-		} catch (FileNotFoundException e) {
-			System.out.println("El archivo no existe");
-		} catch (IOException ae) {
-			System.out.println("Error al escribir el dato");
-		} finally {
-			try {
-				stream.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
 	}
 }

@@ -1,14 +1,11 @@
 package ejercicio3;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.EOFException;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
+
+import customReaderWriter.CustomBufferedReader;
+import customReaderWriter.CustomBufferedWriter;
 
 public class CalcularPeonadas {
 	private ArrayList<Trabajador> trabajadores;
@@ -48,85 +45,55 @@ public class CalcularPeonadas {
 	}
 
 	public void guardarPeonadas() {
-		BufferedWriter stream = null;
-		try {
-			stream = new BufferedWriter(
-				new FileWriter(this.ficheroTotalPeonadas)
-			);
-			for (Trabajador trabajador : this.trabajadores) {
-				stream.write(trabajador.toString());
-				stream.newLine();
-			}
-		} catch (IOException e) {
-			System.out.println("Error escribiendo el texto");
-		} finally {
-			if (stream != null) {
-				try {
-					stream.close();
-				} catch (IOException e) {
-					System.out.println("Error cerrando stream");
+		CustomBufferedWriter customBufferedWriter = new CustomBufferedWriter() {
+			public void streamWrite() throws IOException {
+				for (Trabajador trabajador : trabajadores) {
+					stream.write(trabajador.toString());
+					stream.newLine();
 				}
 			}
-		}
+		};
+
+		customBufferedWriter.write(this.ficheroTotalPeonadas);
 	}
 
 	public void cargarPeonadas() {
-		BufferedReader stream = null;
-		try {
-			stream = new BufferedReader(new FileReader(this.ficheroPeonadas));
-			String linea = stream.readLine();
-			while (linea != null) {
-				StringTokenizer partes = new StringTokenizer(linea, ":");
-				partes.nextToken();
-				StringTokenizer trabajadores = new StringTokenizer(
-					partes.nextToken(),
-					","
-				);
+		CustomBufferedReader customBufferedReader = new CustomBufferedReader() {
+			public void streamRead() throws IOException {
+				String linea = stream.readLine();
+				while (linea != null) {
+					StringTokenizer partes = new StringTokenizer(linea, ":");
+					partes.nextToken();
+					StringTokenizer trabajadores = new StringTokenizer(
+						partes.nextToken(),
+						","
+					);
 
-				while (trabajadores.hasMoreElements()) {
-					this.getTrabajador(
-						trabajadores.nextToken()
-					).aumentarDiasTrabajados();
+					while (trabajadores.hasMoreElements()) {
+						getTrabajador(
+							trabajadores.nextToken()
+						).aumentarDiasTrabajados();
+					}
+
+					linea = stream.readLine();
 				}
+			}
+		};
 
-				linea = stream.readLine();
-			}
-		} catch (EOFException e) {
-		} catch (FileNotFoundException e) {
-			System.out.println("El archivo no existe");
-		} catch (IOException ae) {
-			System.out.println("Error al escribir el dato");
-		} finally {
-			try {
-				stream.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
+		customBufferedReader.read(this.ficheroPeonadas);
 	}
 
 	public void cargarTrabajadores() {
-		BufferedReader stream = null;
-		try {
-			stream = new BufferedReader(
-				new FileReader(this.ficheroTrabajadores)
-			);
-			String linea = stream.readLine();
-			while (linea != null) {
-				this.trabajadores.add(new Trabajador(linea));
-				linea = stream.readLine();
+		CustomBufferedReader customBufferedReader = new CustomBufferedReader() {
+			public void streamRead() throws IOException {
+				String linea = stream.readLine();
+				while (linea != null) {
+					trabajadores.add(new Trabajador(linea));
+					linea = stream.readLine();
+				}
 			}
-		} catch (EOFException e) {
-		} catch (FileNotFoundException e) {
-			System.out.println("El archivo no existe");
-		} catch (IOException ae) {
-			System.out.println("Error al escribir el dato");
-		} finally {
-			try {
-				stream.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
+		};
+
+		customBufferedReader.read(ficheroTrabajadores);
 	}
 }
