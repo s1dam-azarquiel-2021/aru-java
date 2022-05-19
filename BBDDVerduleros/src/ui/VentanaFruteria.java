@@ -37,7 +37,6 @@ public class VentanaFruteria extends JFrame {
 	private JTextField txtPrecio;
 	private DAOProducto daoProducto;
 	private DAOGrupo daoGrupo;
-	private ArrayList<Producto> productos;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -58,7 +57,6 @@ public class VentanaFruteria extends JFrame {
 	public VentanaFruteria() {
 		this.daoProducto = new DAOProducto();
 		this.daoGrupo = new DAOGrupo();
-		this.productos = this.daoProducto.get();
 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setBounds(100, 100, 800, 600);
@@ -137,7 +135,6 @@ public class VentanaFruteria extends JFrame {
 			)
 		);
 
-		this.productos = this.daoProducto.get();
 		this.updateTable();
 	}
 
@@ -150,7 +147,9 @@ public class VentanaFruteria extends JFrame {
 			return;
 		}
 
-		Producto producto = this.productos.get(this.table.getSelectedRow());
+		Producto producto = daoProducto.get(
+			(int) this.table.getValueAt(this.table.getSelectedRow(), 0)
+		);
 
 		this.txtId.setText(String.valueOf(producto.getId()));
 		this.txtNombre.setText(producto.getNombre());
@@ -176,13 +175,14 @@ public class VentanaFruteria extends JFrame {
 	}
 
 	private void updateTable() {
-		Object[][] datos = new Object[this.productos.size()][4];
+		ArrayList<Producto> productos = this.daoProducto.get();
+		Object[][] datos = new Object[productos.size()][4];
 
 		for (int i = 0; i < datos.length; i++) {
-			datos[i][0] = this.productos.get(i).getId();
-			datos[i][1] = this.productos.get(i).getNombre();
-			datos[i][2] = this.productos.get(i).getGrupo().getNombre();
-			datos[i][3] = this.productos.get(i).getPrecio();
+			datos[i][0] = productos.get(i).getId();
+			datos[i][1] = productos.get(i).getNombre();
+			datos[i][2] = productos.get(i).getGrupo().getNombre();
+			datos[i][3] = productos.get(i).getPrecio();
 		}
 
 		this.table.setModel(new DefaultTableModel(datos, new String[] {
