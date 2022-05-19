@@ -101,7 +101,7 @@ public class DAOProducto {
 						result.getInt(1),
 						result.getString(2),
 						daoGrupo.get(result.getInt(3)),
-						result.getFloat(4)
+						result.getDouble(4)
 					)
 				);
 			}
@@ -129,16 +129,18 @@ public class DAOProducto {
 				)
 			);
 
-			result.next();
+			if (result.next()) {
+				DAOGrupo daoGrupo = new DAOGrupo();
 
-			DAOGrupo daoGrupo = new DAOGrupo();
+				return new Producto(
+					result.getInt(1),
+					result.getString(2),
+					daoGrupo.get(result.getInt(3)),
+					result.getDouble(4)
+				);
+			}
 
-			return new Producto(
-				result.getInt(1),
-				result.getString(2),
-				daoGrupo.get(result.getInt(3)),
-				result.getFloat(4)
-			);
+			return null;
 		} catch (
 
 			SQLException e

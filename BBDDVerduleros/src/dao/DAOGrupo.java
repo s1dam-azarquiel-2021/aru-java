@@ -113,9 +113,11 @@ public class DAOGrupo {
 				String.format("SELECT * FROM grupos WHERE IdGrupo = %d", id)
 			);
 
-			result.next();
+			if (result.next()) {
+				return new Grupo(result.getInt(1), result.getString(2));
+			}
 
-			return new Grupo(result.getInt(1), result.getString(2));
+			return null;
 		} catch (
 
 			SQLException e
