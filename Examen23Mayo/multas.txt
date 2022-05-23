@@ -1,0 +1,4 @@
+12/05/2022:1785CDD:Aparcar en zona azul
+16/05/2022:3322BFH:Aparcar en zona naranja
+17/05/2022:6650JJH:Ticket pasado de hora
+18/05/2022:7748HFF:Ticket pasado de hora 
