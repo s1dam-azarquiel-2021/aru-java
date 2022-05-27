@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.UIManager;
+import javax.swing.WindowConstants;
 import javax.swing.table.DefaultTableModel;
 
 import customReaderWriter.CustomObjectInputStream;
@@ -28,6 +29,7 @@ public class VentanaPrincipal2 extends JFrame {
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					UIManager.setLookAndFeel(
@@ -49,13 +51,13 @@ public class VentanaPrincipal2 extends JFrame {
 		this.ficheroIntervenciones = "intervenciones.obj";
 		this.ficheroVehiculos = "vehiculos.obj";
 
-		this.vehiculos = new ArrayList<Vehiculo>();
+		this.vehiculos = new ArrayList<>();
 		this.cargarVehiculos();
 
-		this.intervenciones = new ArrayList<Intervencion>();
+		this.intervenciones = new ArrayList<>();
 		this.cargarIntervenciones();
 
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		this.setBounds(100, 100, 800, 400);
 
 		JPanel contentPane = new JPanel();
@@ -67,6 +69,7 @@ public class VentanaPrincipal2 extends JFrame {
 
 		tableVehiculos = new JTable();
 		tableVehiculos.addMouseListener(new MouseAdapter() {
+			@Override
 			public void mouseClicked(MouseEvent e) {
 				actualizarTablaIntervenciones();
 			}
@@ -85,6 +88,7 @@ public class VentanaPrincipal2 extends JFrame {
 
 	public void cargarVehiculos() {
 		CustomObjectInputStream ois = new CustomObjectInputStream() {
+			@Override
 			public void main() throws IOException, ClassNotFoundException {
 				while (true) {
 					Vehiculo vehiculo = (Vehiculo) stream.readObject();
@@ -98,6 +102,7 @@ public class VentanaPrincipal2 extends JFrame {
 
 	public void cargarIntervenciones() {
 		CustomObjectInputStream ois = new CustomObjectInputStream() {
+			@Override
 			public void main() throws IOException, ClassNotFoundException {
 				while (true) {
 					intervenciones.add((Intervencion) stream.readObject());
@@ -127,6 +132,7 @@ public class VentanaPrincipal2 extends JFrame {
 				String.class, String.class, String.class, String.class
 			};
 
+			@Override
 			public Class getColumnClass(int columnIndex) {
 				return columnTypes[columnIndex];
 			}
@@ -135,6 +141,7 @@ public class VentanaPrincipal2 extends JFrame {
 				false, false, false, false
 			};
 
+			@Override
 			public boolean isCellEditable(int row, int column) {
 				return columnEditables[column];
 			}
@@ -142,7 +149,7 @@ public class VentanaPrincipal2 extends JFrame {
 	}
 
 	private ArrayList<Intervencion> getIntervenciones(Vehiculo vehiculo) {
-		ArrayList<Intervencion> intervenciones = new ArrayList<Intervencion>();
+		ArrayList<Intervencion> intervenciones = new ArrayList<>();
 		for (Intervencion intervencion : this.intervenciones) {
 			if (intervencion.getMatricula().equals(vehiculo.getMatricula())) {
 				intervenciones.add(intervencion);
@@ -184,6 +191,7 @@ public class VentanaPrincipal2 extends JFrame {
 					Date.class, String.class, Float.class, String.class
 				};
 
+				@Override
 				public Class getColumnClass(int columnIndex) {
 					return columnTypes[columnIndex];
 				}
@@ -192,6 +200,7 @@ public class VentanaPrincipal2 extends JFrame {
 					false, false, false, false
 				};
 
+				@Override
 				public boolean isCellEditable(int row, int column) {
 					return columnEditables[column];
 				}

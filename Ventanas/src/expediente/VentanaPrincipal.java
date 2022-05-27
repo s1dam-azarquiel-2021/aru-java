@@ -14,6 +14,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
+import javax.swing.WindowConstants;
 import javax.swing.table.DefaultTableModel;
 
 public class VentanaPrincipal extends JFrame {
@@ -23,6 +24,7 @@ public class VentanaPrincipal extends JFrame {
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					UIManager.setLookAndFeel(
@@ -38,7 +40,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 
 	public VentanaPrincipal() {
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		this.setBounds(100, 100, 770, 410);
 
 		this.expediente = new Expediente(new Alumno("1234A", "Alberto"));
@@ -68,6 +70,7 @@ public class VentanaPrincipal extends JFrame {
 
 		JButton btnNuevoModulo = new JButton("Nuevo");
 		btnNuevoModulo.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				nuevoModulo();
 			}
@@ -77,6 +80,7 @@ public class VentanaPrincipal extends JFrame {
 
 		JButton btnModificarModulo = new JButton("Modificar");
 		btnModificarModulo.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				modificarModulo();
 			}
@@ -86,6 +90,7 @@ public class VentanaPrincipal extends JFrame {
 
 		JButton btnEliminarModulo = new JButton("Elimininar");
 		btnEliminarModulo.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				eliminarModulo();
 			}
@@ -98,7 +103,8 @@ public class VentanaPrincipal extends JFrame {
 
 	private void nuevoModulo() {
 		DialogoNuevoModulo dialogoNuevoModulo = new DialogoNuevoModulo(
-			this, true
+			this,
+			true
 		);
 		dialogoNuevoModulo.setLocationRelativeTo(this);
 		dialogoNuevoModulo.setVisible(true);
@@ -132,7 +138,9 @@ public class VentanaPrincipal extends JFrame {
 		} else {
 			DialogoModificarModulo dialogoModificarModulo =
 				new DialogoModificarModulo(
-					this, true, this.expediente.getModulos().get(
+					this,
+					true,
+					this.expediente.getModulos().get(
 						this.table.getSelectedRow()
 					)
 				);
@@ -164,6 +172,7 @@ public class VentanaPrincipal extends JFrame {
 				Float.class
 			};
 
+			@Override
 			public Class getColumnClass(int columnIndex) {
 				return columnTypes[columnIndex];
 			}
@@ -172,6 +181,7 @@ public class VentanaPrincipal extends JFrame {
 				false, false, false, false, false
 			};
 
+			@Override
 			public boolean isCellEditable(int row, int column) {
 				return columnEditables[column];
 			}

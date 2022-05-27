@@ -29,5 +29,4 @@ public class Paciente {
 	public String toString() {
 		return "Nombre: " + name + "\nCompañia: " + company + "\n";
 	}
-
 }

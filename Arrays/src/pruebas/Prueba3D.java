@@ -82,9 +82,9 @@ public class Prueba3D {
 
 		for (int j = 0; j < datos[0].length; j++) {
 			int suma = 0;
-			for (int i = 0; i < datos.length; i++) {
-				for (int k = 0; k < datos[i][j].length; k++) {
-					suma += datos[i][j][k];
+			for (int[][] element : datos) {
+				for (int k = 0; k < element[j].length; k++) {
+					suma += element[j][k];
 				}
 			}
 			System.out.printf("%s: %d alumnos\n", cursos[j], suma);
@@ -94,9 +94,9 @@ public class Prueba3D {
 
 		for (int k = 0; k < datos[0][0].length; k++) {
 			int suma = 0;
-			for (int i = 0; i < datos.length; i++) {
-				for (int j = 0; j < datos[i].length; j++) {
-					suma += datos[i][j][k];
+			for (int[][] element : datos) {
+				for (int[] element2 : element) {
+					suma += element2[k];
 				}
 			}
 			System.out.printf("%s: %d alumnos\n", sexo[k], suma);

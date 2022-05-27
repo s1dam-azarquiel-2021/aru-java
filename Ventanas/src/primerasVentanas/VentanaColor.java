@@ -12,6 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
+import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 
 public class VentanaColor extends JFrame {
@@ -20,6 +21,7 @@ public class VentanaColor extends JFrame {
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					UIManager.setLookAndFeel(
@@ -35,7 +37,7 @@ public class VentanaColor extends JFrame {
 	}
 
 	public VentanaColor() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -50,6 +52,7 @@ public class VentanaColor extends JFrame {
 
 		JButton btnRojo = new JButton("rojo");
 		btnRojo.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				cambiarColor(Color.RED);
 			}
@@ -62,6 +65,7 @@ public class VentanaColor extends JFrame {
 
 		JButton btnVerde = new JButton("verde");
 		btnVerde.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				cambiarColor(Color.GREEN);
 			}
@@ -73,6 +77,7 @@ public class VentanaColor extends JFrame {
 
 		JButton btnAzul = new JButton("azul");
 		btnAzul.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				cambiarColor(Color.BLUE);
 			}
@@ -84,6 +89,7 @@ public class VentanaColor extends JFrame {
 
 		JButton btnAmarillo = new JButton("amarillo");
 		btnAmarillo.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				cambiarColor(Color.YELLOW);
 			}

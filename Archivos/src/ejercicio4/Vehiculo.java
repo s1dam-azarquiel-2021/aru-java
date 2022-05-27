@@ -50,6 +50,7 @@ public class Vehiculo implements Serializable {
 		this.entradaEnExposicion = entradaEnExposicion;
 	}
 
+	@Override
 	public String toString() {
 		return "Vehiculo [matricula=" + matricula + ", modelo=" + modelo
 		+ ", precio=" + precio + ", entradaEnExposicion=" + entradaEnExposicion

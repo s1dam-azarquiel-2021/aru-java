@@ -19,6 +19,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.UIManager;
+import javax.swing.WindowConstants;
 import javax.swing.table.DefaultTableModel;
 
 public class VentanaPrincipal extends JFrame {
@@ -27,6 +28,7 @@ public class VentanaPrincipal extends JFrame {
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					UIManager.setLookAndFeel(
@@ -46,11 +48,12 @@ public class VentanaPrincipal extends JFrame {
 	 */
 	public VentanaPrincipal() {
 		addWindowListener(new WindowAdapter() {
+			@Override
 			public void windowClosing(WindowEvent e) {
 				guardarAgenda();
 			}
 		});
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		this.setBounds(100, 100, 460, 320);
 
 		this.cargarAgenda();
@@ -70,6 +73,7 @@ public class VentanaPrincipal extends JFrame {
 
 		JButton btnNuevo = new JButton("Nuevo");
 		btnNuevo.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				nuevo();
 			}
@@ -79,6 +83,7 @@ public class VentanaPrincipal extends JFrame {
 
 		JButton btnEliminar = new JButton("Eliminar");
 		btnEliminar.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				eliminar();
 			}
@@ -89,7 +94,8 @@ public class VentanaPrincipal extends JFrame {
 
 	private void nuevo() {
 		DialogoNuevoContacto dialogoNuevoContacto = new DialogoNuevoContacto(
-			this, true
+			this,
+			true
 		);
 		dialogoNuevoContacto.setLocationRelativeTo(this);
 		dialogoNuevoContacto.setVisible(true);
@@ -169,6 +175,7 @@ public class VentanaPrincipal extends JFrame {
 				String.class, Long.class
 			};
 
+			@Override
 			public Class getColumnClass(int columnIndex) {
 				return columnTypes[columnIndex];
 			}
@@ -177,6 +184,7 @@ public class VentanaPrincipal extends JFrame {
 				false, false
 			};
 
+			@Override
 			public boolean isCellEditable(int row, int column) {
 				return columnEditables[column];
 			}

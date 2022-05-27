@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.UIManager;
+import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
@@ -24,6 +25,7 @@ public class VentanaPrincipal extends JFrame {
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					UIManager.setLookAndFeel(
@@ -44,7 +46,7 @@ public class VentanaPrincipal extends JFrame {
 		this.daoMascota = new DAOMascota();
 
 		this.setTitle("Censo Electoral");
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		this.setBounds(100, 100, 800, 400);
 
 		JPanel contentPane = new JPanel();
@@ -63,6 +65,7 @@ public class VentanaPrincipal extends JFrame {
 		JButton nuevo = new JButton("Nueva Mascota");
 		nuevo.setAlignmentX(Component.CENTER_ALIGNMENT);
 		nuevo.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				nuevaMascota();
 			}
@@ -115,6 +118,7 @@ public class VentanaPrincipal extends JFrame {
 				String.class, String.class, String.class
 			};
 
+			@Override
 			public Class getColumnClass(int columnIndex) {
 				return columnTypes[columnIndex];
 			}
@@ -123,6 +127,7 @@ public class VentanaPrincipal extends JFrame {
 				false, false, false, false
 			};
 
+			@Override
 			public boolean isCellEditable(int row, int column) {
 				return columnEditables[column];
 			}

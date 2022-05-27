@@ -11,5 +11,4 @@ public abstract class VehiculoSinMotor extends Vehiculo {
 	public String toString() {
 		return super.toString();
 	}
-
 }

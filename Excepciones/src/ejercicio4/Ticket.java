@@ -27,7 +27,7 @@ public class Ticket {
 
 	public float calcularPrecio() throws DiferenciaNegativaException {
 		long diferencia = Calendar.getInstance().getTimeInMillis()
-			- this.hora.getTimeInMillis();
+		- this.hora.getTimeInMillis();
 		if (diferencia < 0) {
 			throw new DiferenciaNegativaException(
 				"Diferencia de horas negativa"
@@ -45,8 +45,8 @@ public class Ticket {
 				minutos = 0;
 			}
 
-			return dias * PRECIO_DIA + horas * PRECIO_HORA
-				+ minutos * PRECIO_MINUTO;
+			return dias * PRECIO_DIA + horas * PRECIO_HORA + minutos
+			* PRECIO_MINUTO;
 		}
 	}
 
@@ -65,6 +65,6 @@ public class Ticket {
 	@Override
 	public String toString() {
 		return "matricula: " + matricula + "\nhora: " + hora + "\npagado: "
-			+ pagado + "\n";
+		+ pagado + "\n";
 	}
 }

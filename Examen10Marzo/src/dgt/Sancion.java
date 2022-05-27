@@ -57,8 +57,8 @@ public abstract class Sancion {
 	@Override
 	public String toString() {
 		return "conductor:\n-----\n" + conductor + "-----\nmatricula: "
-			+ matricula + "\ndescripcion: " + descripcion + "\nfechaSancion: "
-			+ fechaSancion + "\n";
+		+ matricula + "\ndescripcion: " + descripcion + "\nfechaSancion: "
+		+ fechaSancion + "\n";
 	}
 	// --------
 }

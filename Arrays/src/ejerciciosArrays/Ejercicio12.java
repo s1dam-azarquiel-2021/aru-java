@@ -10,7 +10,7 @@ public class Ejercicio12 {
 		// sabemos los numeros que van a teclear el array debe ir cambiando
 		// de size para irse adaptando al numero de datos leido.
 
-		ArrayList<Integer> numeros = new ArrayList<Integer>();
+		ArrayList<Integer> numeros = new ArrayList<>();
 		Scanner input = new Scanner(System.in);
 		do {
 			numeros.add(input.nextInt());

@@ -62,8 +62,8 @@ public class Notas2DConNombres {
 
 		for (int j = 0; j < notas[0].length; j++) {
 			int suma = 0;
-			for (int i = 0; i < notas.length; i++) {
-				suma += notas[i][j];
+			for (int[] element : notas) {
+				suma += element[j];
 			}
 			double media = suma / notas.length;
 			if (media > mejorMedia) {

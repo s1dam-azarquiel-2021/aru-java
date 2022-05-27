@@ -57,6 +57,7 @@ public class Modulo {
 		return (float) (notas[0] + notas[1] + notas[2]) / 3;
 	}
 
+	@Override
 	public String toString() {
 		return nombre + "\t" + notas[0] + "\t" + notas[1] + "\t" + notas[2];
 	}

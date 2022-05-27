@@ -17,6 +17,7 @@ public class GestorArchivoTexto {
 
 	public void readContenido() {
 		CustomBufferedReader br = new CustomBufferedReader() {
+			@Override
 			public void main() throws IOException {
 				contenido = stream.lines().collect(
 					Collectors.joining(System.lineSeparator())
@@ -29,6 +30,7 @@ public class GestorArchivoTexto {
 
 	public void guardarContenido() {
 		CustomBufferedWriter bw = new CustomBufferedWriter() {
+			@Override
 			public void main() throws IOException {
 				stream.write(contenido);
 			}

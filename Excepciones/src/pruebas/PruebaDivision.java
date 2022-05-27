@@ -12,7 +12,6 @@ public class PruebaDivision {
 		} catch (Exception e) {
 			System.out.println("Eso no es un numero");
 			a = 1;
-
 		}
 
 		System.out.print("Teclea el divisor: ");
@@ -22,7 +21,6 @@ public class PruebaDivision {
 		} catch (Exception e) {
 			System.out.println("Eso no es un numero");
 			b = 1;
-
 		}
 		input.close();
 
@@ -30,7 +28,6 @@ public class PruebaDivision {
 			System.out.printf("La division es: %d\n", a / b);
 		} catch (Exception e) {
 			System.out.println("No se puede dividir por cero");
-
 		}
 	}
 }

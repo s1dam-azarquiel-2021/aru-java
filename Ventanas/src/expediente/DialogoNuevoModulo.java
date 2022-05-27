@@ -80,6 +80,7 @@ public class DialogoNuevoModulo extends JDialog {
 
 		JButton okButton = new JButton("OK");
 		okButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				confirmar();
 			}
@@ -90,6 +91,7 @@ public class DialogoNuevoModulo extends JDialog {
 
 		JButton cancelButton = new JButton("Cancel");
 		cancelButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				cancelar();
 			}
@@ -123,9 +125,9 @@ public class DialogoNuevoModulo extends JDialog {
 			try {
 				((VentanaPrincipal) this.getParent()).getExpediente().addModulo(
 					new Modulo(
-						this.textFieldNombre.getText(), Integer.parseInt(
-							this.textFieldNotaEv1.getText()
-						), Integer.parseInt(this.textFieldNotaEv2.getText()),
+						this.textFieldNombre.getText(),
+						Integer.parseInt(this.textFieldNotaEv1.getText()),
+						Integer.parseInt(this.textFieldNotaEv2.getText()),
 						Integer.parseInt(this.textFieldNotaEv3.getText())
 					)
 				);

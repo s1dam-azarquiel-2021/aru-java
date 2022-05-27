@@ -20,6 +20,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
+import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
@@ -30,6 +31,7 @@ public class VentanaPrincipal extends JFrame {
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					UIManager.setLookAndFeel(
@@ -51,9 +53,10 @@ public class VentanaPrincipal extends JFrame {
 		this.gestorHabitaciones = new GestorHabitaciones("habitaciones.obj");
 		this.gestorHabitaciones.read();
 
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		this.setBounds(100, 100, 800, 400);
 		this.addWindowListener(new WindowAdapter() {
+			@Override
 			public void windowClosing(WindowEvent e) {
 				gestorClientes.write();
 				gestorHabitaciones.write();
@@ -81,6 +84,7 @@ public class VentanaPrincipal extends JFrame {
 
 		JButton btnGestionHabitaciones = new JButton("Gestion de Habitaciones");
 		btnGestionHabitaciones.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				gestionHabitaciones();
 			}
@@ -95,6 +99,7 @@ public class VentanaPrincipal extends JFrame {
 
 		JButton btnLlegadas = new JButton("Llegada");
 		btnLlegadas.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				llegada();
 			}
@@ -105,6 +110,7 @@ public class VentanaPrincipal extends JFrame {
 
 		JButton btnSalidas = new JButton("Salida");
 		btnSalidas.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				salida();
 			}
@@ -223,6 +229,7 @@ public class VentanaPrincipal extends JFrame {
 				Integer.class, String.class, String.class, Boolean.class
 			};
 
+			@Override
 			public Class getColumnClass(int columnIndex) {
 				return columnTypes[columnIndex];
 			}
@@ -231,6 +238,7 @@ public class VentanaPrincipal extends JFrame {
 				false, false, false, false
 			};
 
+			@Override
 			public boolean isCellEditable(int row, int column) {
 				return columnEditables[column];
 			}

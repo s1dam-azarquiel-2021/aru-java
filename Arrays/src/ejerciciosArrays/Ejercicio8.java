@@ -51,8 +51,8 @@ public class Ejercicio8 {
 
 		if (
 			sumaDiagonales[0] != sumaDiagonales[1]
-				|| sumaDiagonales[0] != sumaFilas[0]
-				|| sumaDiagonales[0] != sumaColumnas[0]
+			|| sumaDiagonales[0] != sumaFilas[0]
+			|| sumaDiagonales[0] != sumaColumnas[0]
 		) {
 			esMagico = false;
 		}

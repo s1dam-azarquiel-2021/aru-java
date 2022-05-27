@@ -13,8 +13,8 @@ public class Temperaturas {
 		input.close();
 
 		double media = 0;
-		for (int i = 0; i < temps.length; i++) {
-			media += temps[i];
+		for (double temp : temps) {
+			media += temp;
 		}
 		media /= temps.length;
 

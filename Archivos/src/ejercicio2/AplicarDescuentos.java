@@ -29,7 +29,7 @@ public class AplicarDescuentos {
 	}
 
 	public static ArrayList<Planta> cargarPlantasYAplicarDescuento() {
-		ArrayList<Planta> plantas = new ArrayList<Planta>();
+		ArrayList<Planta> plantas = new ArrayList<>();
 		File file = new File("Plantas.venta");
 		ObjectInputStream stream = null;
 		try {

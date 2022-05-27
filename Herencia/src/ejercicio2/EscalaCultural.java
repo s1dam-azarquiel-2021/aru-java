@@ -34,6 +34,6 @@ public class EscalaCultural extends Escala {
 	@Override
 	public String toString() {
 		return super.toString() + "Guia: " + guia + "\nprecioGuia: "
-			+ precioGuia + "\n";
+		+ precioGuia + "\n";
 	}
 }

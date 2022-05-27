@@ -17,7 +17,7 @@ public class PruebaArrayLists {
 
 		System.out.printf("%s\n", lista);
 
-		ArrayList<String> nombres = new ArrayList<String>();
+		ArrayList<String> nombres = new ArrayList<>();
 		nombres.add("Javier");
 		nombres.add("Marcos");
 		nombres.add("Alba");
@@ -38,8 +38,8 @@ public class PruebaArrayLists {
 		// ArrayList<ArrayList<String>> listaDoble =
 		// new ArrayList<ArrayList<String>>();
 
-		for (int i = 0; i < nombres.size(); i++) {
-			System.out.printf("%s\n", nombres.get(i));
+		for (String nombre : nombres) {
+			System.out.printf("%s\n", nombre);
 		}
 
 		for (String string : nombres) {
@@ -59,15 +59,13 @@ public class PruebaArrayLists {
 			"Esta alba en la lista? %s\n", nombres.contains("Alba")
 		);
 
-		ArrayList<Integer> numeros = new ArrayList<Integer>(
-			Arrays.asList(5, 2, 3)
-		);
+		ArrayList<Integer> numeros = new ArrayList<>(Arrays.asList(5, 2, 3));
 
 		String[] arrayNombres = {
 			"Pedro", "Juan", "Alberto"
 		};
 
-		ArrayList<String> listaNombres = new ArrayList<String>(
+		ArrayList<String> listaNombres = new ArrayList<>(
 			Arrays.asList(arrayNombres)
 		);
 

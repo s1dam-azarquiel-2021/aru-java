@@ -57,6 +57,7 @@ public class DialogoLlegadas extends JDialog {
 
 		JButton nuevoButton = new JButton("Nuevo");
 		nuevoButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				nuevo();
 			}
@@ -67,6 +68,7 @@ public class DialogoLlegadas extends JDialog {
 
 		JButton okButton = new JButton("Aceptar");
 		okButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				aceptar();
 			}
@@ -78,6 +80,7 @@ public class DialogoLlegadas extends JDialog {
 
 		JButton cancelButton = new JButton("Cancelar");
 		cancelButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				cancelar();
 			}
@@ -147,6 +150,7 @@ public class DialogoLlegadas extends JDialog {
 				String.class, String.class
 			};
 
+			@Override
 			public Class getColumnClass(int columnIndex) {
 				return columnTypes[columnIndex];
 			}
@@ -155,6 +159,7 @@ public class DialogoLlegadas extends JDialog {
 				false, false
 			};
 
+			@Override
 			public boolean isCellEditable(int row, int column) {
 				return columnEditables[column];
 			}

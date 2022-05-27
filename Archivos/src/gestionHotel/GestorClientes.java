@@ -13,11 +13,12 @@ public class GestorClientes {
 	public GestorClientes(String archivo) {
 		super();
 		this.archivo = archivo;
-		this.clientes = new ArrayList<Cliente>();
+		this.clientes = new ArrayList<>();
 	}
 
 	public void read() {
 		CustomObjectInputStream ois = new CustomObjectInputStream() {
+			@Override
 			public void main() throws IOException, ClassNotFoundException {
 				while (true) {
 					clientes.add((Cliente) stream.readObject());
@@ -30,6 +31,7 @@ public class GestorClientes {
 
 	public void write() {
 		CustomObjectOutputStream oos = new CustomObjectOutputStream() {
+			@Override
 			public void main() throws IOException {
 				for (Cliente cliente : clientes) {
 					stream.writeObject(cliente);

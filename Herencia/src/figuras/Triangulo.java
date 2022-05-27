@@ -17,8 +17,9 @@ public class Triangulo extends Figura {
 
 	@Override
 	public double getPerimetro() {
-		return this.base + this.altura
-			+ Math.sqrt(this.altura * this.altura + this.base * this.base);
+		return this.base + this.altura + Math.sqrt(
+			this.altura * this.altura + this.base * this.base
+		);
 	}
 
 	public double getBase() {
@@ -40,6 +41,6 @@ public class Triangulo extends Figura {
 	@Override
 	public String toString() {
 		return super.toString() + "Base: " + base + "\naltura: " + altura
-			+ "\n";
+		+ "\n";
 	}
 }

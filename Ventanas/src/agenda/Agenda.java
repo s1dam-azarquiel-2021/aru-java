@@ -6,7 +6,7 @@ public class Agenda {
 	private ArrayList<Contacto> lista;
 
 	public Agenda() {
-		this.lista = new ArrayList<Contacto>();
+		this.lista = new ArrayList<>();
 	}
 
 	public boolean add(Contacto contacto) {

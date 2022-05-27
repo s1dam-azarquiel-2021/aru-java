@@ -39,7 +39,6 @@ public class Comanda {
 		}
 
 		return false;
-
 	}
 
 	public int getnMesa() {
@@ -70,7 +69,7 @@ public class Comanda {
 	public String toString() {
 		StringBuilder resultado = new StringBuilder(
 			"Numero pesa: " + nMesa + "\nNumero comensales: " + nComensales
-				+ "\n"
+			+ "\n"
 		);
 
 		for (Plato plato : this.platos) {

@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
+import javax.swing.WindowConstants;
 
 public class Formulario extends JFrame {
 	private JPanel contentPane;
@@ -19,6 +20,7 @@ public class Formulario extends JFrame {
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					UIManager.setLookAndFeel(
@@ -34,7 +36,7 @@ public class Formulario extends JFrame {
 	}
 
 	public Formulario() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 230, 180);
 		contentPane = new JPanel();
 		setContentPane(contentPane);
@@ -60,6 +62,7 @@ public class Formulario extends JFrame {
 
 		JButton btnComprobar = new JButton("Comprobar datos");
 		btnComprobar.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				comprobar();
 			}
@@ -69,6 +72,7 @@ public class Formulario extends JFrame {
 
 		JButton btnDialogoEdad = new JButton("...");
 		btnDialogoEdad.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				dialogoEdad();
 			}

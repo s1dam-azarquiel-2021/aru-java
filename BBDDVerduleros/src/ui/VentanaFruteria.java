@@ -21,6 +21,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
+import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
@@ -40,6 +41,7 @@ public class VentanaFruteria extends JFrame {
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					UIManager.setLookAndFeel(
@@ -58,7 +60,7 @@ public class VentanaFruteria extends JFrame {
 		this.daoProducto = new DAOProducto();
 		this.daoGrupo = new DAOGrupo();
 
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		this.setBounds(100, 100, 800, 600);
 
 		JPanel mainPane = new JPanel();
@@ -75,6 +77,7 @@ public class VentanaFruteria extends JFrame {
 
 		table = new JTable();
 		table.addMouseListener(new MouseAdapter() {
+			@Override
 			public void mouseClicked(MouseEvent e) {
 				cargarProducto();
 			}
@@ -89,26 +92,26 @@ public class VentanaFruteria extends JFrame {
 		leftBottomPane.setLayout(new GridLayout(4, 2, 20, 20));
 		bottomPane.add(leftBottomPane, BorderLayout.CENTER);
 
-		JLabel lblId = new JLabel("Id:", JLabel.RIGHT);
+		JLabel lblId = new JLabel("Id:", SwingConstants.RIGHT);
 		leftBottomPane.add(lblId);
 
 		txtId = new JTextField();
 		txtId.setEditable(false);
 		leftBottomPane.add(txtId);
 
-		JLabel lblNombre = new JLabel("Nombre:", JLabel.RIGHT);
+		JLabel lblNombre = new JLabel("Nombre:", SwingConstants.RIGHT);
 		leftBottomPane.add(lblNombre);
 
 		txtNombre = new JTextField();
 		leftBottomPane.add(txtNombre);
 
-		JLabel lblGrupo = new JLabel("Grupo:", JLabel.RIGHT);
+		JLabel lblGrupo = new JLabel("Grupo:", SwingConstants.RIGHT);
 		leftBottomPane.add(lblGrupo);
 
 		grupos = new JComboBox<>();
 		leftBottomPane.add(grupos);
 
-		JLabel lblPrecio = new JLabel("Precio:", JLabel.RIGHT);
+		JLabel lblPrecio = new JLabel("Precio:", SwingConstants.RIGHT);
 		leftBottomPane.add(lblPrecio);
 
 		txtPrecio = new JTextField();
@@ -116,6 +119,7 @@ public class VentanaFruteria extends JFrame {
 
 		JButton btnModificar = new JButton("Modificar");
 		btnModificar.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				modificar();
 			}
@@ -155,7 +159,7 @@ public class VentanaFruteria extends JFrame {
 		this.txtNombre.setText(producto.getNombre());
 		this.txtPrecio.setText(String.valueOf(producto.getPrecio()));
 		this.grupos.setModel(
-			new DefaultComboBoxModel<String>(
+			new DefaultComboBoxModel<>(
 				this.cargarGrupos(producto.getGrupo().getNombre())
 			)
 		);
@@ -194,6 +198,7 @@ public class VentanaFruteria extends JFrame {
 				Integer.class, String.class, String.class, Double.class
 			};
 
+			@Override
 			public Class getColumnClass(int columnIndex) {
 				return columnTypes[columnIndex];
 			}
@@ -202,6 +207,7 @@ public class VentanaFruteria extends JFrame {
 				false, false, false, false
 			};
 
+			@Override
 			public boolean isCellEditable(int row, int column) {
 				return columnEditables[column];
 			}

@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class LeerNumeros {
 	public static void main(String[] args) {
-		ArrayList<Integer> numeros = new ArrayList<Integer>();
+		ArrayList<Integer> numeros = new ArrayList<>();
 		Scanner input = new Scanner(System.in);
 		do {
 			numeros.add(input.nextInt());

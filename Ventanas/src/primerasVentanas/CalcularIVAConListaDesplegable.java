@@ -17,6 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
+import javax.swing.WindowConstants;
 
 public class CalcularIVAConListaDesplegable extends JFrame {
 	private static final Font FONT_SMALL = new Font("Iosevka", Font.BOLD, 14);
@@ -28,6 +29,7 @@ public class CalcularIVAConListaDesplegable extends JFrame {
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					UIManager.setLookAndFeel(
@@ -44,7 +46,7 @@ public class CalcularIVAConListaDesplegable extends JFrame {
 	}
 
 	public CalcularIVAConListaDesplegable() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 400, 260);
 		contentPane = new JPanel();
 		setContentPane(contentPane);
@@ -53,9 +55,9 @@ public class CalcularIVAConListaDesplegable extends JFrame {
 		txtFieldCantidad = generateTxtField(20, true);
 		JLabel lblCantidad = generateJLabel("Cantidad:", 20);
 
-		comboBox = new JComboBox<Integer>();
+		comboBox = new JComboBox<>();
 		comboBox.setBounds(100, 60, 200, 30);
-		comboBox.setModel(new DefaultComboBoxModel<Integer>(new Integer[] {
+		comboBox.setModel(new DefaultComboBoxModel<>(new Integer[] {
 			21, 10, 4
 		}));
 
@@ -79,12 +81,14 @@ public class CalcularIVAConListaDesplegable extends JFrame {
 		contentPane.add(btnCalcular);
 
 		comboBox.addItemListener(new ItemListener() {
+			@Override
 			public void itemStateChanged(ItemEvent e) {
 				calcular();
 			}
 		});
 
 		btnCalcular.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				calcular();
 			}

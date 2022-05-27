@@ -69,6 +69,7 @@ public class DialogoNuevoCliente extends JDialog {
 
 		JButton okButton = new JButton("Aceptar");
 		okButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				aceptar();
 			}
@@ -80,6 +81,7 @@ public class DialogoNuevoCliente extends JDialog {
 
 		JButton cancelButton = new JButton("Cancelar");
 		cancelButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				cancelar();
 			}

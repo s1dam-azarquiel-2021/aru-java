@@ -40,6 +40,7 @@ public class DialogoElegirEdad extends JDialog {
 		this.slider = new JSlider();
 		this.slider.setBounds(20, 100, 200, 40);
 		this.slider.addChangeListener(new ChangeListener() {
+			@Override
 			public void stateChanged(ChangeEvent e) {
 				actualizarEdad();
 			}
@@ -54,6 +55,7 @@ public class DialogoElegirEdad extends JDialog {
 
 		JButton okButton = new JButton("OK");
 		okButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				confirmar();
 			}
@@ -64,6 +66,7 @@ public class DialogoElegirEdad extends JDialog {
 
 		JButton cancelButton = new JButton("Cancel");
 		cancelButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				cancelar();
 			}

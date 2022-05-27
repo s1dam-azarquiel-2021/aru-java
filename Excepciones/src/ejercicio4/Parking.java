@@ -15,11 +15,11 @@ public class Parking {
 	public Parking(int capacidad) {
 		super();
 		this.capacidad = capacidad;
-		this.tickets = new ArrayList<Ticket>();
+		this.tickets = new ArrayList<>();
 	}
 
-	public void add(Ticket ticket)
-		throws ParkingLlenoException, TicketDuplicadoException {
+	public void add(Ticket ticket) throws ParkingLlenoException,
+		TicketDuplicadoException {
 		if (this.tickets.size() >= capacidad) {
 			throw new ParkingLlenoException("El parking esta lleno");
 		}

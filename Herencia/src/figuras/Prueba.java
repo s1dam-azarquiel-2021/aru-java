@@ -8,7 +8,7 @@ public class Prueba {
 		Triangulo t = new Triangulo("Rojo", 3, 4);
 		Cuadrado s = new Cuadrado("Verde", 3);
 
-		ArrayList<Figura> lista = new ArrayList<Figura>();
+		ArrayList<Figura> lista = new ArrayList<>();
 		lista.add(s);
 		lista.add(t);
 		lista.add(c);

@@ -5,8 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class PruebaConMetodo {
-	public static void main(String[] args)
-		throws NumberFormatException, IOException {
+	public static void main(String[] args) throws NumberFormatException,
+		IOException {
 		int valor = leerDato();
 		System.out.printf("El dato es: %d", valor);
 	}

@@ -38,6 +38,7 @@ public class GenerarPremios {
 
 	public void cargarCombinaciones() {
 		CustomBufferedReader br = new CustomBufferedReader() {
+			@Override
 			public void main() throws IOException {
 				String linea = stream.readLine();
 				while (linea != null) {
@@ -59,6 +60,7 @@ public class GenerarPremios {
 
 	public void cargarCombiGanadora() {
 		CustomBufferedReader br = new CustomBufferedReader() {
+			@Override
 			public void main() throws IOException {
 				String linea = stream.readLine();
 				StringTokenizer numeros = new StringTokenizer(linea, ",");
@@ -73,6 +75,7 @@ public class GenerarPremios {
 
 	public void guardarPremios() {
 		CustomBufferedWriter bw = new CustomBufferedWriter() {
+			@Override
 			public void main() throws IOException {
 				for (ArrayList<Integer> combinacionActual : combinaciones) {
 					int acertadas = 0;

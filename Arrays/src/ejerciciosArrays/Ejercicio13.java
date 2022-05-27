@@ -26,7 +26,7 @@ public class Ejercicio13 {
 			}
 		};
 
-		ArrayList<Integer> resultado = new ArrayList<Integer>();
+		ArrayList<Integer> resultado = new ArrayList<>();
 
 		for (int i = 0; i < array.length; i++) {
 			for (int j = 0; j < array[i].length; j++) {

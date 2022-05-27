@@ -17,7 +17,7 @@ public class AlmacenDeMultas {
 
 	public AlmacenDeMultas() {
 		super();
-		this.sanciones = new ArrayList<Sancion>();
+		this.sanciones = new ArrayList<>();
 	}
 	// ------------
 
@@ -39,7 +39,7 @@ public class AlmacenDeMultas {
 	}
 
 	public ArrayList<Sancion> getSanciones(String matricula) {
-		ArrayList<Sancion> resultado = new ArrayList<Sancion>();
+		ArrayList<Sancion> resultado = new ArrayList<>();
 		for (Sancion sancion : this.sanciones) {
 			if (sancion.getMatricula().equals(matricula)) {
 				resultado.add(sancion);
@@ -50,7 +50,7 @@ public class AlmacenDeMultas {
 	}
 
 	public ArrayList<Conductor> getMalosConductores() {
-		ArrayList<Conductor> resultado = new ArrayList<Conductor>();
+		ArrayList<Conductor> resultado = new ArrayList<>();
 		for (Sancion sancion : this.sanciones) {
 			if (sancion instanceof SancionGrave) {
 				Conductor conductor = sancion.getConductor();

@@ -56,6 +56,7 @@ public class DialogoGestionHabitaciones extends JDialog {
 
 		JButton okButton = new JButton("Aceptar");
 		okButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				aceptar();
 			}
@@ -67,6 +68,7 @@ public class DialogoGestionHabitaciones extends JDialog {
 
 		JButton cancelButton = new JButton("Cancelar");
 		cancelButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				cancelar();
 			}
@@ -107,6 +109,7 @@ public class DialogoGestionHabitaciones extends JDialog {
 				Integer.class, Boolean.class
 			};
 
+			@Override
 			public Class getColumnClass(int columnIndex) {
 				return columnTypes[columnIndex];
 			}
@@ -115,6 +118,7 @@ public class DialogoGestionHabitaciones extends JDialog {
 				false, true
 			};
 
+			@Override
 			public boolean isCellEditable(int row, int column) {
 				return columnEditables[column];
 			}

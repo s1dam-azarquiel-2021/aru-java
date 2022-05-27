@@ -22,12 +22,13 @@ public class ActualizarPrecios {
 
 	public ActualizarPrecios(String ficheroVehiculos) {
 		super();
-		this.vehiculos = new ArrayList<Vehiculo>();
+		this.vehiculos = new ArrayList<>();
 		this.ficheroVehiculos = ficheroVehiculos;
 	}
 
 	public void guardarVehiculos() {
 		CustomObjectOutputStream oos = new CustomObjectOutputStream() {
+			@Override
 			public void main() throws IOException {
 				for (Vehiculo vehiculo : vehiculos) {
 					stream.writeObject(vehiculo);
@@ -40,6 +41,7 @@ public class ActualizarPrecios {
 
 	public void cargarVehiculos() {
 		CustomObjectInputStream ois = new CustomObjectInputStream() {
+			@Override
 			public void main() throws IOException, ClassNotFoundException {
 				while (true) {
 					Vehiculo vehiculo = (Vehiculo) stream.readObject();

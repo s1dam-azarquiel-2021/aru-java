@@ -17,6 +17,6 @@ public class Cocina extends Estancia {
 	@Override
 	public String toString() {
 		return super.toString() + "nElectrodomesticos: " + nElectrodomesticos
-			+ "\n";
+		+ "\n";
 	}
 }

@@ -24,6 +24,7 @@ public class Fusionar {
 
 	public void cargarCompras() {
 		CustomObjectInputStream ois = new CustomObjectInputStream() {
+			@Override
 			public void main() throws IOException, ClassNotFoundException {
 				while (true) {
 					compras.add((Compra) stream.readObject());
@@ -36,6 +37,7 @@ public class Fusionar {
 
 	public void fusionarCompras() {
 		CustomObjectOutputStream oos = new CustomObjectOutputStream() {
+			@Override
 			public void main() throws IOException {
 				for (int i = 0; i < compras.size(); i++) {
 					Compra compra = compras.get(i);

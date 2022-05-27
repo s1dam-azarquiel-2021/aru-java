@@ -8,7 +8,7 @@ public class Expediente {
 
 	public Expediente(Alumno alumno) {
 		this.alumno = alumno;
-		modulos = new ArrayList<Modulo>();
+		modulos = new ArrayList<>();
 	}
 
 	public Expediente(Alumno alumno, ArrayList<Modulo> modulos) {
@@ -30,9 +30,9 @@ public class Expediente {
 	}
 
 	public Modulo getModulo(String nombreModulo) {
-		for (int i = 0; i < modulos.size(); i++) {
-			if (modulos.get(i).getNombre().equals(nombreModulo)) {
-				return modulos.get(i);
+		for (Modulo element : modulos) {
+			if (element.getNombre().equals(nombreModulo)) {
+				return element;
 			}
 		}
 		return null;
@@ -47,19 +47,20 @@ public class Expediente {
 			return 0;
 		} else {
 			float suma = 0;
-			for (int i = 0; i < modulos.size(); i++) {
-				suma += modulos.get(i).notaMedia();
+			for (Modulo element : modulos) {
+				suma += element.notaMedia();
 			}
 			return suma / modulos.size();
 		}
 	}
 
+	@Override
 	public String toString() {
 		String resultado = "";
 		resultado += " Expediente de: " + alumno + "\n";
 		resultado += " MODULO\t1Ev\t2Ev\t3Ev\n";
-		for (int i = 0; i < modulos.size(); i++) {
-			resultado += modulos.get(i) + "\n";
+		for (Modulo element : modulos) {
+			resultado += element + "\n";
 		}
 		resultado += "Nota Media:" + this.notaMedia() + "\n";
 		return resultado;
@@ -76,11 +77,11 @@ public class Expediente {
 	}
 
 	public boolean modifyModulo(Modulo modulo) {
-		for (int i = 0; i < modulos.size(); i++) {
-			if (modulos.get(i).getNombre().equals(modulo.getNombre())) {
-				modulos.get(i).setNota(1, modulo.getNota(1));
-				modulos.get(i).setNota(2, modulo.getNota(2));
-				modulos.get(i).setNota(3, modulo.getNota(3));
+		for (Modulo element : modulos) {
+			if (element.getNombre().equals(modulo.getNombre())) {
+				element.setNota(1, modulo.getNota(1));
+				element.setNota(2, modulo.getNota(2));
+				element.setNota(3, modulo.getNota(3));
 				return true;
 			}
 		}

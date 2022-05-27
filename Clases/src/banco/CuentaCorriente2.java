@@ -38,6 +38,6 @@ public class CuentaCorriente2 {
 	@Override
 	public String toString() {
 		return "Numero cuenta: " + numeroCuenta + "\nTitular: " + titular
-			+ "\nSaldo: " + saldo;
+		+ "\nSaldo: " + saldo;
 	}
 }

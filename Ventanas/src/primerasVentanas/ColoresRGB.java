@@ -10,13 +10,16 @@ import javax.swing.JPanel;
 import javax.swing.JSlider;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
+import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 public class ColoresRGB extends JFrame {
 	private static final Font MAIN_FONT = new Font(
-		"Iosevka Extrabold", Font.BOLD, 20
+		"Iosevka Extrabold",
+		Font.BOLD,
+		20
 	);
 	private JPanel contentPane;
 	private JPanel colorVisualizer;
@@ -26,6 +29,7 @@ public class ColoresRGB extends JFrame {
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					UIManager.setLookAndFeel(
@@ -41,7 +45,7 @@ public class ColoresRGB extends JFrame {
 	}
 
 	public ColoresRGB() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 500, 300);
 
 		contentPane = new JPanel();
@@ -107,7 +111,8 @@ public class ColoresRGB extends JFrame {
 	private void cambiarColor() {
 		this.colorVisualizer.setBackground(
 			new java.awt.Color(
-				this.sliderR.getValue(), this.sliderG.getValue(),
+				this.sliderR.getValue(),
+				this.sliderG.getValue(),
 				this.sliderB.getValue()
 			)
 		);
@@ -119,6 +124,7 @@ public class ColoresRGB extends JFrame {
 
 	private ChangeListener actualizar(JLabel jLabel, JSlider jSlider) {
 		return new ChangeListener() {
+			@Override
 			public void stateChanged(ChangeEvent e) {
 				cambiarColor();
 				cambiarValor(jLabel, jSlider.getValue());

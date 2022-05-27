@@ -50,6 +50,7 @@ public class DialogoNuevoContacto extends JDialog {
 
 		JButton okButton = new JButton("OK");
 		okButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				confirmar();
 			}
@@ -60,6 +61,7 @@ public class DialogoNuevoContacto extends JDialog {
 
 		JButton cancelButton = new JButton("Cancel");
 		cancelButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				cancelar();
 			}
@@ -83,9 +85,8 @@ public class DialogoNuevoContacto extends JDialog {
 			try {
 				((VentanaPrincipal) this.getParent()).getAgenda().add(
 					new Contacto(
-						this.txtFieldNombre.getText(), Long.parseLong(
-							this.txtFieldNumero.getText()
-						)
+						this.txtFieldNombre.getText(),
+						Long.parseLong(this.txtFieldNumero.getText())
 					)
 				);
 

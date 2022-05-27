@@ -32,6 +32,6 @@ public abstract class VehiculoConMotor extends Vehiculo {
 	@Override
 	public String toString() {
 		return super.toString() + "Cilindrada: " + cilindrada
-			+ "\nCombustible: " + combustible + "\n";
+		+ "\nCombustible: " + combustible + "\n";
 	}
 }

@@ -38,6 +38,6 @@ public class CuentaCorrienteProfesional {
 	@Override
 	public String toString() {
 		return "Numero cuenta: " + numeroCuenta + "\n\nTitular:\n" + titular
-			+ "\n\nSaldo: " + saldo;
+		+ "\n\nSaldo: " + saldo;
 	}
 }

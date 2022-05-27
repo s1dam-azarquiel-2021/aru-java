@@ -6,7 +6,7 @@ public class ListaDeEspera {
 	private ArrayList<Paciente> list;
 
 	public ListaDeEspera() {
-		this.list = new ArrayList<Paciente>();
+		this.list = new ArrayList<>();
 	}
 
 	public boolean add(Paciente paciente) {

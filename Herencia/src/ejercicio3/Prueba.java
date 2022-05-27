@@ -7,7 +7,7 @@ import ejercicio3.Electrodomestico.Consumo;
 
 public class Prueba {
 	public static void main(String[] args) {
-		ArrayList<Electrodomestico> lista = new ArrayList<Electrodomestico>(10);
+		ArrayList<Electrodomestico> lista = new ArrayList<>(10);
 		lista.add(new Electrodomestico());
 		lista.add(new Electrodomestico(10, 50));
 		lista.add(new Electrodomestico(Color.ROJO, Consumo.B, 5, 200));

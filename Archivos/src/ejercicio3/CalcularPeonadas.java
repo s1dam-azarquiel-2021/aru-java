@@ -29,7 +29,7 @@ public class CalcularPeonadas {
 		String ficheroTotalPeonadas
 	) {
 		super();
-		this.trabajadores = new ArrayList<Trabajador>();
+		this.trabajadores = new ArrayList<>();
 		this.ficheroTrabajadores = ficheroTrabajadores;
 		this.ficheroPeonadas = ficheroPeonadas;
 		this.ficheroTotalPeonadas = ficheroTotalPeonadas;
@@ -46,6 +46,7 @@ public class CalcularPeonadas {
 
 	public void guardarPeonadas() {
 		CustomBufferedWriter bw = new CustomBufferedWriter() {
+			@Override
 			public void main() throws IOException {
 				for (Trabajador trabajador : trabajadores) {
 					stream.write(trabajador.toString());
@@ -59,6 +60,7 @@ public class CalcularPeonadas {
 
 	public void cargarPeonadas() {
 		CustomBufferedReader br = new CustomBufferedReader() {
+			@Override
 			public void main() throws IOException {
 				String linea = stream.readLine();
 				while (linea != null) {
@@ -85,6 +87,7 @@ public class CalcularPeonadas {
 
 	public void cargarTrabajadores() {
 		CustomBufferedReader br = new CustomBufferedReader() {
+			@Override
 			public void main() throws IOException {
 				String linea = stream.readLine();
 				while (linea != null) {

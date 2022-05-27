@@ -15,7 +15,8 @@ public class Ejercicio17 {
 		Scanner input = new Scanner(System.in);
 		System.out.printf("Introduce las asignaturas:\n");
 		StringTokenizer asignaturas = new StringTokenizer(
-			input.nextLine(), ":"
+			input.nextLine(),
+			":"
 		);
 
 		System.out.printf("Introduce las notas:\n");
@@ -37,7 +38,7 @@ public class Ejercicio17 {
 		} else {
 			System.out.printf(
 				"Tiene que haber la misma cantidad"
-					+ " de asignaturas que de notas\n"
+				+ " de asignaturas que de notas\n"
 			);
 		}
 	}

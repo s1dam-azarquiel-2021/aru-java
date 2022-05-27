@@ -17,7 +17,7 @@ public class Vivienda {
 
 	public Vivienda() {
 		super();
-		this.estancias = new ArrayList<Estancia>();
+		this.estancias = new ArrayList<>();
 	}
 
 	public ArrayList<Estancia> getEstancias() {

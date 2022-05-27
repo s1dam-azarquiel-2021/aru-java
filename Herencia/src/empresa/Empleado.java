@@ -12,5 +12,4 @@ public class Empleado extends Staff {
 	public String toString() {
 		return super.toString();
 	}
-
 }

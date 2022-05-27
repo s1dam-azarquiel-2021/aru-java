@@ -14,7 +14,7 @@ public class Ejercicio9_b {
 			3, 6, 18, 21, 25, 47
 		};
 
-		ArrayList<Integer> arrFinal = new ArrayList<Integer>(
+		ArrayList<Integer> arrFinal = new ArrayList<>(
 			arrA.length + arrB.length
 		);
 

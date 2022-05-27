@@ -96,9 +96,9 @@ public class Crucero {
 	public String toString() {
 		StringBuilder resultado = new StringBuilder(
 			"Codigo crucero: " + cCrucero + "\nNombre Comercial: "
-				+ nombreComercial + "\nNombre Barco: " + nombreBarco
-				+ "\nFecha partida: " + fPartida + "\nFecha regreso: "
-				+ fRegreso + "\n"
+			+ nombreComercial + "\nNombre Barco: " + nombreBarco
+			+ "\nFecha partida: " + fPartida + "\nFecha regreso: " + fRegreso
+			+ "\n"
 		);
 
 		for (Escala escala : this.escalas) {

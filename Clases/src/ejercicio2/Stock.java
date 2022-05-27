@@ -10,7 +10,7 @@ public class Stock {
 	}
 
 	public Stock() {
-		this.productos = new ArrayList<Producto>();
+		this.productos = new ArrayList<>();
 	}
 
 	public boolean add(Producto producto) {
@@ -50,7 +50,7 @@ public class Stock {
 	}
 
 	public ArrayList<Producto> outOfStockProducts() {
-		ArrayList<Producto> result = new ArrayList<Producto>();
+		ArrayList<Producto> result = new ArrayList<>();
 		for (Producto producto : this.productos) {
 			if (producto.getCantidad() == 0) {
 				result.add(producto);
@@ -61,7 +61,7 @@ public class Stock {
 	}
 
 	public ArrayList<Producto> belowMinimumProducts() {
-		ArrayList<Producto> result = new ArrayList<Producto>();
+		ArrayList<Producto> result = new ArrayList<>();
 		for (Producto producto : this.productos) {
 			if (producto.getCantidad() < producto.getMinimo()) {
 				result.add(producto);
@@ -81,8 +81,9 @@ public class Stock {
 		for (int i = 0; i < this.size(); i++) {
 			if (this.productos.get(i) != null) {
 				resultado.append(
-					"Producto " + (i + 1) + "\n"
-						+ this.productos.get(i).toString()
+					"Producto " + (i + 1) + "\n" + this.productos.get(
+						i
+					).toString()
 				);
 			}
 		}

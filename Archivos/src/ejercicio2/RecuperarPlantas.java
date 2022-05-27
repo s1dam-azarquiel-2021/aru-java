@@ -15,7 +15,7 @@ public class RecuperarPlantas {
 		try {
 			stream = new ObjectInputStream(new FileInputStream(archivo));
 			while (true) {
-				System.out.println((Planta) stream.readObject());
+				System.out.println(stream.readObject());
 			}
 		} catch (EOFException e) {
 		} catch (FileNotFoundException e) {

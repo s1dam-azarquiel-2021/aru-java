@@ -10,7 +10,7 @@ public class AgendaV2 {
 	}
 
 	public AgendaV2() {
-		this.lista = new ArrayList<Contacto>();
+		this.lista = new ArrayList<>();
 	}
 
 	public boolean add(Contacto contacto) {

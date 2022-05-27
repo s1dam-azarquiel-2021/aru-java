@@ -6,7 +6,8 @@ public class PruebaProfesional {
 		System.out.printf("%s\n", pepino);
 
 		CuentaCorrienteProfesional cuenta = new CuentaCorrienteProfesional(
-			123456789, pepino
+			123456789,
+			pepino
 		);
 		cuenta.ingresar(1200);
 		System.out.printf("\n%s\n", cuenta);

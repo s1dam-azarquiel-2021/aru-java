@@ -35,8 +35,9 @@ public class PruebaString2 {
 			"La palabra \"que\" esta en la posicion: %s\n", s.indexOf("que")
 		);
 		System.out.printf(
-			"La letra \'a\' apartir de la posicion 4: %s\n",
-			s.lastIndexOf('a', 4)
+			"La letra \'a\' apartir de la posicion 4: %s\n", s.lastIndexOf(
+				'a', 4
+			)
 		);
 	}
 }

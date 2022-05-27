@@ -25,5 +25,4 @@ public class TicketDuplicadoException extends Exception {
 	public TicketDuplicadoException(Throwable cause) {
 		super(cause);
 	}
-
 }

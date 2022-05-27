@@ -10,7 +10,7 @@ public class CajonFacturas {
 	}
 
 	public CajonFacturas() {
-		this.facturas = new ArrayList<Factura>();
+		this.facturas = new ArrayList<>();
 	}
 
 	public boolean add(Factura factura) {
@@ -28,7 +28,7 @@ public class CajonFacturas {
 	}
 
 	public ArrayList<Factura> notPaidInvoices() {
-		ArrayList<Factura> result = new ArrayList<Factura>();
+		ArrayList<Factura> result = new ArrayList<>();
 		for (Factura factura : this.facturas) {
 			if (!factura.isPagada()) {
 				result.add(factura);

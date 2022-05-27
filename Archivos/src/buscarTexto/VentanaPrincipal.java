@@ -20,6 +20,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.KeyStroke;
 import javax.swing.UIManager;
+import javax.swing.WindowConstants;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
@@ -30,6 +31,7 @@ public class VentanaPrincipal extends JFrame {
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					UIManager.setLookAndFeel(
@@ -46,7 +48,7 @@ public class VentanaPrincipal extends JFrame {
 
 	public VentanaPrincipal() {
 		this.setTitle("Bloc de notas");
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		this.setBounds(100, 100, 531, 407);
 
 		JPanel contentPane = new JPanel();
@@ -81,14 +83,17 @@ public class VentanaPrincipal extends JFrame {
 
 		txtFieldFiltro.getDocument().addDocumentListener(
 			new DocumentListener() {
+				@Override
 				public void removeUpdate(DocumentEvent e) {
 					filtrarTexto();
 				}
 
+				@Override
 				public void insertUpdate(DocumentEvent e) {
 					filtrarTexto();
 				}
 
+				@Override
 				public void changedUpdate(DocumentEvent e) {
 					filtrarTexto();
 				}
@@ -96,6 +101,7 @@ public class VentanaPrincipal extends JFrame {
 		);
 
 		mntmAbrir.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				abrir();
 			}
@@ -106,6 +112,7 @@ public class VentanaPrincipal extends JFrame {
 		);
 
 		mntmGuardar.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				guardar();
 			}
@@ -116,6 +123,7 @@ public class VentanaPrincipal extends JFrame {
 		);
 
 		mntmGuardarComo.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				guardarComo();
 			}

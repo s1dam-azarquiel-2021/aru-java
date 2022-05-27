@@ -19,12 +19,11 @@ public class CalcularFacturaAgua {
 
 		int total = 0;
 		if (metros3 > limiteCaro) {
-			total = (limiteMedio - limiteBajo) * pBajo
-				+ (limiteCaro - limiteMedio) * pMedio
-				+ (metros3 - limiteCaro) * pCaro;
+			total = (limiteMedio - limiteBajo) * pBajo + (limiteCaro
+			- limiteMedio) * pMedio + (metros3 - limiteCaro) * pCaro;
 		} else if (metros3 > limiteMedio) {
-			total = (limiteMedio - limiteBajo) * pBajo
-				+ (metros3 - limiteMedio) * pMedio;
+			total = (limiteMedio - limiteBajo) * pBajo + (metros3 - limiteMedio)
+			* pMedio;
 		} else {
 			total = metros3 * pBajo;
 		}

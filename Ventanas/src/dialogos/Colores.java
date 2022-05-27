@@ -11,12 +11,14 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
+import javax.swing.WindowConstants;
 
 public class Colores extends JFrame {
 	private JLabel lblTexto;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					UIManager.setLookAndFeel(
@@ -32,7 +34,7 @@ public class Colores extends JFrame {
 	}
 
 	public Colores() {
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		this.setBounds(100, 100, 250, 160);
 
 		JPanel contentPane = new JPanel();
@@ -47,6 +49,7 @@ public class Colores extends JFrame {
 
 		JButton btnCambiarColor = new JButton("Cambiar color");
 		btnCambiarColor.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				dialogoCambiarColor();
 			}

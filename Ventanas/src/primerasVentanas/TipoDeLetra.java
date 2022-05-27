@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
+import javax.swing.WindowConstants;
 
 public class TipoDeLetra extends JFrame {
 	private static final Font MAIN_FONT = new Font("Iosevka", Font.PLAIN, 40);
@@ -22,6 +23,7 @@ public class TipoDeLetra extends JFrame {
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					UIManager.setLookAndFeel(
@@ -37,7 +39,7 @@ public class TipoDeLetra extends JFrame {
 	}
 
 	public TipoDeLetra() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 400, 210);
 		contentPane = new JPanel();
 		setContentPane(contentPane);
@@ -68,6 +70,7 @@ public class TipoDeLetra extends JFrame {
 
 	private ActionListener cambiarFuenteAlSeleccionar() {
 		return new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				Font fuente = MAIN_FONT;
 

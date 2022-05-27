@@ -8,12 +8,12 @@ public class Ejercicio5 {
 		int[] resultado = new int[ordenada.length];
 		int posPar = 0;
 		int posImpar = resultado.length - 1;
-		for (int i = 0; i < ordenada.length; i++) {
-			if (ordenada[i] % 2 == 0) {
-				resultado[posPar] = ordenada[i];
+		for (int element : ordenada) {
+			if (element % 2 == 0) {
+				resultado[posPar] = element;
 				posPar++;
 			} else {
-				resultado[posImpar] = ordenada[i];
+				resultado[posImpar] = element;
 				posImpar--;
 			}
 		}

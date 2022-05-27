@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
+import javax.swing.WindowConstants;
 
 public class VentanaPrincipal extends JFrame {
 	private ListaDeEspera listaDeEspera;
@@ -17,6 +18,7 @@ public class VentanaPrincipal extends JFrame {
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					UIManager.setLookAndFeel(
@@ -32,7 +34,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 
 	public VentanaPrincipal() {
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		this.setBounds(100, 100, 330, 130);
 
 		this.listaDeEspera = new ListaDeEspera();
@@ -43,6 +45,7 @@ public class VentanaPrincipal extends JFrame {
 
 		JButton btnNuevo = new JButton("Nuevo");
 		btnNuevo.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				nuevoPaciente();
 			}
@@ -52,6 +55,7 @@ public class VentanaPrincipal extends JFrame {
 
 		JButton btnAtender = new JButton("Atender");
 		btnAtender.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				atenderPaciente();
 			}
@@ -70,7 +74,8 @@ public class VentanaPrincipal extends JFrame {
 
 	private void nuevoPaciente() {
 		DialogoNuevoPaciente dialogoNuevoPaciente = new DialogoNuevoPaciente(
-			this, true
+			this,
+			true
 		);
 		dialogoNuevoPaciente.setLocationRelativeTo(this);
 		dialogoNuevoPaciente.setVisible(true);

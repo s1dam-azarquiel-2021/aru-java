@@ -41,6 +41,6 @@ public abstract class Escala {
 	@Override
 	public String toString() {
 		return "Ciudad: " + ciudad + "\nHora Bajada: " + horaBajada
-			+ "\nHora Regreso: " + horaRegreso + "\n";
+		+ "\nHora Regreso: " + horaRegreso + "\n";
 	}
 }

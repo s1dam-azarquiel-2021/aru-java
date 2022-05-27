@@ -11,6 +11,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 import javax.swing.UIManager;
+import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
@@ -31,6 +32,7 @@ public class VentanaCenso extends JFrame {
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					UIManager.setLookAndFeel(
@@ -51,7 +53,7 @@ public class VentanaCenso extends JFrame {
 	 */
 	public VentanaCenso() {
 		setTitle("Censo Electoral");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 630, 358);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -81,6 +83,7 @@ public class VentanaCenso extends JFrame {
 				String.class, Integer.class
 			};
 
+			@Override
 			public Class getColumnClass(int columnIndex) {
 				return columnTypes[columnIndex];
 			}
@@ -89,6 +92,7 @@ public class VentanaCenso extends JFrame {
 				false, false
 			};
 
+			@Override
 			public boolean isCellEditable(int row, int column) {
 				return columnEditables[column];
 			}
@@ -113,6 +117,7 @@ public class VentanaCenso extends JFrame {
 				String.class, String.class, Integer.class, String.class
 			};
 
+			@Override
 			public Class getColumnClass(int columnIndex) {
 				return columnTypes[columnIndex];
 			}
@@ -121,6 +126,7 @@ public class VentanaCenso extends JFrame {
 				false, false, false, false
 			};
 
+			@Override
 			public boolean isCellEditable(int row, int column) {
 				return columnEditables[column];
 			}
@@ -149,6 +155,7 @@ public class VentanaCenso extends JFrame {
 				String.class, Integer.class
 			};
 
+			@Override
 			public Class getColumnClass(int columnIndex) {
 				return columnTypes[columnIndex];
 			}
@@ -157,6 +164,7 @@ public class VentanaCenso extends JFrame {
 				false, false
 			};
 
+			@Override
 			public boolean isCellEditable(int row, int column) {
 				return columnEditables[column];
 			}
@@ -190,6 +198,7 @@ public class VentanaCenso extends JFrame {
 				String.class, String.class, Integer.class, String.class
 			};
 
+			@Override
 			public Class getColumnClass(int columnIndex) {
 				return columnTypes[columnIndex];
 			}
@@ -198,6 +207,7 @@ public class VentanaCenso extends JFrame {
 				false, false, false, false
 			};
 
+			@Override
 			public boolean isCellEditable(int row, int column) {
 				return columnEditables[column];
 			}

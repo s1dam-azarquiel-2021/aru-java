@@ -22,6 +22,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
+import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
@@ -44,6 +45,7 @@ public class VentanaCursos extends JFrame {
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					UIManager.setLookAndFeel(
@@ -63,7 +65,7 @@ public class VentanaCursos extends JFrame {
 		this.daoCurso = new DAOCurso();
 		this.daoEvaluacion = new DAOEvaluacion();
 
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		this.setBounds(100, 100, 800, 600);
 
 		JPanel mainPane = new JPanel();
@@ -93,28 +95,31 @@ public class VentanaCursos extends JFrame {
 		centerTopPane.setLayout(new GridLayout(4, 2, 20, 20));
 		centerPane.add(centerTopPane, BorderLayout.CENTER);
 
-		JLabel lblId = new JLabel("Seleccione Alumno:", JLabel.RIGHT);
+		JLabel lblId = new JLabel("Seleccione Alumno:", SwingConstants.RIGHT);
 		centerTopPane.add(lblId);
 
-		alumnos = new JComboBox<String>();
-		alumnos.setModel(new DefaultComboBoxModel<String>(this.alumnos()));
+		alumnos = new JComboBox<>();
+		alumnos.setModel(new DefaultComboBoxModel<>(this.alumnos()));
 		centerTopPane.add(alumnos);
 
-		JLabel lblNombre = new JLabel("Seleccione Curso:", JLabel.RIGHT);
+		JLabel lblNombre = new JLabel(
+			"Seleccione Curso:",
+			SwingConstants.RIGHT
+		);
 		centerTopPane.add(lblNombre);
 
 		cursos = new JComboBox<>();
-		cursos.setModel(new DefaultComboBoxModel<String>(this.cursos()));
+		cursos.setModel(new DefaultComboBoxModel<>(this.cursos()));
 		centerTopPane.add(cursos);
 
-		JLabel lblGrupo = new JLabel("Nota:", JLabel.RIGHT);
+		JLabel lblGrupo = new JLabel("Nota:", SwingConstants.RIGHT);
 		centerTopPane.add(lblGrupo);
 
-		notas = new JComboBox<Integer>();
-		notas.setModel(new DefaultComboBoxModel<Integer>(this.notas()));
+		notas = new JComboBox<>();
+		notas.setModel(new DefaultComboBoxModel<>(this.notas()));
 		centerTopPane.add(notas);
 
-		JLabel lblPrecio = new JLabel("Observaciones:", JLabel.RIGHT);
+		JLabel lblPrecio = new JLabel("Observaciones:", SwingConstants.RIGHT);
 		centerTopPane.add(lblPrecio);
 
 		txtObservaciones = new JTextField();
@@ -122,6 +127,7 @@ public class VentanaCursos extends JFrame {
 
 		JButton btnModificar = new JButton("Anotar");
 		btnModificar.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				modificar();
 			}
@@ -216,6 +222,7 @@ public class VentanaCursos extends JFrame {
 				String.class, String.class, Integer.class, String.class
 			};
 
+			@Override
 			public Class getColumnClass(int columnIndex) {
 				return columnTypes[columnIndex];
 			}
@@ -224,6 +231,7 @@ public class VentanaCursos extends JFrame {
 				false, false, false, false
 			};
 
+			@Override
 			public boolean isCellEditable(int row, int column) {
 				return columnEditables[column];
 			}

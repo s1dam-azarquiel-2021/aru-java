@@ -15,11 +15,11 @@ public class Pandilla {
 	public Pandilla(int capacidad) {
 		super();
 		this.capacidad = capacidad;
-		this.amigos = new ArrayList<Amigo>();
+		this.amigos = new ArrayList<>();
 	}
 
-	public void add(Amigo amigo)
-		throws PandillaCompletaException, VayaNombreDeMierdaException {
+	public void add(Amigo amigo) throws PandillaCompletaException,
+		VayaNombreDeMierdaException {
 		if (this.amigos.size() == this.capacidad) {
 			throw new PandillaCompletaException(
 				"Esto ta lleno, buscate otro lao"

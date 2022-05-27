@@ -27,6 +27,6 @@ public abstract class Estancia {
 	@Override
 	public String toString() {
 		return "metros2: " + metros2 + "\nnVentanas: " + nVentanas
-			+ "\nprecio: " + precio + "\n";
+		+ "\nprecio: " + precio + "\n";
 	}
 }

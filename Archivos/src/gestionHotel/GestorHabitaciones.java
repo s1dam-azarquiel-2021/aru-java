@@ -13,11 +13,12 @@ public class GestorHabitaciones {
 	public GestorHabitaciones(String archivo) {
 		super();
 		this.archivo = archivo;
-		this.habitaciones = new ArrayList<Habitacion>();
+		this.habitaciones = new ArrayList<>();
 	}
 
 	public void read() {
 		CustomObjectInputStream ois = new CustomObjectInputStream() {
+			@Override
 			public void main() throws IOException, ClassNotFoundException {
 				while (true) {
 					habitaciones.add((Habitacion) stream.readObject());
@@ -30,6 +31,7 @@ public class GestorHabitaciones {
 
 	public void write() {
 		CustomObjectOutputStream oos = new CustomObjectOutputStream() {
+			@Override
 			public void main() throws IOException {
 				for (Habitacion habitacion : habitaciones) {
 					stream.writeObject(habitacion);

@@ -59,6 +59,6 @@ public class Contador {
 	@Override
 	public String toString() {
 		return "valor: " + valor + "\nminimo: " + minimo + "\nmaximo: " + maximo
-			+ "\n";
+		+ "\n";
 	}
 }

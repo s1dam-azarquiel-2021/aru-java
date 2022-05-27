@@ -17,6 +17,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
+import javax.swing.WindowConstants;
 
 public class CalcularIVA extends JFrame {
 	private static final Font FONT_BIG = new Font("Iosevka", Font.BOLD, 18);
@@ -29,6 +30,7 @@ public class CalcularIVA extends JFrame {
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					UIManager.setLookAndFeel(
@@ -44,7 +46,7 @@ public class CalcularIVA extends JFrame {
 	}
 
 	public CalcularIVA() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 400, 340);
 		contentPane = new JPanel();
 		setContentPane(contentPane);
@@ -83,6 +85,7 @@ public class CalcularIVA extends JFrame {
 		rdbtnIVA21.addItemListener(calcularAlSeleccionar());
 
 		btnCalcular.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				calcular();
 			}
@@ -119,6 +122,7 @@ public class CalcularIVA extends JFrame {
 
 	private ItemListener calcularAlSeleccionar() {
 		return new ItemListener() {
+			@Override
 			public void itemStateChanged(ItemEvent e) {
 				calcular();
 			}

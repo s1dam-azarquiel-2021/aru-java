@@ -28,6 +28,7 @@ public class Arreglar {
 
 	public void cargarResidentes() {
 		CustomBufferedReader br = new CustomBufferedReader() {
+			@Override
 			public void main() throws IOException {
 				String linea = stream.readLine();
 				while (linea != null) {
@@ -55,6 +56,7 @@ public class Arreglar {
 
 	public void cargarMultas() {
 		CustomBufferedReader br = new CustomBufferedReader() {
+			@Override
 			public void main() throws IOException {
 				String linea = stream.readLine();
 				while (linea != null) {
@@ -84,6 +86,7 @@ public class Arreglar {
 
 	public void guardar() {
 		CustomBufferedWriter bw = new CustomBufferedWriter() {
+			@Override
 			public void main() throws IOException {
 				for (Multa multa : multas) {
 					stream.write(

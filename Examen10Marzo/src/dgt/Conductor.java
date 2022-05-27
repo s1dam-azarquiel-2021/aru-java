@@ -49,8 +49,7 @@ public class Conductor {
 	@Override
 	public String toString() {
 		return "dni: " + dni + "\nnombre: " + nombre + "\napellidos: "
-			+ apellidos + "\nfechaObtencionCarnet: " + fechaObtencionCarnet
-			+ "\n";
+		+ apellidos + "\nfechaObtencionCarnet: " + fechaObtencionCarnet + "\n";
 	}
 	// --------
 }

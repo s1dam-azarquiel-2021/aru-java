@@ -25,8 +25,8 @@ public class Ejercicio12 {
 
 		System.out.printf(
 			"El segundo siguinta seran las:\n"
-				+ "%d horas, %d minutos y %d segundos.\n",
-			H_CORRECTO, M_CORRECTO, S_CORRECTO
+			+ "%d horas, %d minutos y %d segundos.\n", H_CORRECTO, M_CORRECTO,
+			S_CORRECTO
 		);
 	}
 }

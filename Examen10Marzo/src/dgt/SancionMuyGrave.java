@@ -43,7 +43,7 @@ public class SancionMuyGrave extends SancionGrave {
 	@Override
 	public String toString() {
 		return super.toString() + "mesesCarnetRetirado: " + mesesCarnetRetirado
-			+ "\n";
+		+ "\n";
 	}
 	// --------
 }

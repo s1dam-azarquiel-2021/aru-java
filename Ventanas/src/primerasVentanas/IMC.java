@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
+import javax.swing.WindowConstants;
 
 public class IMC extends JFrame {
 	private static final Font FONT_BIG = new Font("Iosevka", Font.BOLD, 18);
@@ -27,6 +28,7 @@ public class IMC extends JFrame {
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					UIManager.setLookAndFeel(
@@ -43,7 +45,7 @@ public class IMC extends JFrame {
 	}
 
 	public IMC() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(0, 0, 400, 210);
 		contentPane = new JPanel();
 		setContentPane(contentPane);
@@ -77,6 +79,7 @@ public class IMC extends JFrame {
 		contentPane.add(lblIMCTexto);
 
 		btnCalcular.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				calcular();
 			}

@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
+import javax.swing.WindowConstants;
 
 public class CalculadoraAntigua extends JFrame {
 	private static final String DEFAULT_NUMBER = "0";
@@ -25,6 +26,7 @@ public class CalculadoraAntigua extends JFrame {
 			this.operation = operation;
 		}
 
+		@Override
 		public String toString() {
 			return this.operation;
 		}
@@ -40,6 +42,7 @@ public class CalculadoraAntigua extends JFrame {
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					UIManager.setLookAndFeel(
@@ -55,7 +58,7 @@ public class CalculadoraAntigua extends JFrame {
 	}
 
 	public CalculadoraAntigua() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 550, 510);
 		contentPane = new JPanel();
 		setContentPane(contentPane);
@@ -119,18 +122,21 @@ public class CalculadoraAntigua extends JFrame {
 		contentPane.add(btnCalcular);
 
 		btnCE.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				reiniciar();
 			}
 		});
 
 		btnPosNeg.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				cambiarSigno();
 			}
 		});
 
 		btnCalcular.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				calcular();
 			}
@@ -150,6 +156,7 @@ public class CalculadoraAntigua extends JFrame {
 	private JButton generateNumberBtn(String number, int x, int y) {
 		JButton resultado = this.generateSquareBtn(number, x, y);
 		resultado.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				aniadirNumero(number);
 			}
@@ -160,6 +167,7 @@ public class CalculadoraAntigua extends JFrame {
 	private JButton generateOperationBtn(Operation operation, int x, int y) {
 		JButton resultado = this.generateSquareBtn(operation.toString(), x, y);
 		resultado.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				realizarOperacion(operation);
 			}

@@ -39,6 +39,6 @@ public abstract class Barco {
 	@Override
 	public String toString() {
 		return "Nombre: " + nombre + "\nCapitan: " + capitan + "\nEslora: "
-			+ eslora + "\n";
+		+ eslora + "\n";
 	}
 }

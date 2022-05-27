@@ -5,18 +5,32 @@ import java.util.GregorianCalendar;
 public class Prueba {
 	public static void main(String[] args) {
 		Conductor juan = new Conductor(
-			"105020826B", "Juan", "del Castillo otra vez",
+			"105020826B",
+			"Juan",
+			"del Castillo otra vez",
 			new GregorianCalendar(2022, 4, 4)
 		);
 
 		SancionLeve leve = new SancionLeve(
-			juan, "1234A", "Saltarse un semaforo", 100
+			juan,
+			"1234A",
+			"Saltarse un semaforo",
+			100
 		);
 		SancionGrave grave = new SancionGrave(
-			juan, "1234A", "Ir a 150", 500, 2
+			juan,
+			"1234A",
+			"Ir a 150",
+			500,
+			2
 		);
 		SancionMuyGrave muyGrave = new SancionMuyGrave(
-			juan, "5678B", "Atropello a 10 personas", 80000, 10, 24
+			juan,
+			"5678B",
+			"Atropello a 10 personas",
+			80000,
+			10,
+			24
 		);
 
 		AlmacenDeMultas multas = new AlmacenDeMultas();

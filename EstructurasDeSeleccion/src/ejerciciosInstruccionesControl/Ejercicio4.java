@@ -20,7 +20,7 @@ public class Ejercicio4 {
 
 		if (
 			N_USUARIO_PRIMERA_CIFRA == N_PREMIADO_PRIMERA_CIFRA
-				|| N_USUARIO_ULTIMA_CIFRA == N_PREMIADO_ULTIMA_CIFRA
+			|| N_USUARIO_ULTIMA_CIFRA == N_PREMIADO_ULTIMA_CIFRA
 		) {
 			System.out.printf("Si tiene reintegro\n");
 		} else {

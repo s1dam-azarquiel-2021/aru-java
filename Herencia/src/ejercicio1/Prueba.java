@@ -6,7 +6,7 @@ import ejercicio1.Carnes.Grado;
 
 public class Prueba {
 	public static void main(String[] args) {
-		ArrayList<Plato> lista = new ArrayList<Plato>();
+		ArrayList<Plato> lista = new ArrayList<>();
 		lista.add(new Primeros("sopa", 5, false));
 		lista.add(new Carnes("Solomillo", 8, Grado.MUY_HECHO));
 		lista.add(new Pescados("Lubina", 8));

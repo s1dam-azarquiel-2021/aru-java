@@ -34,9 +34,9 @@ public class MezclarDatos {
 		String ficheroJugadores, String ficheroGuardado
 	) {
 		super();
-		this.selecciones = new ArrayList<Seleccion>();
-		this.demarcaciones = new ArrayList<Demarcacion>();
-		this.jugadores = new ArrayList<Jugador>();
+		this.selecciones = new ArrayList<>();
+		this.demarcaciones = new ArrayList<>();
+		this.jugadores = new ArrayList<>();
 		this.ficheroDemarcaciones = ficheroDemarcaciones;
 		this.ficheroSelecciones = ficheroSelecciones;
 		this.ficheroJugadores = ficheroJugadores;
@@ -45,6 +45,7 @@ public class MezclarDatos {
 
 	public void guardarDatos() {
 		CustomBufferedWriter bw = new CustomBufferedWriter() {
+			@Override
 			public void main() throws IOException {
 				for (Seleccion seleccion : selecciones) {
 					stream.write(seleccion.getNombre());
@@ -67,6 +68,7 @@ public class MezclarDatos {
 
 	public void cargarJugadores() {
 		CustomBufferedReader br = new CustomBufferedReader() {
+			@Override
 			public void main() throws IOException {
 				String linea = stream.readLine();
 				while (linea != null) {
@@ -88,6 +90,7 @@ public class MezclarDatos {
 
 	public void cargarSelecciones() {
 		CustomBufferedReader br = new CustomBufferedReader() {
+			@Override
 			public void main() throws IOException {
 				String linea = stream.readLine();
 				while (linea != null) {
@@ -105,6 +108,7 @@ public class MezclarDatos {
 
 	public void cargarDemarcaciones() {
 		CustomBufferedReader br = new CustomBufferedReader() {
+			@Override
 			public void main() throws IOException {
 				String linea = stream.readLine();
 				while (linea != null) {
